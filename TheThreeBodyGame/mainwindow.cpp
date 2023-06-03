@@ -36,6 +36,6 @@ MainWindow::~MainWindow()
 void MainWindow::on_startgame_clicked()
 {
     close();
-    Gamepage game;
-    game.show();
+    Gamepage* game = new Gamepage();
+    game->showMaximized();
 }
