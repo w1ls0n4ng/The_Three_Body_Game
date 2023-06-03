@@ -38,12 +38,18 @@
      <rect>
       <x>870</x>
       <y>30</y>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>900</x>
+      <y>10</y>
       <width>93</width>
       <height>28</height>
      </rect>
     </property>
     <property name="text">
      <string>进入游戏</string>
+     <string>开始新游戏</string>
     </property>
    </widget>
   </widget>
