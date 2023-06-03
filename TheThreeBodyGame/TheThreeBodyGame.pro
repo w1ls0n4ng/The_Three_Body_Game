@@ -5,6 +5,9 @@
 #-------------------------------------------------
 
 QT       += core gui
+QT       += 3dcore 3drender 3dinput
+QT       += 3dextras
+
 
 
 

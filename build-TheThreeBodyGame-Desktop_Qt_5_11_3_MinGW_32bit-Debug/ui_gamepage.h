@@ -21,21 +21,22 @@ QT_BEGIN_NAMESPACE
 class Ui_Gamepage
 {
 public:
-    QMenuBar *menubar;
     QWidget *centralwidget;
+    QMenuBar *menubar;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *Gamepage)
     {
         if (Gamepage->objectName().isEmpty())
             Gamepage->setObjectName(QStringLiteral("Gamepage"));
-        Gamepage->resize(640, 480);
-        menubar = new QMenuBar(Gamepage);
-        menubar->setObjectName(QStringLiteral("menubar"));
-        Gamepage->setMenuBar(menubar);
+        Gamepage->resize(1920, 1080);
         centralwidget = new QWidget(Gamepage);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         Gamepage->setCentralWidget(centralwidget);
+        menubar = new QMenuBar(Gamepage);
+        menubar->setObjectName(QStringLiteral("menubar"));
+        menubar->setGeometry(QRect(0, 0, 1920, 26));
+        Gamepage->setMenuBar(menubar);
         statusbar = new QStatusBar(Gamepage);
         statusbar->setObjectName(QStringLiteral("statusbar"));
         Gamepage->setStatusBar(statusbar);
