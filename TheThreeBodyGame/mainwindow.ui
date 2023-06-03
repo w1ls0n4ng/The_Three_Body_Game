@@ -10,10 +10,28 @@
     <height>576</height>
    </rect>
   </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="font">
+   <font>
+    <family>FangSong</family>
+    <pointsize>18</pointsize>
+   </font>
+  </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>三体游戏 Three Body Game</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
    <widget class="QLabel" name="homepage">
     <property name="geometry">
      <rect>
@@ -22,6 +40,12 @@
       <width>1024</width>
       <height>576</height>
      </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="layoutDirection">
      <enum>Qt::LeftToRight</enum>
@@ -33,23 +57,29 @@
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QPushButton" name="playgame">
+   <widget class="QPushButton" name="startgame">
     <property name="geometry">
      <rect>
-      <x>870</x>
+      <x>812</x>
       <y>30</y>
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>900</x>
-      <y>10</y>
-      <width>93</width>
-      <height>28</height>
+      <width>151</width>
+      <height>51</height>
      </rect>
     </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <family>FangSong</family>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
     <property name="text">
-     <string>进入游戏</string>
-     <string>开始新游戏</string>
+     <string>开始游戏</string>
     </property>
    </widget>
   </widget>
@@ -59,7 +89,7 @@
      <x>0</x>
      <y>0</y>
      <width>1024</width>
-     <height>26</height>
+     <height>36</height>
     </rect>
    </property>
   </widget>

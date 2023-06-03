@@ -25,8 +25,7 @@ class Ui_MainWindow
 public:
     QWidget *centralwidget;
     QLabel *homepage;
-    QPushButton *playgame;
-    QPushButton *pushButton;
+    QPushButton *startgame;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -35,23 +34,36 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
         MainWindow->resize(1024, 576);
+        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(MainWindow->sizePolicy().hasHeightForWidth());
+        MainWindow->setSizePolicy(sizePolicy);
+        QFont font;
+        font.setFamily(QStringLiteral("FangSong"));
+        font.setPointSize(18);
+        MainWindow->setFont(font);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
+        sizePolicy.setHeightForWidth(centralwidget->sizePolicy().hasHeightForWidth());
+        centralwidget->setSizePolicy(sizePolicy);
         homepage = new QLabel(centralwidget);
         homepage->setObjectName(QStringLiteral("homepage"));
         homepage->setGeometry(QRect(0, 0, 1024, 576));
+        sizePolicy.setHeightForWidth(homepage->sizePolicy().hasHeightForWidth());
+        homepage->setSizePolicy(sizePolicy);
         homepage->setLayoutDirection(Qt::LeftToRight);
         homepage->setAlignment(Qt::AlignCenter);
-        playgame = new QPushButton(centralwidget);
-        playgame->setObjectName(QStringLiteral("playgame"));
-        playgame->setGeometry(QRect(870, 30, 93, 28));
-        pushButton = new QPushButton(centralwidget);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(900, 10, 93, 28));
+        startgame = new QPushButton(centralwidget);
+        startgame->setObjectName(QStringLiteral("startgame"));
+        startgame->setGeometry(QRect(812, 30, 151, 51));
+        sizePolicy.setHeightForWidth(startgame->sizePolicy().hasHeightForWidth());
+        startgame->setSizePolicy(sizePolicy);
+        startgame->setFont(font);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QStringLiteral("menubar"));
-        menubar->setGeometry(QRect(0, 0, 1024, 26));
+        menubar->setGeometry(QRect(0, 0, 1024, 36));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QStringLiteral("statusbar"));
@@ -64,10 +76,9 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", nullptr));
+        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "\344\270\211\344\275\223\346\270\270\346\210\217 Three Body Game", nullptr));
         homepage->setText(QApplication::translate("MainWindow", "TextLabel", nullptr));
-        playgame->setText(QApplication::translate("MainWindow", "\350\277\233\345\205\245\346\270\270\346\210\217", nullptr));
-        pushButton->setText(QApplication::translate("MainWindow", "\345\274\200\345\247\213\346\226\260\346\270\270\346\210\217", nullptr));
+        startgame->setText(QApplication::translate("MainWindow", "\345\274\200\345\247\213\346\270\270\346\210\217", nullptr));
     } // retranslateUi
 
 };
