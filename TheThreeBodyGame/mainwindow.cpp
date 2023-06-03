@@ -14,18 +14,10 @@ MainWindow::MainWindow(QWidget *parent) :
     QString backgroundImage = "background-image: url(../Assests/homepage.png);";
     this->setStyleSheet(backgroundImage);
 
-    // Get the screen geometry
-    QRect screenGeometry = QApplication::desktop()->screenGeometry();
-
-    // Calculate the desired x and y coordinates
-    int x = (screenGeometry.width() / 3) * 2;    // X position at the center of the screen
-    int y = (screenGeometry.height() / 3);   // Y position at the center of the screen
-
-    qDebug() << screenGeometry.width() << screenGeometry.height();
-
-    // Set the position of the label
-    ui->startgame->move(x, y);
     ui->startgame->setStyleSheet("color: white; background-color: black; border: 2px solid white;");
+    ui->loadgame->setStyleSheet("color: white; background-color: black; border: 2px solid white;");
+    ui->exitgame->setStyleSheet("color: white; background-color: black; border: 2px solid white;");
+
 
 }
 

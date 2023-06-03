@@ -24,6 +24,8 @@ class Ui_MainWindow
 public:
     QWidget *centralwidget;
     QPushButton *startgame;
+    QPushButton *loadgame;
+    QPushButton *exitgame;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -31,7 +33,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(1024, 576);
+        MainWindow->resize(1920, 1080);
         QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -47,14 +49,28 @@ public:
         centralwidget->setSizePolicy(sizePolicy);
         startgame = new QPushButton(centralwidget);
         startgame->setObjectName(QStringLiteral("startgame"));
-        startgame->setGeometry(QRect(812, 30, 151, 51));
+        startgame->setGeometry(QRect(1630, 680, 151, 51));
         sizePolicy.setHeightForWidth(startgame->sizePolicy().hasHeightForWidth());
         startgame->setSizePolicy(sizePolicy);
         startgame->setFont(font);
+        loadgame = new QPushButton(centralwidget);
+        loadgame->setObjectName(QStringLiteral("loadgame"));
+        loadgame->setGeometry(QRect(1630, 750, 151, 51));
+        sizePolicy.setHeightForWidth(loadgame->sizePolicy().hasHeightForWidth());
+        loadgame->setSizePolicy(sizePolicy);
+        loadgame->setFont(font);
+        loadgame->setStyleSheet(QStringLiteral("selection-background-color: rgb(0, 0, 0);"));
+        exitgame = new QPushButton(centralwidget);
+        exitgame->setObjectName(QStringLiteral("exitgame"));
+        exitgame->setGeometry(QRect(1630, 820, 151, 51));
+        sizePolicy.setHeightForWidth(exitgame->sizePolicy().hasHeightForWidth());
+        exitgame->setSizePolicy(sizePolicy);
+        exitgame->setFont(font);
+        exitgame->setStyleSheet(QStringLiteral("selection-background-color: rgb(0, 0, 0);"));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QStringLiteral("menubar"));
-        menubar->setGeometry(QRect(0, 0, 1024, 36));
+        menubar->setGeometry(QRect(0, 0, 1920, 36));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QStringLiteral("statusbar"));
@@ -69,6 +85,8 @@ public:
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "\344\270\211\344\275\223\346\270\270\346\210\217 Three Body Game", nullptr));
         startgame->setText(QApplication::translate("MainWindow", "\345\274\200\345\247\213\346\270\270\346\210\217", nullptr));
+        loadgame->setText(QApplication::translate("MainWindow", "\347\273\247\347\273\255\346\270\270\346\210\217", nullptr));
+        exitgame->setText(QApplication::translate("MainWindow", "\351\200\200\345\207\272\346\270\270\346\210\217", nullptr));
     } // retranslateUi
 
 };
