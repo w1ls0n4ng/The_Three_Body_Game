@@ -241,15 +241,8 @@ Makefile: ../TheThreeBodyGame/TheThreeBodyGame.pro ../../../../Qt/Qt5.11.3/5.11.
 		../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/mkspecs/features/lex.prf \
 		../TheThreeBodyGame/TheThreeBodyGame.pro \
 		../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/lib/qtmaind.prl \
-		../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/lib/Qt53DExtras.prl \
-		../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/lib/Qt53DRender.prl \
-		../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/lib/Qt53DInput.prl \
-		../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/lib/Qt53DLogic.prl \
-		../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/lib/Qt53DCore.prl \
-		../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/lib/Qt5Gamepad.prl \
 		../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/lib/Qt5Widgets.prl \
 		../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/lib/Qt5Gui.prl \
-		../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/lib/Qt5Network.prl \
 		../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/lib/Qt5Core.prl
 	$(QMAKE) -o Makefile ..\TheThreeBodyGame\TheThreeBodyGame.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 ../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/mkspecs/features/spec_pre.prf:
@@ -432,15 +425,8 @@ Makefile: ../TheThreeBodyGame/TheThreeBodyGame.pro ../../../../Qt/Qt5.11.3/5.11.
 ../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/mkspecs/features/lex.prf:
 ../TheThreeBodyGame/TheThreeBodyGame.pro:
 ../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/lib/qtmaind.prl:
-../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/lib/Qt53DExtras.prl:
-../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/lib/Qt53DRender.prl:
-../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/lib/Qt53DInput.prl:
-../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/lib/Qt53DLogic.prl:
-../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/lib/Qt53DCore.prl:
-../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/lib/Qt5Gamepad.prl:
 ../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/lib/Qt5Widgets.prl:
 ../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/lib/Qt5Gui.prl:
-../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/lib/Qt5Network.prl:
 ../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/lib/Qt5Core.prl:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ..\TheThreeBodyGame\TheThreeBodyGame.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"

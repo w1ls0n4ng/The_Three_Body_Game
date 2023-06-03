@@ -11,7 +11,6 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
@@ -24,7 +23,6 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
-    QLabel *homepage;
     QPushButton *startgame;
     QMenuBar *menubar;
     QStatusBar *statusbar;
@@ -47,13 +45,6 @@ public:
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         sizePolicy.setHeightForWidth(centralwidget->sizePolicy().hasHeightForWidth());
         centralwidget->setSizePolicy(sizePolicy);
-        homepage = new QLabel(centralwidget);
-        homepage->setObjectName(QStringLiteral("homepage"));
-        homepage->setGeometry(QRect(0, 0, 1024, 576));
-        sizePolicy.setHeightForWidth(homepage->sizePolicy().hasHeightForWidth());
-        homepage->setSizePolicy(sizePolicy);
-        homepage->setLayoutDirection(Qt::LeftToRight);
-        homepage->setAlignment(Qt::AlignCenter);
         startgame = new QPushButton(centralwidget);
         startgame->setObjectName(QStringLiteral("startgame"));
         startgame->setGeometry(QRect(812, 30, 151, 51));
@@ -77,7 +68,6 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "\344\270\211\344\275\223\346\270\270\346\210\217 Three Body Game", nullptr));
-        homepage->setText(QApplication::translate("MainWindow", "TextLabel", nullptr));
         startgame->setText(QApplication::translate("MainWindow", "\345\274\200\345\247\213\346\270\270\346\210\217", nullptr));
     } // retranslateUi
 

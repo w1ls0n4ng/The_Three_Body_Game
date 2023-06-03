@@ -5,7 +5,6 @@
 #-------------------------------------------------
 
 QT       += core gui
-QT       += 3dextras
 
 
 
@@ -29,13 +28,16 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    gamepage.cpp
 
 HEADERS += \
-    mainwindow.h
+    mainwindow.h \
+    gamepage.h
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    gamepage.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

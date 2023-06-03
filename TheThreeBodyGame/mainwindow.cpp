@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "gamepage.h"
 #include <QDesktopWidget>
 #include <QDebug>
 
@@ -10,22 +11,31 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     // Set a background image
-    QString backgroundImage = "background-image: url(../Assests/edit.png);";
+    QString backgroundImage = "background-image: url(../Assests/homepage.png);";
     this->setStyleSheet(backgroundImage);
 
+    // Get the screen geometry
+    QRect screenGeometry = QApplication::desktop()->screenGeometry();
 
-    QRect rect = QApplication::desktop()->availableGeometry(this);
-    int width = rect.width();
-    int height = rect.height();
+    // Calculate the desired x and y coordinates
+    int x = (screenGeometry.width() / 3) * 2;    // X position at the center of the screen
+    int y = (screenGeometry.height() / 3);   // Y position at the center of the screen
 
-//    QPixmap pixmap("../Assests/edit.png");
-//    pixmap = pixmap.scaled(width + 80, height + 80, Qt::KeepAspectRatio);
-//    ui->homepage->setPixmap(pixmap);
-//    ui->homepage->resize(width, height);
+    // Set the position of the label
+    ui->startgame->move(x, y);
+    ui->startgame->setStyleSheet("color: white; background-color: black; border: 2px solid white;");
+
 }
 
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::on_startgame_clicked()
+{
+    close();
+    Gamepage game;
+    game.show();
 }
