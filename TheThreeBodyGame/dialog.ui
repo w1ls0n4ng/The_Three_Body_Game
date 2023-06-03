@@ -6,24 +6,27 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>1024</width>
+    <height>576</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="homepage">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>250</y>
-     <width>71</width>
-     <height>20</height>
+     <x>0</x>
+     <y>0</y>
+     <width>1024</width>
+     <height>576</height>
     </rect>
    </property>
    <property name="text">
-    <string>Hello World</string>
+    <string>TextLabel</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
    </property>
   </widget>
  </widget>

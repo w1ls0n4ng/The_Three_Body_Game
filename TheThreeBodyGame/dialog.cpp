@@ -1,12 +1,13 @@
 #include "dialog.h"
 #include "ui_dialog.h"
+#include "QDesktopWidget"
 
 Dialog::Dialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Dialog)
 {
     ui->setupUi(this);
-    ui->label->setText("牛逼");
+    ui->homepage->setPixmap(QPixmap("../Assests/Homepage.png"));
 }
 
 Dialog::~Dialog()

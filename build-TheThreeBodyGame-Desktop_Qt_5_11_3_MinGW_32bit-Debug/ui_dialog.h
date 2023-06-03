@@ -19,16 +19,17 @@ QT_BEGIN_NAMESPACE
 class Ui_Dialog
 {
 public:
-    QLabel *label;
+    QLabel *homepage;
 
     void setupUi(QDialog *Dialog)
     {
         if (Dialog->objectName().isEmpty())
             Dialog->setObjectName(QStringLiteral("Dialog"));
-        Dialog->resize(400, 300);
-        label = new QLabel(Dialog);
-        label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(50, 250, 71, 20));
+        Dialog->resize(1024, 576);
+        homepage = new QLabel(Dialog);
+        homepage->setObjectName(QStringLiteral("homepage"));
+        homepage->setGeometry(QRect(0, 0, 1024, 576));
+        homepage->setAlignment(Qt::AlignCenter);
 
         retranslateUi(Dialog);
 
@@ -38,7 +39,7 @@ public:
     void retranslateUi(QDialog *Dialog)
     {
         Dialog->setWindowTitle(QApplication::translate("Dialog", "Dialog", nullptr));
-        label->setText(QApplication::translate("Dialog", "Hello World", nullptr));
+        homepage->setText(QApplication::translate("Dialog", "TextLabel", nullptr));
     } // retranslateUi
 
 };
