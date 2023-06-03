@@ -220,8 +220,8 @@ release/moc_mainwindow.cpp: ../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/include/Qt
 		../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/bin/moc.exe
 	D:\Qt\Qt5.11.3\5.11.3\mingw53_32\bin\moc.exe $(DEFINES) --include D:/Coding/PekingUniversity/The_Three_Body_Game/build-TheThreeBodyGame-Desktop_Qt_5_11_3_MinGW_32bit-Debug/release/moc_predefs.h -ID:/Qt/Qt5.11.3/5.11.3/mingw53_32/mkspecs/win32-g++ -ID:/Coding/PekingUniversity/The_Three_Body_Game/TheThreeBodyGame -ID:/Qt/Qt5.11.3/5.11.3/mingw53_32/include -ID:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets -ID:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtGui -ID:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtANGLE -ID:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtCore -I. -ID:/Qt/Qt5.11.3/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -ID:/Qt/Qt5.11.3/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -ID:/Qt/Qt5.11.3/Tools/mingw530_32/i686-w64-mingw32/include -ID:/Qt/Qt5.11.3/Tools/mingw530_32/i686-w64-mingw32/include/c++ -ID:/Qt/Qt5.11.3/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -ID:/Qt/Qt5.11.3/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward ..\TheThreeBodyGame\mainwindow.h -o release\moc_mainwindow.cpp
 
-release/moc_gamepage.cpp: ../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/QWidget \
-		../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qwidget.h \
+release/moc_gamepage.cpp: ../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/QMainWindow \
+		../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qmainwindow.h \
 		../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qtwidgetsglobal.h \
 		../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtGui/qtguiglobal.h \
 		../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtCore/qglobal.h \
@@ -247,6 +247,7 @@ release/moc_gamepage.cpp: ../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWi
 		../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtCore/qversiontagging.h \
 		../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtGui/qtgui-config.h \
 		../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qtwidgets-config.h \
+		../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qwidget.h \
 		../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtGui/qwindowdefs.h \
 		../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtCore/qobjectdefs.h \
 		../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtCore/qnamespace.h \
@@ -323,6 +324,8 @@ release/moc_gamepage.cpp: ../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWi
 		../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtCore/qfiledevice.h \
 		../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtGui/qvector2d.h \
 		../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtGui/qtouchdevice.h \
+		../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qtabwidget.h \
+		../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtGui/qicon.h \
 		../TheThreeBodyGame/gamepage.h \
 		release/moc_predefs.h \
 		../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/bin/moc.exe
@@ -604,8 +607,8 @@ release/mainwindow.o: ../TheThreeBodyGame/mainwindow.cpp ../TheThreeBodyGame/mai
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\mainwindow.o ..\TheThreeBodyGame\mainwindow.cpp
 
 release/gamepage.o: ../TheThreeBodyGame/gamepage.cpp ../TheThreeBodyGame/gamepage.h \
-		../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/QWidget \
-		../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qwidget.h \
+		../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/QMainWindow \
+		../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qmainwindow.h \
 		../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qtwidgetsglobal.h \
 		../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtGui/qtguiglobal.h \
 		../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtCore/qglobal.h \
@@ -631,6 +634,7 @@ release/gamepage.o: ../TheThreeBodyGame/gamepage.cpp ../TheThreeBodyGame/gamepag
 		../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtCore/qversiontagging.h \
 		../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtGui/qtgui-config.h \
 		../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qtwidgets-config.h \
+		../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qwidget.h \
 		../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtGui/qwindowdefs.h \
 		../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtCore/qobjectdefs.h \
 		../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtCore/qnamespace.h \
@@ -707,6 +711,8 @@ release/gamepage.o: ../TheThreeBodyGame/gamepage.cpp ../TheThreeBodyGame/gamepag
 		../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtCore/qfiledevice.h \
 		../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtGui/qvector2d.h \
 		../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtGui/qtouchdevice.h \
+		../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qtabwidget.h \
+		../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtGui/qicon.h \
 		ui_gamepage.h \
 		../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtCore/QVariant \
 		../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/QApplication \
@@ -719,7 +725,7 @@ release/gamepage.o: ../TheThreeBodyGame/gamepage.cpp ../TheThreeBodyGame/gamepag
 		../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/QPushButton \
 		../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qpushbutton.h \
 		../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qabstractbutton.h \
-		../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtGui/qicon.h
+		../../../../Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\gamepage.o ..\TheThreeBodyGame\gamepage.cpp
 
 release/moc_mainwindow.o: release/moc_mainwindow.cpp 

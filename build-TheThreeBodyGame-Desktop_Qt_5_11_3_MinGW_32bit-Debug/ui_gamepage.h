@@ -11,7 +11,9 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QPushButton>
+#include <QtWidgets/QMainWindow>
+#include <QtWidgets/QMenuBar>
+#include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -19,26 +21,33 @@ QT_BEGIN_NAMESPACE
 class Ui_Gamepage
 {
 public:
-    QPushButton *pushButton;
+    QMenuBar *menubar;
+    QWidget *centralwidget;
+    QStatusBar *statusbar;
 
-    void setupUi(QWidget *Gamepage)
+    void setupUi(QMainWindow *Gamepage)
     {
         if (Gamepage->objectName().isEmpty())
             Gamepage->setObjectName(QStringLiteral("Gamepage"));
         Gamepage->resize(640, 480);
-        pushButton = new QPushButton(Gamepage);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(460, 370, 93, 28));
+        menubar = new QMenuBar(Gamepage);
+        menubar->setObjectName(QStringLiteral("menubar"));
+        Gamepage->setMenuBar(menubar);
+        centralwidget = new QWidget(Gamepage);
+        centralwidget->setObjectName(QStringLiteral("centralwidget"));
+        Gamepage->setCentralWidget(centralwidget);
+        statusbar = new QStatusBar(Gamepage);
+        statusbar->setObjectName(QStringLiteral("statusbar"));
+        Gamepage->setStatusBar(statusbar);
 
         retranslateUi(Gamepage);
 
         QMetaObject::connectSlotsByName(Gamepage);
     } // setupUi
 
-    void retranslateUi(QWidget *Gamepage)
+    void retranslateUi(QMainWindow *Gamepage)
     {
-        Gamepage->setWindowTitle(QApplication::translate("Gamepage", "Form", nullptr));
-        pushButton->setText(QApplication::translate("Gamepage", "Show Details", nullptr));
+        Gamepage->setWindowTitle(QApplication::translate("Gamepage", "MainWindow", nullptr));
     } // retranslateUi
 
 };

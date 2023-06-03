@@ -1,13 +1,13 @@
 #ifndef GAMEPAGE_H
 #define GAMEPAGE_H
 
-#include <QWidget>
+#include <QMainWindow>
 
 namespace Ui {
 class Gamepage;
 }
 
-class Gamepage : public QWidget
+class Gamepage : public QMainWindow
 {
     Q_OBJECT
 

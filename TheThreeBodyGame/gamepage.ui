@@ -1,7 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0'?>
 <ui version="4.0">
+ <author/>
+ <comment/>
+ <exportmacro/>
  <class>Gamepage</class>
- <widget class="QWidget" name="Gamepage">
+ <widget class="QMainWindow" name="Gamepage">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -11,22 +14,12 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>MainWindow</string>
   </property>
-  <widget class="QPushButton" name="pushButton">
-   <property name="geometry">
-    <rect>
-     <x>460</x>
-     <y>370</y>
-     <width>93</width>
-     <height>28</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Show Details</string>
-   </property>
-  </widget>
+  <widget class="QMenuBar" name="menubar"/>
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <pixmapfunction/>
  <connections/>
 </ui>
