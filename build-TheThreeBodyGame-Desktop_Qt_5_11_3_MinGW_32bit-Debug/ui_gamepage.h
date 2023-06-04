@@ -31,18 +31,18 @@ public:
     QProgressBar *population;
     QLabel *year_label;
     QLabel *year;
-    QLabel *hjy_label;
-    QLabel *ljy_label;
+    QLabel *constant_era_label;
+    QLabel *chaotic_era_label;
     QLabel *civilization_label;
-    QLabel *cv_state_label;
+    QLabel *civilization_state_label;
     QLabel *deadly_temp_label;
     QLabel *disastor_temp_label;
-    QLabel *hjy;
-    QLabel *conti_hjy_label;
-    QLabel *conti_hjy;
-    QLabel *ljy;
+    QLabel *constant_era;
+    QLabel *continue_constant_era_label;
+    QLabel *continue_constant_era;
+    QLabel *chaotic_era;
     QLabel *civilization;
-    QLabel *cv_state;
+    QLabel *civilization_state;
     QLabel *deadly_temp;
     QLabel *disastor_temp;
     QLabel *ave_temp;
@@ -100,25 +100,25 @@ public:
         year->setStyleSheet(QLatin1String("background: rgba(255, 255, 255, 0);\n"
 "font: 10pt \"Microsoft YaHei UI\";\n"
 "color: rgb(210, 238, 255);"));
-        hjy_label = new QLabel(groupBox);
-        hjy_label->setObjectName(QStringLiteral("hjy_label"));
-        hjy_label->setGeometry(QRect(25, 150, 100, 21));
-        hjy_label->setStyleSheet(QLatin1String("font: 75 10pt \"Microsoft YaHei UI\";\n"
+        constant_era_label = new QLabel(groupBox);
+        constant_era_label->setObjectName(QStringLiteral("constant_era_label"));
+        constant_era_label->setGeometry(QRect(25, 150, 100, 21));
+        constant_era_label->setStyleSheet(QLatin1String("font: 75 10pt \"Microsoft YaHei UI\";\n"
 "background: transparent;"));
-        ljy_label = new QLabel(groupBox);
-        ljy_label->setObjectName(QStringLiteral("ljy_label"));
-        ljy_label->setGeometry(QRect(25, 180, 100, 21));
-        ljy_label->setStyleSheet(QLatin1String("font: 75 10pt \"Microsoft YaHei UI\";\n"
+        chaotic_era_label = new QLabel(groupBox);
+        chaotic_era_label->setObjectName(QStringLiteral("chaotic_era_label"));
+        chaotic_era_label->setGeometry(QRect(25, 180, 100, 21));
+        chaotic_era_label->setStyleSheet(QLatin1String("font: 75 10pt \"Microsoft YaHei UI\";\n"
 "background: transparent;"));
         civilization_label = new QLabel(groupBox);
         civilization_label->setObjectName(QStringLiteral("civilization_label"));
         civilization_label->setGeometry(QRect(25, 210, 100, 21));
         civilization_label->setStyleSheet(QLatin1String("background: transparent;\n"
 "font: 75 10pt \"Microsoft YaHei UI\";"));
-        cv_state_label = new QLabel(groupBox);
-        cv_state_label->setObjectName(QStringLiteral("cv_state_label"));
-        cv_state_label->setGeometry(QRect(25, 240, 80, 21));
-        cv_state_label->setStyleSheet(QLatin1String("background: transparent;\n"
+        civilization_state_label = new QLabel(groupBox);
+        civilization_state_label->setObjectName(QStringLiteral("civilization_state_label"));
+        civilization_state_label->setGeometry(QRect(25, 240, 80, 21));
+        civilization_state_label->setStyleSheet(QLatin1String("background: transparent;\n"
 "font: 75 10pt \"Microsoft YaHei UI\";"));
         deadly_temp_label = new QLabel(groupBox);
         deadly_temp_label->setObjectName(QStringLiteral("deadly_temp_label"));
@@ -130,27 +130,27 @@ public:
         disastor_temp_label->setGeometry(QRect(25, 300, 80, 21));
         disastor_temp_label->setStyleSheet(QLatin1String("background: transparent;\n"
 "font: 75 10pt \"Microsoft YaHei UI\";"));
-        hjy = new QLabel(groupBox);
-        hjy->setObjectName(QStringLiteral("hjy"));
-        hjy->setGeometry(QRect(115, 150, 71, 21));
-        hjy->setStyleSheet(QLatin1String("background: rgba(255, 255, 255, 0);\n"
+        constant_era = new QLabel(groupBox);
+        constant_era->setObjectName(QStringLiteral("constant_era"));
+        constant_era->setGeometry(QRect(115, 150, 71, 21));
+        constant_era->setStyleSheet(QLatin1String("background: rgba(255, 255, 255, 0);\n"
 "font: 10pt \"Microsoft YaHei UI\";\n"
 "color: rgb(210, 238, 255);"));
-        conti_hjy_label = new QLabel(groupBox);
-        conti_hjy_label->setObjectName(QStringLiteral("conti_hjy_label"));
-        conti_hjy_label->setGeometry(QRect(190, 150, 100, 21));
-        conti_hjy_label->setStyleSheet(QLatin1String("font: 75 10pt \"Microsoft YaHei UI\";\n"
+        continue_constant_era_label = new QLabel(groupBox);
+        continue_constant_era_label->setObjectName(QStringLiteral("continue_constant_era_label"));
+        continue_constant_era_label->setGeometry(QRect(190, 150, 100, 21));
+        continue_constant_era_label->setStyleSheet(QLatin1String("font: 75 10pt \"Microsoft YaHei UI\";\n"
 "background: transparent;"));
-        conti_hjy = new QLabel(groupBox);
-        conti_hjy->setObjectName(QStringLiteral("conti_hjy"));
-        conti_hjy->setGeometry(QRect(280, 150, 71, 21));
-        conti_hjy->setStyleSheet(QLatin1String("background: rgba(255, 255, 255, 0);\n"
+        continue_constant_era = new QLabel(groupBox);
+        continue_constant_era->setObjectName(QStringLiteral("continue_constant_era"));
+        continue_constant_era->setGeometry(QRect(280, 150, 71, 21));
+        continue_constant_era->setStyleSheet(QLatin1String("background: rgba(255, 255, 255, 0);\n"
 "font: 10pt \"Microsoft YaHei UI\";\n"
 "color: rgb(210, 238, 255);"));
-        ljy = new QLabel(groupBox);
-        ljy->setObjectName(QStringLiteral("ljy"));
-        ljy->setGeometry(QRect(115, 180, 71, 21));
-        ljy->setStyleSheet(QLatin1String("background: rgba(255, 255, 255, 0);\n"
+        chaotic_era = new QLabel(groupBox);
+        chaotic_era->setObjectName(QStringLiteral("chaotic_era"));
+        chaotic_era->setGeometry(QRect(115, 180, 71, 21));
+        chaotic_era->setStyleSheet(QLatin1String("background: rgba(255, 255, 255, 0);\n"
 "font: 10pt \"Microsoft YaHei UI\";\n"
 "color: rgb(210, 238, 255);"));
         civilization = new QLabel(groupBox);
@@ -159,15 +159,15 @@ public:
         civilization->setStyleSheet(QLatin1String("background: rgba(255, 255, 255, 0);\n"
 "font: 10pt \"Microsoft YaHei UI\";\n"
 "color: rgb(210, 238, 255);"));
-        cv_state = new QLabel(groupBox);
-        cv_state->setObjectName(QStringLiteral("cv_state"));
-        cv_state->setGeometry(QRect(100, 240, 71, 21));
-        cv_state->setStyleSheet(QLatin1String("background: rgba(255, 255, 255, 0);\n"
+        civilization_state = new QLabel(groupBox);
+        civilization_state->setObjectName(QStringLiteral("civilization_state"));
+        civilization_state->setGeometry(QRect(100, 240, 71, 21));
+        civilization_state->setStyleSheet(QLatin1String("background: rgba(255, 255, 255, 0);\n"
 "font: 10pt \"Microsoft YaHei UI\";\n"
 "color: rgb(210, 238, 255);"));
         deadly_temp = new QLabel(groupBox);
         deadly_temp->setObjectName(QStringLiteral("deadly_temp"));
-        deadly_temp->setGeometry(QRect(100, 270, 71, 21));
+        deadly_temp->setGeometry(QRect(100, 270, 191, 21));
         deadly_temp->setStyleSheet(QLatin1String("background: rgba(255, 255, 255, 0);\n"
 "font: 10pt \"Microsoft YaHei UI\";\n"
 "color: rgb(210, 238, 255);"));
@@ -271,20 +271,20 @@ public:
         population_label->setText(QApplication::translate("Gamepage", "<html><head/><body><p><span style=\" font-size:10pt; color:#00ffff;\">\344\272\272\345\217\243%</span></p></body></html>", nullptr));
         year_label->setText(QApplication::translate("Gamepage", "<html><head/><body><p><span style=\" font-size:10pt; color:#55ffff;\">\345\271\264</span></p></body></html>", nullptr));
         year->setText(QApplication::translate("Gamepage", "200", nullptr));
-        hjy_label->setText(QApplication::translate("Gamepage", "<html><head/><body><p><span style=\" color:#55ffff;\">\346\226\207\346\230\216\346\201\222\347\272\252\345\205\203</span></p></body></html>", nullptr));
-        ljy_label->setText(QApplication::translate("Gamepage", "<html><head/><body><p><span style=\" color:#55ffff;\">\346\226\207\346\230\216\344\271\261\347\272\252\345\205\203</span></p></body></html>", nullptr));
+        constant_era_label->setText(QApplication::translate("Gamepage", "<html><head/><body><p><span style=\" color:#55ffff;\">\346\226\207\346\230\216\346\201\222\347\272\252\345\205\203</span></p></body></html>", nullptr));
+        chaotic_era_label->setText(QApplication::translate("Gamepage", "<html><head/><body><p><span style=\" color:#55ffff;\">\346\226\207\346\230\216\344\271\261\347\272\252\345\205\203</span></p></body></html>", nullptr));
         civilization_label->setText(QApplication::translate("Gamepage", "<html><head/><body><p><span style=\" color:#55ffff;\">\346\226\207\346\230\216\345\255\225\350\202\262\344\270\255</span></p></body></html>", nullptr));
-        cv_state_label->setText(QApplication::translate("Gamepage", "<html><head/><body><p><span style=\" color:#55ffff;\">\346\226\207\346\230\216\347\212\266\346\200\201</span></p></body></html>", nullptr));
+        civilization_state_label->setText(QApplication::translate("Gamepage", "<html><head/><body><p><span style=\" color:#55ffff;\">\346\226\207\346\230\216\347\212\266\346\200\201</span></p></body></html>", nullptr));
         deadly_temp_label->setText(QApplication::translate("Gamepage", "<html><head/><body><p><span style=\" color:#55ffff;\">\350\207\264\345\221\275\346\270\251\345\272\246</span></p></body></html>", nullptr));
         disastor_temp_label->setText(QApplication::translate("Gamepage", "<html><head/><body><p><span style=\" color:#55ffff;\">\347\201\276\351\232\276\346\270\251\345\272\246</span></p></body></html>", nullptr));
-        hjy->setText(QApplication::translate("Gamepage", "200", nullptr));
-        conti_hjy_label->setText(QApplication::translate("Gamepage", "<html><head/><body><p><span style=\" color:#55ffff;\">\350\277\236\347\273\255\346\201\222\347\272\252\345\205\203</span></p></body></html>", nullptr));
-        conti_hjy->setText(QApplication::translate("Gamepage", "200", nullptr));
-        ljy->setText(QApplication::translate("Gamepage", "200", nullptr));
+        constant_era->setText(QApplication::translate("Gamepage", "200", nullptr));
+        continue_constant_era_label->setText(QApplication::translate("Gamepage", "<html><head/><body><p><span style=\" color:#55ffff;\">\350\277\236\347\273\255\346\201\222\347\272\252\345\205\203</span></p></body></html>", nullptr));
+        continue_constant_era->setText(QApplication::translate("Gamepage", "200", nullptr));
+        chaotic_era->setText(QApplication::translate("Gamepage", "200", nullptr));
         civilization->setText(QApplication::translate("Gamepage", "200", nullptr));
-        cv_state->setText(QApplication::translate("Gamepage", "200", nullptr));
+        civilization_state->setText(QApplication::translate("Gamepage", "200", nullptr));
         deadly_temp->setText(QApplication::translate("Gamepage", "200", nullptr));
-        disastor_temp->setText(QApplication::translate("Gamepage", "200", nullptr));
+        disastor_temp->setText(QString());
         ave_temp->setText(QApplication::translate("Gamepage", "200", nullptr));
         ave_temp_label->setText(QApplication::translate("Gamepage", "<html><head/><body><p><span style=\" color:#55ffff;\">\345\271\263\345\235\207\346\270\251\345\272\246</span></p></body></html>", nullptr));
         groupBox_2->setTitle(QString());

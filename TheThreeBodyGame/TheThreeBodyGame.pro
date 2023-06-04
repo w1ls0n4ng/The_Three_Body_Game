@@ -37,7 +37,10 @@ SOURCES += \
 
 HEADERS += \
     mainwindow.h \
-    gamepage.h
+    gamepage.h \
+    sun.h \
+    planet.h \
+    civilization.h
 
 FORMS += \
     mainwindow.ui \

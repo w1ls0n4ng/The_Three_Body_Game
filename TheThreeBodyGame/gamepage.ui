@@ -112,7 +112,7 @@ color: rgb(210, 238, 255);</string>
       <string>200</string>
      </property>
     </widget>
-    <widget class="QLabel" name="hjy_label">
+    <widget class="QLabel" name="constant_era_label">
      <property name="geometry">
       <rect>
        <x>25</x>
@@ -129,7 +129,7 @@ background: transparent;</string>
       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#55ffff;&quot;&gt;文明恒纪元&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
-    <widget class="QLabel" name="ljy_label">
+    <widget class="QLabel" name="chaotic_era_label">
      <property name="geometry">
       <rect>
        <x>25</x>
@@ -163,7 +163,7 @@ font: 75 10pt &quot;Microsoft YaHei UI&quot;;</string>
       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#55ffff;&quot;&gt;文明孕育中&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
-    <widget class="QLabel" name="cv_state_label">
+    <widget class="QLabel" name="civilization_state_label">
      <property name="geometry">
       <rect>
        <x>25</x>
@@ -214,7 +214,7 @@ font: 75 10pt &quot;Microsoft YaHei UI&quot;;</string>
       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#55ffff;&quot;&gt;灾难温度&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
-    <widget class="QLabel" name="hjy">
+    <widget class="QLabel" name="constant_era">
      <property name="geometry">
       <rect>
        <x>115</x>
@@ -232,7 +232,7 @@ color: rgb(210, 238, 255);</string>
       <string>200</string>
      </property>
     </widget>
-    <widget class="QLabel" name="conti_hjy_label">
+    <widget class="QLabel" name="continue_constant_era_label">
      <property name="geometry">
       <rect>
        <x>190</x>
@@ -249,7 +249,7 @@ background: transparent;</string>
       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#55ffff;&quot;&gt;连续恒纪元&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
-    <widget class="QLabel" name="conti_hjy">
+    <widget class="QLabel" name="continue_constant_era">
      <property name="geometry">
       <rect>
        <x>280</x>
@@ -267,7 +267,7 @@ color: rgb(210, 238, 255);</string>
       <string>200</string>
      </property>
     </widget>
-    <widget class="QLabel" name="ljy">
+    <widget class="QLabel" name="chaotic_era">
      <property name="geometry">
       <rect>
        <x>115</x>
@@ -303,7 +303,7 @@ color: rgb(210, 238, 255);</string>
       <string>200</string>
      </property>
     </widget>
-    <widget class="QLabel" name="cv_state">
+    <widget class="QLabel" name="civilization_state">
      <property name="geometry">
       <rect>
        <x>100</x>
@@ -326,7 +326,7 @@ color: rgb(210, 238, 255);</string>
       <rect>
        <x>100</x>
        <y>270</y>
-       <width>71</width>
+       <width>191</width>
        <height>21</height>
       </rect>
      </property>
@@ -354,7 +354,7 @@ font: 10pt &quot;Microsoft YaHei UI&quot;;
 color: rgb(210, 238, 255);</string>
      </property>
      <property name="text">
-      <string>200</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="ave_temp">
