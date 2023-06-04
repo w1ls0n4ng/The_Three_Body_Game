@@ -15,8 +15,10 @@ public:
     explicit Gamepage(QWidget *parent = nullptr);
     ~Gamepage();
 
+
 private:
     Ui::Gamepage *ui;
 };
+
 
 #endif // GAMEPAGE_H

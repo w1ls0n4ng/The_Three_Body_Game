@@ -27,7 +27,9 @@ public:
     QWidget *centralwidget;
     QGroupBox *groupBox;
     QLabel *label;
-    QProgressBar *progressBar;
+    QProgressBar *population;
+    QLabel *label_2;
+    QLabel *label_3;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -40,16 +42,27 @@ public:
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         groupBox = new QGroupBox(centralwidget);
         groupBox->setObjectName(QStringLiteral("groupBox"));
-        groupBox->setGeometry(QRect(30, 610, 251, 401));
+        groupBox->setGeometry(QRect(30, 430, 360, 512));
         groupBox->setStyleSheet(QStringLiteral(""));
         label = new QLabel(groupBox);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(30, 90, 55, 16));
-        label->setAutoFillBackground(true);
-        progressBar = new QProgressBar(groupBox);
-        progressBar->setObjectName(QStringLiteral("progressBar"));
-        progressBar->setGeometry(QRect(90, 90, 118, 23));
-        progressBar->setValue(24);
+        label->setGeometry(QRect(30, 90, 55, 21));
+        label->setAutoFillBackground(false);
+        label->setStyleSheet(QStringLiteral("background: transparent;"));
+        label->setFrameShadow(QFrame::Plain);
+        population = new QProgressBar(groupBox);
+        population->setObjectName(QStringLiteral("population"));
+        population->setGeometry(QRect(90, 90, 118, 23));
+        population->setAutoFillBackground(false);
+        population->setStyleSheet(QStringLiteral(""));
+        population->setValue(24);
+        population->setTextVisible(false);
+        label_2 = new QLabel(groupBox);
+        label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setGeometry(QRect(30, 130, 55, 16));
+        label_3 = new QLabel(groupBox);
+        label_3->setObjectName(QStringLiteral("label_3"));
+        label_3->setGeometry(QRect(120, 130, 55, 16));
         Gamepage->setCentralWidget(centralwidget);
         menubar = new QMenuBar(Gamepage);
         menubar->setObjectName(QStringLiteral("menubar"));
@@ -70,8 +83,9 @@ public:
 #ifndef QT_NO_WHATSTHIS
         groupBox->setWhatsThis(QApplication::translate("Gamepage", "<html><head/><body><p><br/></p></body></html>", nullptr));
 #endif // QT_NO_WHATSTHIS
-        groupBox->setTitle(QApplication::translate("Gamepage", "\350\241\214\346\230\237\346\226\207\346\230\216", nullptr));
-        label->setText(QApplication::translate("Gamepage", "\344\272\272\345\217\243%", nullptr));
+        label->setText(QApplication::translate("Gamepage", "<html><head/><body><p><span style=\" font-size:10pt; color:#00ffff;\">\344\272\272\345\217\243%</span></p></body></html>", nullptr));
+        label_2->setText(QApplication::translate("Gamepage", "TextLabel", nullptr));
+        label_3->setText(QApplication::translate("Gamepage", "TextLabel", nullptr));
     } // retranslateUi
 
 };

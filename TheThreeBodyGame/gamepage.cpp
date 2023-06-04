@@ -5,6 +5,7 @@
 #include <QCheckBox>
 #include <QPushButton>
 
+
 Gamepage::Gamepage(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::Gamepage)
@@ -14,10 +15,18 @@ Gamepage::Gamepage(QWidget *parent) :
     this->setStyleSheet(backgroundImage);
 
     QString styleSheet = "QGroupBox {"
-                         "    background-color: blue;"
-                         "    border: 2px solid red;"
+                         "    background-image: url(../Assests/border.png);"
+                         "    border-radius: 5px;"  // 5像素的圆角边框
                          "}";
     ui->groupBox->setStyleSheet(styleSheet);
+
+
+    styleSheet = "QProgessBar {"
+                         "    background-image: url(../Assests/1.png);"
+                         "    background-color: red;"
+                         "}";
+    ui->population->setStyleSheet(styleSheet);
+    ui->population->setValue(70);
 
 
 }
@@ -26,3 +35,5 @@ Gamepage::~Gamepage()
 {
     delete ui;
 }
+
+
