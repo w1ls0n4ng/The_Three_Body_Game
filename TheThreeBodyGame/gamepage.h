@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QTimer>
+#include <QGraphicsScene>
 
 namespace Ui {
 class Gamepage;
@@ -24,6 +25,8 @@ public slots:
 private:
     Ui::Gamepage *ui;
     QTimer *timer;
+    QGraphicsScene *scene;
+    QGraphicsView* view;
 };
 
 
