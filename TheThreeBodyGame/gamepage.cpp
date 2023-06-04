@@ -4,9 +4,13 @@
 #include <QVBoxLayout>
 #include <QCheckBox>
 #include <QPushButton>
+<<<<<<< Updated upstream
 #include <QMediaPlayer>
 #include <QMediaPlaylist>
 
+=======
+#include <QDebug>
+>>>>>>> Stashed changes
 
 Gamepage::Gamepage(QWidget *parent) :
     QMainWindow(parent),
@@ -41,7 +45,20 @@ Gamepage::Gamepage(QWidget *parent) :
                          "    border: None;"
                          "}";
     ui->population->setStyleSheet(styleSheet);
-    ui->population->setValue(70);
+
+
+    ui->population->setValue(10);
+    timer = new QTimer(this);
+    connect(timer, SIGNAL(timeout()),this,SLOT(myfunction()));
+    timer->start(1000);
+
+    styleSheet = "QGroupBox {"
+                         "    background-image: url(../Assests/border2.png);"
+                         "    border-radius: 5px;"  // 5像素的圆角边框
+                         "    background-color:rgba(7, 4, 30, 200);"
+                         "}";
+    ui->groupBox_2->setStyleSheet(styleSheet);
+
 
 
 
@@ -52,3 +69,15 @@ Gamepage::~Gamepage()
 {
     delete ui;
 }
+<<<<<<< Updated upstream
+=======
+
+void Gamepage::myfunction()
+{
+    int val = ui->population->value() + 5;
+    ui->population->setValue(val);
+    qDebug() << "test";
+}
+
+
+>>>>>>> Stashed changes

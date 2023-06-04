@@ -2,6 +2,7 @@
 #define GAMEPAGE_H
 
 #include <QMainWindow>
+#include <QTimer>
 
 namespace Ui {
 class Gamepage;
@@ -15,8 +16,15 @@ public:
     explicit Gamepage(QWidget *parent = nullptr);
     ~Gamepage();
 
+<<<<<<< Updated upstream
+=======
+public slots:
+    void myfunction();
+
+>>>>>>> Stashed changes
 private:
     Ui::Gamepage *ui;
+    QTimer *timer;
 };
 
 
