@@ -16,12 +16,11 @@ public:
     explicit Gamepage(QWidget *parent = nullptr);
     ~Gamepage();
 
-<<<<<<< Updated upstream
-=======
+
 public slots:
     void myfunction();
 
->>>>>>> Stashed changes
+
 private:
     Ui::Gamepage *ui;
     QTimer *timer;

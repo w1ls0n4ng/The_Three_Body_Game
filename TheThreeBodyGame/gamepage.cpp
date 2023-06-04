@@ -4,13 +4,9 @@
 #include <QVBoxLayout>
 #include <QCheckBox>
 #include <QPushButton>
-<<<<<<< Updated upstream
 #include <QMediaPlayer>
 #include <QMediaPlaylist>
 
-=======
-#include <QDebug>
->>>>>>> Stashed changes
 
 Gamepage::Gamepage(QWidget *parent) :
     QMainWindow(parent),
@@ -69,15 +65,11 @@ Gamepage::~Gamepage()
 {
     delete ui;
 }
-<<<<<<< Updated upstream
-=======
 
 void Gamepage::myfunction()
 {
     int val = ui->population->value() + 5;
     ui->population->setValue(val);
-    qDebug() << "test";
 }
 
 
->>>>>>> Stashed changes
