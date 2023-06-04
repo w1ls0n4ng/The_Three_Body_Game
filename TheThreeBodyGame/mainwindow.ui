@@ -53,6 +53,9 @@
       <pointsize>18</pointsize>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255)</string>
+    </property>
     <property name="text">
      <string>开始游戏</string>
     </property>
@@ -79,7 +82,7 @@
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">selection-background-color: rgb(0, 0, 0);</string>
+     <string notr="true">color: rgb(255, 255, 255)</string>
     </property>
     <property name="text">
      <string>继续游戏</string>
@@ -107,7 +110,7 @@
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">selection-background-color: rgb(0, 0, 0);</string>
+     <string notr="true">color: rgb(255, 255, 255)</string>
     </property>
     <property name="text">
      <string>退出游戏</string>
@@ -120,7 +123,7 @@
      <x>0</x>
      <y>0</y>
      <width>1920</width>
-     <height>36</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>
