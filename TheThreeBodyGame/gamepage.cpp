@@ -21,12 +21,15 @@ Gamepage::Gamepage(QWidget *parent) :
     ui->groupBox->setStyleSheet(styleSheet);
 
 
-    styleSheet = "QProgessBar {"
+    styleSheet = "QProgressBar {"
                          "    background-image: url(../Assests/1.png);"
-                         "    background-color: red;"
+                         "    background-color: rgba(23, 33, 255, 50);"
+                         "    border: None;"
                          "}";
     ui->population->setStyleSheet(styleSheet);
     ui->population->setValue(70);
+
+
 
 
 }
