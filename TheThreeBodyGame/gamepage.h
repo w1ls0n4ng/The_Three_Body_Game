@@ -35,6 +35,7 @@ private:
     QGraphicsEllipseItem* circle1;
     QGraphicsEllipseItem* circle2;
     QGraphicsEllipseItem* circle3;
+    QGraphicsEllipseItem* circle4;
     int game_stop = 0;
     sun sun1, sun2, sun3;
     planet earth;
@@ -42,8 +43,8 @@ private:
     float time = 0;
     // 设置G值
     double G = 3.1415926 * 3.1415926;
-    // 假设更新gap为40ms
-    int gap = 40;
+    // 每次更新0.005游戏年
+    int gap = 5;
 };
 
 

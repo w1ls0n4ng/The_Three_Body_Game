@@ -102,9 +102,24 @@ public:
                 }
                 for (int i = 0; i < 3; ++i)
                 {
-                    update_vel[i] += G * sun1.mass * (sun1.location[i] - location[i]) / (r1 * r1 * r1) * double(gap) / 1000;
-                    update_vel[i] += G * sun2.mass * (sun2.location[i] - location[i]) / (r2 * r2 * r2) * double(gap) / 1000;
-                    update_vel[i] += G * sun3.mass * (sun3.location[i] - location[i]) / (r3 * r3 * r3) * double(gap) / 1000;
+                    if (r1<1){
+                        update_vel[i] += G * sun1.mass * (sun1.location[i] - location[i]) / (r1 * 1) * double(gap) / 1000;
+                    }
+                    else {
+                        update_vel[i] += G * sun1.mass * (sun1.location[i] - location[i]) / (r1 * r1 * r1) * double(gap) / 1000;
+                    }
+                    if (r2<1){
+                        update_vel[i] += G * sun2.mass * (sun2.location[i] - location[i]) / (r2 * 1) * double(gap) / 1000;
+                    }
+                    else {
+                        update_vel[i] += G * sun2.mass * (sun2.location[i] - location[i]) / (r2 * r2 * r2) * double(gap) / 1000;
+                    }
+                    if (r3<1){
+                        update_vel[i] += G * sun3.mass * (sun3.location[i] - location[i]) / (r3 * 1) * double(gap) / 1000;
+                    }
+                    else {
+                        update_vel[i] += G * sun3.mass * (sun3.location[i] - location[i]) / (r3 * r3 * r3) * double(gap) / 1000;
+                    }
                 }
                 for (int i = 0; i < 3; ++i)
                 {
@@ -144,12 +159,26 @@ public:
             }
         }
         // 得球判定
-        if (father_sun_num == 0 & distance_to_last_catch > 20)
+        if (father_sun_num == 0 & distance_to_last_catch > 5)
         {
             if (d1 < 3)
             {
                 father_sun_num = 1;
                 father_sun = &sun1;
+                season = 0;
+                orbit += 1;
+            }
+            if (d2 < 3)
+            {
+                father_sun_num = 2;
+                father_sun = &sun2;
+                season = 0;
+                orbit += 1;
+            }
+            if (d3 < 3)
+            {
+                father_sun_num = 3;
+                father_sun = &sun3;
                 season = 0;
                 orbit += 1;
             }

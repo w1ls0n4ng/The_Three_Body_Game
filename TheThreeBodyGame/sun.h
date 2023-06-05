@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <random>
+#include <time.h>
 using namespace std;
 
 // 计算距离
@@ -33,14 +34,11 @@ public:
         location[0] = t1;
         location[1] = t2;
         location[2] = t3;
-        default_random_engine e;
-        uniform_real_distribution<double> u1(1.5, 2.5);
-        mass = u1(e);
-        uniform_real_distribution<double> u2(0, 4);
-        for (int i = 0; i < 3; ++i)
+        mass = 1.5 + double(rand()) / double(RAND_MAX);
+        for (int i = 0; i < 2; ++i)
         {
-            velocity[i] = (u2(e) - 2) * 0.5;
-            location[i] += u2(e);
+            velocity[i] = double(rand()) / double(RAND_MAX) * 1 - 0.5;
+            location[i] += double(rand()) / double(RAND_MAX) * 2;
         }
     }
     // 更新太阳位置与速度，距离小于0.02个天文单位则相撞，游戏直接结束
@@ -65,12 +63,32 @@ public:
             }
             for (int i = 0; i < 3; ++i)
             {
-                update_vel[0][i] = G * sun2.mass * (sun2.location[i] - this->location[i]) / (distance12 * distance12 * distance12) * double(gap) / 1000;
-                update_vel[0][i] += G * sun3.mass * (sun3.location[i] - this->location[i]) / (distance31 * distance31 * distance31) * double(gap) / 1000;
-                update_vel[1][i] = G * this->mass * (this->location[i] - sun2.location[i]) / (distance12 * distance12 * distance12) * double(gap) / 1000;
-                update_vel[1][i] += G * sun3.mass * (sun3.location[i] - sun2.location[i]) / (distance23 * distance23 * distance23) * double(gap) / 1000;
-                update_vel[2][i] = G * this->mass * (this->location[i] - sun3.location[i]) / (distance31 * distance31 * distance31) * double(gap) / 1000;
-                update_vel[2][i] += G * sun2.mass * (sun2.location[i] - sun3.location[i]) / (distance23 * distance23 * distance23) * double(gap) / 1000;
+                if (distance12<1){
+                    update_vel[0][i] = G * sun2.mass * (sun2.location[i] - this->location[i]) / (distance12 * 1) * double(gap) / 1000;
+                    update_vel[1][i] = G * this->mass * (this->location[i] - sun2.location[i]) / (distance12  * 1) * double(gap) / 1000;
+                }
+                else {
+                    update_vel[0][i] = G * sun2.mass * (sun2.location[i] - this->location[i]) / (distance12 * distance12 * distance12) * double(gap) / 1000;
+                    update_vel[1][i] = G * this->mass * (this->location[i] - sun2.location[i]) / (distance12 * distance12 * distance12) * double(gap) / 1000;
+                }
+
+                if (distance31<1){
+                    update_vel[0][i] += G * sun3.mass * (sun3.location[i] - this->location[i]) / (distance31 * 1) * double(gap) / 1000;
+                    update_vel[2][i] = G * this->mass * (this->location[i] - sun3.location[i]) / (distance31 * 1) * double(gap) / 1000;
+                }
+                else {
+                    update_vel[0][i] += G * sun3.mass * (sun3.location[i] - this->location[i]) / (distance31 * distance31 * distance31) * double(gap) / 1000;
+                    update_vel[2][i] = G * this->mass * (this->location[i] - sun3.location[i]) / (distance31 * distance31 * distance31) * double(gap) / 1000;
+                }
+
+                if (distance23<1){
+                    update_vel[1][i] += G * sun3.mass * (sun3.location[i] - sun2.location[i]) / (distance23 * 1) * double(gap) / 1000;
+                    update_vel[2][i] += G * sun2.mass * (sun2.location[i] - sun3.location[i]) / (distance23 * 1) * double(gap) / 1000;
+                }
+                else {
+                    update_vel[1][i] += G * sun3.mass * (sun3.location[i] - sun2.location[i]) / (distance23 * distance23 * distance23) * double(gap) / 1000;
+                    update_vel[2][i] += G * sun2.mass * (sun2.location[i] - sun3.location[i]) / (distance23 * distance23 * distance23) * double(gap) / 1000;
+                }
             }
             for (int i = 0; i < 3; ++i)
             {

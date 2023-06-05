@@ -32,7 +32,7 @@ public:
         // 文明诞生事件
         if (is_alive == 0)
         {
-            if (earth.continue_constant_era >= 100)
+            if (earth.continue_constant_era >= 5)
             {
                 is_alive = 1;
             }

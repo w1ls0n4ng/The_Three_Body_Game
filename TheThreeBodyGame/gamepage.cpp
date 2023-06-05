@@ -72,16 +72,17 @@ Gamepage::Gamepage(QWidget *parent) :
     scene->setBackgroundBrush(Qt::transparent);
 
     // 初始化恒星、行星
-    sun1.initialize(10, 0, 0, game_stop);
-    sun2.initialize(-5, 8.66, 0, game_stop);
-    sun3.initialize(-5, -8.66, 0, game_stop);
+    sun1.initialize(-10, 0, 0, game_stop);
+    sun2.initialize(5, 8.66, 0, game_stop);
+    sun3.initialize(5, -8.66, 0, game_stop);
     earth.initialize(sun1, sun2, sun3, game_stop);
     threebodyman.initialize(earth);
 
     // 创造圆形并加入到scene当中
-    circle1 = scene->addEllipse(500, 300, 10, 10);
-    circle2 = scene->addEllipse(600, 400, 10, 10);
-    circle3 = scene->addEllipse(700, 500, 10, 10);
+    circle1 = scene->addEllipse(sun1.location[0]*10+200, sun1.location[1]*10+200, 10, 10);
+    circle2 = scene->addEllipse(sun2.location[0]*10+200, sun2.location[1]*10+200, 10, 10);
+    circle3 = scene->addEllipse(sun3.location[0]*10+200, sun3.location[1]*10+200, 10, 10);
+    circle4 = scene->addEllipse(earth.location[0]*10+200, earth.location[1]*10+200, 5, 5);
 
     circle1->setFlag(QGraphicsItem::ItemIsFocusable);
     circle1->setFocus();
@@ -89,11 +90,14 @@ Gamepage::Gamepage(QWidget *parent) :
     circle2->setFocus();
     circle3->setFlag(QGraphicsItem::ItemIsFocusable);
     circle3->setFocus();
+    circle4->setFlag(QGraphicsItem::ItemIsFocusable);
+    circle4->setFocus();
 
     // 设置三个圆形的颜色
     circle1->setBrush(Qt::red);
     circle2->setBrush(Qt::green);
     circle3->setBrush(Qt::blue);
+    circle4->setBrush(Qt::white);
 
     // 创建view并设置好scene
     view = new QGraphicsView(scene);
@@ -136,10 +140,10 @@ Gamepage::Gamepage(QWidget *parent) :
     // 设置layout到中心小部件
     this->centralWidget()->setLayout(horizontalLayout);
 
-    // 以40毫秒（25帧）刷新
+    // 以1毫秒（1000帧）刷新
     timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()),this,SLOT(updateGameState()));
-    timer->start(40);
+    timer->start(1);
 }
 
 
@@ -208,9 +212,10 @@ void Gamepage::updatePosition()
     threebodyman.update_civilization(gap, earth);
 
     // 设置圆圈位置
-    circle1->setPos(sun1.location[0], sun1.location[1]);
-    circle2->setPos(sun2.location[0], sun2.location[1]);
-    circle3->setPos(sun3.location[0], sun3.location[1]);
+    circle1->setPos(sun1.location[0]*10+200, sun1.location[1]*10+200);
+    circle2->setPos(sun2.location[0]*10+200, sun2.location[1]*10+200);
+    circle3->setPos(sun3.location[0]*10+200, sun3.location[1]*10+200);
+    circle4->setPos(earth.location[0]*10+200, earth.location[1]*10+200);
 
     // 检查圆圈是否已经移出了可见区域
     QRectF visibleRect = view->mapToScene(view->viewport()->geometry()).boundingRect();
