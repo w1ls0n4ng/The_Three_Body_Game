@@ -70,7 +70,7 @@ public:
             {
                 location[i] = father_sun->location[i];
                 velocity[i] = father_sun->velocity[i];
-                if (i == orbit)
+                if (i == orbit % 3)
                 {
                     location[i] += cos(2 * 3.1415926 * season);
                     velocity[i] += 3.1415926 * sqrt(father_sun->mass / 2) * sin(2 * 3.1415926 * season);
@@ -105,20 +105,29 @@ public:
                     if (r1<1){
                         update_vel[i] += G * sun1.mass * (sun1.location[i] - location[i]) / (r1 * 1) * double(gap) / 1000;
                     }
-                    else {
+                    if (r1<=10 & r1>=1) {
                         update_vel[i] += G * sun1.mass * (sun1.location[i] - location[i]) / (r1 * r1 * r1) * double(gap) / 1000;
+                    }
+                    if (r1>10){
+                        update_vel[i] += G * sun1.mass * (sun1.location[i] - location[i]) / (r1 * r1 * 10) * double(gap) / 1000;
                     }
                     if (r2<1){
                         update_vel[i] += G * sun2.mass * (sun2.location[i] - location[i]) / (r2 * 1) * double(gap) / 1000;
                     }
-                    else {
+                    if (r2<=10 & r2>=1) {
                         update_vel[i] += G * sun2.mass * (sun2.location[i] - location[i]) / (r2 * r2 * r2) * double(gap) / 1000;
+                    }
+                    if (r2>10){
+                        update_vel[i] += G * sun2.mass * (sun2.location[i] - location[i]) / (r2 * r2 * 10) * double(gap) / 1000;
                     }
                     if (r3<1){
                         update_vel[i] += G * sun3.mass * (sun3.location[i] - location[i]) / (r3 * 1) * double(gap) / 1000;
                     }
-                    else {
+                    if (r3<=10 & r3>=1) {
                         update_vel[i] += G * sun3.mass * (sun3.location[i] - location[i]) / (r3 * r3 * r3) * double(gap) / 1000;
+                    }
+                    if (r3>10){
+                        update_vel[i] += G * sun3.mass * (sun3.location[i] - location[i]) / (r3 * r3 * 10) * double(gap) / 1000;
                     }
                 }
                 for (int i = 0; i < 3; ++i)

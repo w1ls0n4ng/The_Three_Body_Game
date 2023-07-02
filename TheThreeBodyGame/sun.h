@@ -28,7 +28,7 @@ public:
     double mass;
 
     // 初始化恒星质量、位置及速度，为了避免它们在游戏开局时相撞或距离过近，需要传一些参
-    void initialize(int t1, int t2, int t3, int &stop)
+    void initialize(double t1, double t2, double t3, int &stop)
     {
         game_stop = &stop;
         location[0] = t1;
@@ -67,27 +67,37 @@ public:
                     update_vel[0][i] = G * sun2.mass * (sun2.location[i] - this->location[i]) / (distance12 * 1) * double(gap) / 1000;
                     update_vel[1][i] = G * this->mass * (this->location[i] - sun2.location[i]) / (distance12  * 1) * double(gap) / 1000;
                 }
-                else {
+                if (distance12<=10 & distance12>=1) {
                     update_vel[0][i] = G * sun2.mass * (sun2.location[i] - this->location[i]) / (distance12 * distance12 * distance12) * double(gap) / 1000;
                     update_vel[1][i] = G * this->mass * (this->location[i] - sun2.location[i]) / (distance12 * distance12 * distance12) * double(gap) / 1000;
                 }
-
+                if (distance12>10){
+                    update_vel[0][i] = G * sun2.mass * (sun2.location[i] - this->location[i]) / (distance12 * distance12 * 10) * double(gap) / 1000;
+                    update_vel[1][i] = G * this->mass * (this->location[i] - sun2.location[i]) / (distance12  * distance12 * 10) * double(gap) / 1000;
+                }
                 if (distance31<1){
                     update_vel[0][i] += G * sun3.mass * (sun3.location[i] - this->location[i]) / (distance31 * 1) * double(gap) / 1000;
                     update_vel[2][i] = G * this->mass * (this->location[i] - sun3.location[i]) / (distance31 * 1) * double(gap) / 1000;
                 }
-                else {
+                if (distance31<=10 & distance31>=1) {
                     update_vel[0][i] += G * sun3.mass * (sun3.location[i] - this->location[i]) / (distance31 * distance31 * distance31) * double(gap) / 1000;
                     update_vel[2][i] = G * this->mass * (this->location[i] - sun3.location[i]) / (distance31 * distance31 * distance31) * double(gap) / 1000;
                 }
-
+                if (distance31>10){
+                    update_vel[0][i] += G * sun3.mass * (sun3.location[i] - this->location[i]) / (distance31 * distance31 * 10) * double(gap) / 1000;
+                    update_vel[2][i] = G * this->mass * (this->location[i] - sun3.location[i]) / (distance31 * distance31 * 10) * double(gap) / 1000;
+                }
                 if (distance23<1){
                     update_vel[1][i] += G * sun3.mass * (sun3.location[i] - sun2.location[i]) / (distance23 * 1) * double(gap) / 1000;
                     update_vel[2][i] += G * sun2.mass * (sun2.location[i] - sun3.location[i]) / (distance23 * 1) * double(gap) / 1000;
                 }
-                else {
+                if (distance23<=10 & distance23>=1){
                     update_vel[1][i] += G * sun3.mass * (sun3.location[i] - sun2.location[i]) / (distance23 * distance23 * distance23) * double(gap) / 1000;
                     update_vel[2][i] += G * sun2.mass * (sun2.location[i] - sun3.location[i]) / (distance23 * distance23 * distance23) * double(gap) / 1000;
+                }
+                if (distance23>10){
+                    update_vel[1][i] += G * sun3.mass * (sun3.location[i] - sun2.location[i]) / (distance23 * distance23 * 10) * double(gap) / 1000;
+                    update_vel[2][i] += G * sun2.mass * (sun2.location[i] - sun3.location[i]) / (distance23 * distance23 * 10) * double(gap) / 1000;
                 }
             }
             for (int i = 0; i < 3; ++i)
