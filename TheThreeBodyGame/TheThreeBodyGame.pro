@@ -33,14 +33,17 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
     mainwindow.cpp \
-    gamepage.cpp
+    gamepage.cpp \
+    players.cpp
 
 HEADERS += \
     mainwindow.h \
     gamepage.h \
     sun.h \
     planet.h \
-    civilization.h
+    civilization.h \
+    gamestatus.h \
+    players.h
 
 FORMS += \
     mainwindow.ui \

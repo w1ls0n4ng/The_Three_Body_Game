@@ -72,17 +72,18 @@ Gamepage::Gamepage(QWidget *parent) :
     scene->setBackgroundBrush(Qt::transparent);
 
     // 初始化恒星、行星
-    sun1.initialize(-10, 0, 0, game_stop);
-    sun2.initialize(5, 8.66, 0, game_stop);
-    sun3.initialize(5, -8.66, 0, game_stop);
-    earth.initialize(sun1, sun2, sun3, game_stop);
+    sun1.initialize(-10, 0, 0);
+    sun2.initialize(5, 8.66, 0);
+    sun3.initialize(5, -8.66, 0);
+    earth.initialize(sun1, sun2, sun3);
     threebodyman.initialize(earth);
+    gamestatus1.initialize();
 
     // 创造圆形并加入到scene当中
-    circle1 = scene->addEllipse(sun1.location[0]*10+200, sun1.location[1]*10+200, 10, 10);
-    circle2 = scene->addEllipse(sun2.location[0]*10+200, sun2.location[1]*10+200, 10, 10);
-    circle3 = scene->addEllipse(sun3.location[0]*10+200, sun3.location[1]*10+200, 10, 10);
-    circle4 = scene->addEllipse(earth.location[0]*10+200, earth.location[1]*10+200, 5, 5);
+    circle1 = scene->addEllipse(sun1.location[0]*10, sun1.location[1]*10, 10, 10);
+    circle2 = scene->addEllipse(sun2.location[0]*10, sun2.location[1]*10, 10, 10);
+    circle3 = scene->addEllipse(sun3.location[0]*10, sun3.location[1]*10, 10, 10);
+    circle4 = scene->addEllipse(earth.location[0]*10, earth.location[1]*10, 5, 5);
 
     circle1->setFlag(QGraphicsItem::ItemIsFocusable);
     circle1->setFocus();
@@ -193,7 +194,7 @@ void Gamepage::updateUI()
     ui->civilization_state->setText(str);
 
     // 更新文明发展指数
-    if (threebodyman.develop_index == 0)
+    if (threebodyman.develop_index < 0.0001)
         str = "";
     else
         str = QString::number(threebodyman.develop_index);
@@ -210,6 +211,9 @@ void Gamepage::updatePosition()
     sun1.update_sun(gap, G, sun2, sun3);
     earth.update_planet(gap, G, sun1, sun2, sun3);
     threebodyman.update_civilization(gap, earth);
+
+    //更新游戏状态
+    gamestatus1.update(sun1,sun2,sun3,earth,threebodyman);
 
     // 设置圆圈位置
     circle1->setPos(sun1.location[0]*10+200, sun1.location[1]*10+200);

@@ -4,6 +4,7 @@
 #include "planet.h"
 #include "sun.h"
 #include "civilization.h"
+#include "gamestatus.h"
 #include <QMainWindow>
 #include <QTimer>
 #include <QGraphicsScene>
@@ -40,6 +41,7 @@ private:
     sun sun1, sun2, sun3;
     planet earth;
     civilization threebodyman;
+    gamestatus gamestatus1;
     float time = 0;
     // 设置G值
     double G = 3.1415926 * 3.1415926;

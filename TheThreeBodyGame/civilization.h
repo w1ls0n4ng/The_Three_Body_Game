@@ -18,6 +18,8 @@ public:
     int min_fatal_temp;
     string current_state;
     int develop_speed_multiply;
+    int current_num;
+    double gap_to_last_civilization;
     void initialize(planet &earth)
     {
         this->earth = &earth;
@@ -26,15 +28,19 @@ public:
         current_state = "";
         develop_index = 0;
         develop_speed_multiply = 0;
+        current_num = 0;
+        gap_to_last_civilization = 0;
     }
     void update_civilization(int gap, planet &earth)
     {
         // 文明诞生事件
         if (is_alive == 0)
         {
-            if (earth.continue_constant_era >= 5)
+            if (earth.continue_constant_era >= 15)
             {
                 is_alive = 1;
+                current_num += 1;
+                gap_to_last_civilization += double(gap) / 1000;
             }
         }
         // 文明发展状态判定
