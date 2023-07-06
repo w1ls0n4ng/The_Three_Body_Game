@@ -16,27 +16,21 @@ public:
             guess_status[i]=0;
         }
     }
-    void update(string guessstatus,int guessnum,gamestatus & gamestatus1){
+    void update(int guessstatus,int guessnum,gamestatus & gamestatus1){
         for (int i=0;i<3;++i){
             if (guess_status[i]==0){
-                if (guessstatus=="胜利"){
+                if (guessstatus==1){
                     guess_num[i]=guessnum;
                     guess_current_num[i]=gamestatus1.current_civilization_num;
                     guess_status[i]=1;
                     cout << i+1 << "/3 预言" << guessnum << "号文明" << guessstatus;
                 }
-                else {
-                    if (guessstatus=="失败"){
-                        guess_num[i]=guessnum;
-                        guess_current_num[i]=gamestatus1.current_civilization_num;
-                        guess_status[i]=-1;
-                        cout << i+1 << "/3 预言" << guessnum << "号文明" << guessstatus;
-                    }
-                    else {
-                        cout << "请输入合法的格式";
-                    }
+                if (guessstatus==-1){
+                    guess_num[i]=guessnum;
+                    guess_current_num[i]=gamestatus1.current_civilization_num;
+                    guess_status[i]=-1;
+                    cout << i+1 << "/3 预言" << guessnum << "号文明" << guessstatus;
                 }
-                break;
             }
         }
     }

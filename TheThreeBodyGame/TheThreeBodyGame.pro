@@ -33,8 +33,7 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
     mainwindow.cpp \
-    gamepage.cpp \
-    players.cpp
+    gamepage.cpp
 
 HEADERS += \
     mainwindow.h \

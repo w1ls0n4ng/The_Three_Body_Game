@@ -37,7 +37,6 @@ private:
     QGraphicsEllipseItem* circle2;
     QGraphicsEllipseItem* circle3;
     QGraphicsEllipseItem* circle4;
-    int game_stop = 0;
     sun sun1, sun2, sun3;
     planet earth;
     civilization threebodyman;

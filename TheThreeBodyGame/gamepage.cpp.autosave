@@ -68,7 +68,7 @@ Gamepage::Gamepage(QWidget *parent) :
                          "    border-radius: 5px;"  // 5像素的圆角边框
                          "    background-color:rgba(7, 4, 30, 200);"
                          "}";
-    ui->groupBox_3->setStyleSheet(styleSheet);
+    ui->groupBox_4->setStyleSheet(styleSheet);
 
     QList<QScreen*> screens = QGuiApplication::screens();
 

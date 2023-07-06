@@ -20,7 +20,7 @@ public:
     int current_civilization_state=0;
     int current_civilization_num=0;
     string gamestop_information;
-    void initialize();
+    void initialize() {}
     void update(sun &sun1, sun &sun2, sun &sun3, planet &earth, civilization &threebodyman){
         double distance12 = distance(sun1, sun2);
         double distance23 = distance(sun2, sun3);
@@ -33,18 +33,22 @@ public:
         if (distance12 < 0.02 | distance23 < 0.02 | distance31 < 0.02){
             game_status=-1;
             gamestop_information="恒星相撞，数万度高温彻底摧毁了行星！";
+            cout << "恒星相撞，数万度高温彻底摧毁了行星！" << "当前文明号" << current_civilization_num;
         }
         if (distance1e < 0.02 | distance2e < 0.02 | distance3e < 0.02){
             game_status=-1;
             gamestop_information="行星被吞噬！";
+            cout << "行星被吞噬！" << "当前文明号" << current_civilization_num;
         }
         if (threebodyman.gap_to_last_civilization >= 1000){
             game_status=-1;
             gamestop_information="行星长期遭遇不适宜温度，生态环境毁灭，再也无法产生文明！";
+            cout << "行星长期遭遇不适宜温度，生态环境毁灭，再也无法产生文明！" << "当前文明号" << current_civilization_num;
         }
         if (threebodyman.develop_index >= 100000){
             game_status=1;
             gamestop_information="文明发展至宇宙文明阶段，开启星系大航行时代！文明获得胜利！";
+            cout << "文明发展至宇宙文明阶段，开启星系大航行时代！文明获得胜利！" << "当前文明号" << current_civilization_num;
         }
 
         //文明状态更新事件
