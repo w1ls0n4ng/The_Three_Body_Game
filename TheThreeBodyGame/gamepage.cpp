@@ -64,11 +64,19 @@ Gamepage::Gamepage(QWidget *parent) :
 
     // 设置第三个Groupbox
     styleSheet = "QGroupBox {"
-                         "    background-image: url(../Assests/border3.png);"
+                         "    background-image: url(../Assests/border2.png);"
                          "    border-radius: 5px;"  // 5像素的圆角边框
                          "    background-color:rgba(7, 4, 30, 200);"
                          "}";
     ui->groupBox_3->setStyleSheet(styleSheet);
+
+    // 设置第四个Groupbox
+    styleSheet = "QGroupBox {"
+                         "    background-image: url(../Assests/border2.png);"
+                         "    border-radius: 5px;"  // 5像素的圆角边框
+                         "    background-color:rgba(7, 4, 30, 200);"
+                         "}";
+    ui->groupBox_4->setStyleSheet(styleSheet);
 
     QList<QScreen*> screens = QGuiApplication::screens();
 

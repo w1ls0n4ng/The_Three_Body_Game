@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'gamepage.ui'
 **
-** Created by: Qt User Interface Compiler version 5.9.7
+** Created by: Qt User Interface Compiler version 5.11.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -10,15 +10,15 @@
 #define UI_GAMEPAGE_H
 
 #include <QtCore/QVariant>
-#include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QGroupBox>
-#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QProgressBar>
+#include <QtWidgets/QPushButton>
+#include <QtWidgets/QRadioButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -63,6 +63,17 @@ public:
     QVBoxLayout *verticalLayout;
     QWidget *verticalLayoutWidget_2;
     QVBoxLayout *verticalLayout_2;
+    QGroupBox *groupBox_3;
+    QLabel *label1_3;
+    QLabel *label2_3;
+    QLabel *label3_3;
+    QLabel *title_label;
+    QGroupBox *groupBox_4;
+    QRadioButton *radioButton;
+    QRadioButton *radioButton_2;
+    QLabel *label_5;
+    QPushButton *pushButton;
+    QLineEdit *lineEdit;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -251,6 +262,39 @@ public:
         verticalLayout_2 = new QVBoxLayout(verticalLayoutWidget_2);
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
         verticalLayout_2->setContentsMargins(0, 0, 0, 0);
+        groupBox_3 = new QGroupBox(centralwidget);
+        groupBox_3->setObjectName(QStringLiteral("groupBox_3"));
+        groupBox_3->setGeometry(QRect(1600, 540, 291, 431));
+        label1_3 = new QLabel(groupBox_3);
+        label1_3->setObjectName(QStringLiteral("label1_3"));
+        label1_3->setGeometry(QRect(20, 60, 241, 16));
+        label2_3 = new QLabel(groupBox_3);
+        label2_3->setObjectName(QStringLiteral("label2_3"));
+        label2_3->setGeometry(QRect(20, 90, 241, 16));
+        label3_3 = new QLabel(groupBox_3);
+        label3_3->setObjectName(QStringLiteral("label3_3"));
+        label3_3->setGeometry(QRect(20, 120, 241, 16));
+        title_label = new QLabel(groupBox_3);
+        title_label->setObjectName(QStringLiteral("title_label"));
+        title_label->setGeometry(QRect(30, 20, 72, 15));
+        groupBox_4 = new QGroupBox(centralwidget);
+        groupBox_4->setObjectName(QStringLiteral("groupBox_4"));
+        groupBox_4->setGeometry(QRect(690, 840, 611, 131));
+        radioButton = new QRadioButton(groupBox_4);
+        radioButton->setObjectName(QStringLiteral("radioButton"));
+        radioButton->setGeometry(QRect(140, 30, 115, 19));
+        radioButton_2 = new QRadioButton(groupBox_4);
+        radioButton_2->setObjectName(QStringLiteral("radioButton_2"));
+        radioButton_2->setGeometry(QRect(140, 80, 115, 19));
+        label_5 = new QLabel(groupBox_4);
+        label_5->setObjectName(QStringLiteral("label_5"));
+        label_5->setGeometry(QRect(40, 40, 101, 41));
+        pushButton = new QPushButton(groupBox_4);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setGeometry(QRect(470, 50, 93, 28));
+        lineEdit = new QLineEdit(groupBox_4);
+        lineEdit->setObjectName(QStringLiteral("lineEdit"));
+        lineEdit->setGeometry(QRect(242, 40, 191, 41));
         Gamepage->setCentralWidget(centralwidget);
         menubar = new QMenuBar(Gamepage);
         menubar->setObjectName(QStringLiteral("menubar"));
@@ -267,38 +311,48 @@ public:
 
     void retranslateUi(QMainWindow *Gamepage)
     {
-        Gamepage->setWindowTitle(QApplication::translate("Gamepage", "MainWindow", Q_NULLPTR));
+        Gamepage->setWindowTitle(QApplication::translate("Gamepage", "MainWindow", nullptr));
 #ifndef QT_NO_WHATSTHIS
-        groupBox->setWhatsThis(QApplication::translate("Gamepage", "<html><head/><body><p><br/></p></body></html>", Q_NULLPTR));
+        groupBox->setWhatsThis(QApplication::translate("Gamepage", "<html><head/><body><p><br/></p></body></html>", nullptr));
 #endif // QT_NO_WHATSTHIS
-        population_label->setText(QApplication::translate("Gamepage", "<html><head/><body><p><span style=\" font-size:10pt; color:#00ffff;\">\344\272\272\345\217\243%</span></p></body></html>", Q_NULLPTR));
-        year_label->setText(QApplication::translate("Gamepage", "<html><head/><body><p><span style=\" font-size:10pt; color:#55ffff;\">\345\271\264</span></p></body></html>", Q_NULLPTR));
-        year->setText(QApplication::translate("Gamepage", "200", Q_NULLPTR));
-        constant_era_label->setText(QApplication::translate("Gamepage", "<html><head/><body><p><span style=\" color:#55ffff;\">\346\226\207\346\230\216\346\201\222\347\272\252\345\205\203</span></p></body></html>", Q_NULLPTR));
-        chaotic_era_label->setText(QApplication::translate("Gamepage", "<html><head/><body><p><span style=\" color:#55ffff;\">\346\226\207\346\230\216\344\271\261\347\272\252\345\205\203</span></p></body></html>", Q_NULLPTR));
-        civilization_label->setText(QApplication::translate("Gamepage", "<html><head/><body><p><span style=\" color:#55ffff;\">\346\226\207\346\230\216\345\255\225\350\202\262\344\270\255</span></p></body></html>", Q_NULLPTR));
-        civilization_state_label->setText(QApplication::translate("Gamepage", "<html><head/><body><p><span style=\" color:#55ffff;\">\346\226\207\346\230\216\347\212\266\346\200\201</span></p></body></html>", Q_NULLPTR));
-        deadly_temp_label->setText(QApplication::translate("Gamepage", "<html><head/><body><p><span style=\" color:#55ffff;\">\350\207\264\345\221\275\346\270\251\345\272\246</span></p></body></html>", Q_NULLPTR));
-        disastor_temp_label->setText(QApplication::translate("Gamepage", "<html><head/><body><p><span style=\" color:#55ffff;\">\347\201\276\351\232\276\346\270\251\345\272\246</span></p></body></html>", Q_NULLPTR));
-        constant_era->setText(QApplication::translate("Gamepage", "200", Q_NULLPTR));
-        continue_constant_era_label->setText(QApplication::translate("Gamepage", "<html><head/><body><p><span style=\" color:#55ffff;\">\350\277\236\347\273\255\346\201\222\347\272\252\345\205\203</span></p></body></html>", Q_NULLPTR));
-        continue_constant_era->setText(QApplication::translate("Gamepage", "200", Q_NULLPTR));
-        chaotic_era->setText(QApplication::translate("Gamepage", "200", Q_NULLPTR));
-        civilization->setText(QApplication::translate("Gamepage", "200", Q_NULLPTR));
-        civilization_state->setText(QApplication::translate("Gamepage", "200", Q_NULLPTR));
-        deadly_temp->setText(QApplication::translate("Gamepage", "200", Q_NULLPTR));
+        population_label->setText(QApplication::translate("Gamepage", "<html><head/><body><p><span style=\" font-size:10pt; color:#00ffff;\">\344\272\272\345\217\243%</span></p></body></html>", nullptr));
+        year_label->setText(QApplication::translate("Gamepage", "<html><head/><body><p><span style=\" font-size:10pt; color:#55ffff;\">\345\271\264</span></p></body></html>", nullptr));
+        year->setText(QApplication::translate("Gamepage", "200", nullptr));
+        constant_era_label->setText(QApplication::translate("Gamepage", "<html><head/><body><p><span style=\" color:#55ffff;\">\346\226\207\346\230\216\346\201\222\347\272\252\345\205\203</span></p></body></html>", nullptr));
+        chaotic_era_label->setText(QApplication::translate("Gamepage", "<html><head/><body><p><span style=\" color:#55ffff;\">\346\226\207\346\230\216\344\271\261\347\272\252\345\205\203</span></p></body></html>", nullptr));
+        civilization_label->setText(QApplication::translate("Gamepage", "<html><head/><body><p><span style=\" color:#55ffff;\">\346\226\207\346\230\216\345\255\225\350\202\262\344\270\255</span></p></body></html>", nullptr));
+        civilization_state_label->setText(QApplication::translate("Gamepage", "<html><head/><body><p><span style=\" color:#55ffff;\">\346\226\207\346\230\216\347\212\266\346\200\201</span></p></body></html>", nullptr));
+        deadly_temp_label->setText(QApplication::translate("Gamepage", "<html><head/><body><p><span style=\" color:#55ffff;\">\350\207\264\345\221\275\346\270\251\345\272\246</span></p></body></html>", nullptr));
+        disastor_temp_label->setText(QApplication::translate("Gamepage", "<html><head/><body><p><span style=\" color:#55ffff;\">\347\201\276\351\232\276\346\270\251\345\272\246</span></p></body></html>", nullptr));
+        constant_era->setText(QApplication::translate("Gamepage", "200", nullptr));
+        continue_constant_era_label->setText(QApplication::translate("Gamepage", "<html><head/><body><p><span style=\" color:#55ffff;\">\350\277\236\347\273\255\346\201\222\347\272\252\345\205\203</span></p></body></html>", nullptr));
+        continue_constant_era->setText(QApplication::translate("Gamepage", "200", nullptr));
+        chaotic_era->setText(QApplication::translate("Gamepage", "200", nullptr));
+        civilization->setText(QApplication::translate("Gamepage", "200", nullptr));
+        civilization_state->setText(QApplication::translate("Gamepage", "200", nullptr));
+        deadly_temp->setText(QApplication::translate("Gamepage", "200", nullptr));
         disastor_temp->setText(QString());
-        ave_temp->setText(QApplication::translate("Gamepage", "200", Q_NULLPTR));
-        ave_temp_label->setText(QApplication::translate("Gamepage", "<html><head/><body><p><span style=\" color:#55ffff;\">\345\271\263\345\235\207\346\270\251\345\272\246</span></p></body></html>", Q_NULLPTR));
+        ave_temp->setText(QApplication::translate("Gamepage", "200", nullptr));
+        ave_temp_label->setText(QApplication::translate("Gamepage", "<html><head/><body><p><span style=\" color:#55ffff;\">\345\271\263\345\235\207\346\270\251\345\272\246</span></p></body></html>", nullptr));
         groupBox_2->setTitle(QString());
-        unit->setText(QApplication::translate("Gamepage", "<html><head/><body><p align=\"justify\"><span style=\" color:#55ffff;\">\345\215\225\344\275\215</span><span style=\" color:#9fb3c3;\"> A.U.</span><span style=\" color:#55ffff;\">/</span><span style=\" color:#9fb3c3;\">10^30kg</span><span style=\" color:#55ffff;\">/</span><span style=\" color:#9fb3c3;\">A.U./\345\215\201\345\271\264</span><span style=\" color:#55ffff;\">/</span><span style=\" color:#9fb3c3;\">\345\271\264</span></p></body></html>", Q_NULLPTR));
-        red_label->setText(QApplication::translate("Gamepage", "<html><head/><body><p><span style=\" color:#ff0000;\">\347\272\242\357\274\232</span></p></body></html>", Q_NULLPTR));
-        green_label->setText(QApplication::translate("Gamepage", "<html><head/><body><p><span style=\" color:#00aa7f;\">\347\273\277\357\274\232</span></p></body></html>", Q_NULLPTR));
-        blue_label->setText(QApplication::translate("Gamepage", "<html><head/><body><p><span style=\" color:#0055ff;\">\350\223\235\357\274\232</span></p></body></html>", Q_NULLPTR));
-        label->setText(QApplication::translate("Gamepage", "TextLabel", Q_NULLPTR));
-        label_2->setText(QApplication::translate("Gamepage", "TextLabel", Q_NULLPTR));
-        label_3->setText(QApplication::translate("Gamepage", "TextLabel", Q_NULLPTR));
-        label_4->setText(QApplication::translate("Gamepage", "<html><head/><body><p><span style=\" color:#9fb3c3;\">\344\270\216\350\241\214\346\230\237\350\267\235\347\246\273/\350\264\250\351\207\217/\351\200\237\347\216\207/\350\241\214\346\230\237\345\271\264</span></p></body></html>", Q_NULLPTR));
+        unit->setText(QApplication::translate("Gamepage", "<html><head/><body><p align=\"justify\"><span style=\" color:#55ffff;\">\345\215\225\344\275\215</span><span style=\" color:#9fb3c3;\"> A.U.</span><span style=\" color:#55ffff;\">/</span><span style=\" color:#9fb3c3;\">10^30kg</span><span style=\" color:#55ffff;\">/</span><span style=\" color:#9fb3c3;\">A.U./\345\215\201\345\271\264</span><span style=\" color:#55ffff;\">/</span><span style=\" color:#9fb3c3;\">\345\271\264</span></p></body></html>", nullptr));
+        red_label->setText(QApplication::translate("Gamepage", "<html><head/><body><p><span style=\" color:#ff0000;\">\347\272\242\357\274\232</span></p></body></html>", nullptr));
+        green_label->setText(QApplication::translate("Gamepage", "<html><head/><body><p><span style=\" color:#00aa7f;\">\347\273\277\357\274\232</span></p></body></html>", nullptr));
+        blue_label->setText(QApplication::translate("Gamepage", "<html><head/><body><p><span style=\" color:#0055ff;\">\350\223\235\357\274\232</span></p></body></html>", nullptr));
+        label->setText(QApplication::translate("Gamepage", "TextLabel", nullptr));
+        label_2->setText(QApplication::translate("Gamepage", "TextLabel", nullptr));
+        label_3->setText(QApplication::translate("Gamepage", "TextLabel", nullptr));
+        label_4->setText(QApplication::translate("Gamepage", "<html><head/><body><p><span style=\" color:#9fb3c3;\">\344\270\216\350\241\214\346\230\237\350\267\235\347\246\273/\350\264\250\351\207\217/\351\200\237\347\216\207/\350\241\214\346\230\237\345\271\264</span></p></body></html>", nullptr));
+        groupBox_3->setTitle(QString());
+        label1_3->setText(QString());
+        label2_3->setText(QString());
+        label3_3->setText(QString());
+        title_label->setText(QApplication::translate("Gamepage", "\351\242\204\350\250\200\345\261\225\347\244\272\357\274\232", nullptr));
+        groupBox_4->setTitle(QString());
+        radioButton->setText(QApplication::translate("Gamepage", "\350\203\234\345\210\251", nullptr));
+        radioButton_2->setText(QApplication::translate("Gamepage", "\345\244\261\350\264\245", nullptr));
+        label_5->setText(QApplication::translate("Gamepage", "\347\216\251\345\256\266\351\242\204\350\250\200\357\274\232", nullptr));
+        pushButton->setText(QApplication::translate("Gamepage", "\347\241\256\345\256\232", nullptr));
     } // retranslateUi
 
 };

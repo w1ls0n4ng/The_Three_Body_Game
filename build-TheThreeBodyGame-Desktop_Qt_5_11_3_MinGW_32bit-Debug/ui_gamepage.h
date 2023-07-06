@@ -74,6 +74,7 @@ public:
     QLabel *label_5;
     QPushButton *pushButton;
     QLineEdit *lineEdit;
+    QGroupBox *groupBox_5;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -295,6 +296,9 @@ public:
         lineEdit = new QLineEdit(groupBox_4);
         lineEdit->setObjectName(QStringLiteral("lineEdit"));
         lineEdit->setGeometry(QRect(242, 40, 191, 41));
+        groupBox_5 = new QGroupBox(centralwidget);
+        groupBox_5->setObjectName(QStringLiteral("groupBox_5"));
+        groupBox_5->setGeometry(QRect(1030, 650, 120, 80));
         Gamepage->setCentralWidget(centralwidget);
         menubar = new QMenuBar(Gamepage);
         menubar->setObjectName(QStringLiteral("menubar"));
@@ -353,6 +357,7 @@ public:
         radioButton_2->setText(QApplication::translate("Gamepage", "\345\244\261\350\264\245", nullptr));
         label_5->setText(QApplication::translate("Gamepage", "\347\216\251\345\256\266\351\242\204\350\250\200\357\274\232", nullptr));
         pushButton->setText(QApplication::translate("Gamepage", "\347\241\256\345\256\232", nullptr));
+        groupBox_5->setTitle(QApplication::translate("Gamepage", "GroupBox", nullptr));
     } // retranslateUi
 
 };
