@@ -33,7 +33,8 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
     mainwindow.cpp \
-    gamepage.cpp
+    gamepage.cpp \
+    pausewindow.cpp
 
 HEADERS += \
     mainwindow.h \
@@ -42,11 +43,13 @@ HEADERS += \
     planet.h \
     civilization.h \
     gamestatus.h \
-    players.h
+    players.h \
+    pausewindow.h
 
 FORMS += \
     mainwindow.ui \
-    gamepage.ui
+    gamepage.ui \
+    pausewindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

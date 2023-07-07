@@ -3,6 +3,7 @@
 #include "planet.h"
 #include "sun.h"
 #include "civilization.h"
+#include "pausewindow.h"
 #include <QGroupBox>
 #include <QVBoxLayout>
 #include <QCheckBox>
@@ -14,6 +15,7 @@
 #include <QGraphicsView>
 #include <QGraphicsEllipseItem>
 #include <QScreen>
+#include <QKeyEvent>
 
 Gamepage::Gamepage(QWidget *parent) :
     QMainWindow(parent),
@@ -161,6 +163,8 @@ Gamepage::Gamepage(QWidget *parent) :
     timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()),this,SLOT(updateGameState()));
     timer->start(1);
+
+    connect(this, &Gamepage::keyPressEvent, this, &Gamepage::keyPressEvent);
 }
 
 
@@ -256,6 +260,16 @@ void Gamepage::updatePosition()
         QRectF newSceneRect = scene->sceneRect().united(circlesRect);
         scene->setSceneRect(newSceneRect);
     }
+}
+
+void Gamepage::keyPressEvent(QKeyEvent * event)
+{
+    if (event->key() == Qt::Key_Escape)
+    {
+        PauseWindow *pause = new PauseWindow();
+        pause->show();
+    }
+
 }
 
 void Gamepage::updateGameState()

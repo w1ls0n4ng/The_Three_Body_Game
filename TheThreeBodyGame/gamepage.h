@@ -6,6 +6,7 @@
 #include "civilization.h"
 #include "gamestatus.h"
 #include <QMainWindow>
+#include <QKeyEvent>
 #include <QTimer>
 #include <QGraphicsScene>
 
@@ -27,6 +28,9 @@ public slots:
     void updateUI();
     void updatePosition();
     void updateGameState();
+
+protected:
+    void keyPressEvent(QKeyEvent *event);
 
 private:
     Ui::Gamepage *ui;
