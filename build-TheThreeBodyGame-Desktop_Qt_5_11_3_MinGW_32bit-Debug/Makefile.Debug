@@ -654,9 +654,6 @@ debug/mainwindow.o: ../TheThreeBodyGame/mainwindow.cpp ../TheThreeBodyGame/mainw
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtMultimedia/qaudio.h \
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtNetwork/qnetworkconfiguration.h \
 		../TheThreeBodyGame/ui_mainwindow.h \
-		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/QAction \
-		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qaction.h \
-		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qactiongroup.h \
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/QApplication \
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qapplication.h \
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtCore/qcoreapplication.h \
@@ -664,28 +661,11 @@ debug/mainwindow.o: ../TheThreeBodyGame/mainwindow.cpp ../TheThreeBodyGame/mainw
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtGui/qguiapplication.h \
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtGui/qinputmethod.h \
-		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/QButtonGroup \
-		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qbuttongroup.h \
-		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/QHeaderView \
-		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qheaderview.h \
-		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qabstractitemview.h \
-		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
-		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qframe.h \
-		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtCore/qabstractitemmodel.h \
-		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtCore/qitemselectionmodel.h \
-		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qabstractitemdelegate.h \
-		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qstyleoption.h \
-		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qabstractspinbox.h \
-		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtGui/qvalidator.h \
-		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtCore/qregularexpression.h \
-		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qslider.h \
-		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qabstractslider.h \
-		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qstyle.h \
-		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qtabbar.h \
-		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qrubberband.h \
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/QMenuBar \
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qmenubar.h \
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qmenu.h \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qaction.h \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qactiongroup.h \
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/QPushButton \
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qpushbutton.h \
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qabstractbutton.h \
@@ -829,9 +809,6 @@ debug/gamepage.o: ../TheThreeBodyGame/gamepage.cpp ../TheThreeBodyGame/gamepage.
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtGui/qpen.h \
 		../TheThreeBodyGame/ui_gamepage.h \
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtCore/QVariant \
-		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/QAction \
-		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qaction.h \
-		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qactiongroup.h \
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/QApplication \
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qapplication.h \
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtCore/qcoreapplication.h \
@@ -839,34 +816,28 @@ debug/gamepage.o: ../TheThreeBodyGame/gamepage.cpp ../TheThreeBodyGame/gamepage.
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtGui/qguiapplication.h \
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtGui/qinputmethod.h \
-		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/QButtonGroup \
-		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qbuttongroup.h \
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/QGroupBox \
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qgroupbox.h \
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qframe.h \
-		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/QHeaderView \
-		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qheaderview.h \
-		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qabstractitemview.h \
-		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
-		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtCore/qabstractitemmodel.h \
-		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtCore/qitemselectionmodel.h \
-		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qabstractitemdelegate.h \
-		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qstyleoption.h \
-		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qabstractspinbox.h \
-		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtGui/qvalidator.h \
-		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtCore/qregularexpression.h \
-		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qslider.h \
-		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qabstractslider.h \
-		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qstyle.h \
-		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qtabbar.h \
-		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qrubberband.h \
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/QLabel \
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qlabel.h \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/QLineEdit \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qlineedit.h \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtGui/qtextcursor.h \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtGui/qtextformat.h \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtGui/qtextoption.h \
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/QMenuBar \
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qmenubar.h \
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qmenu.h \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qaction.h \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qactiongroup.h \
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/QProgressBar \
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qprogressbar.h \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/QPushButton \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qpushbutton.h \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qabstractbutton.h \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/QRadioButton \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qradiobutton.h \
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/QStatusBar \
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qstatusbar.h \
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/QVBoxLayout \
@@ -877,9 +848,6 @@ debug/gamepage.o: ../TheThreeBodyGame/gamepage.cpp ../TheThreeBodyGame/gamepage.
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/QWidget \
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/QCheckBox \
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qcheckbox.h \
-		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qabstractbutton.h \
-		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/QPushButton \
-		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qpushbutton.h \
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtMultimedia/QMediaPlayer \
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtMultimedia/qmediaplayer.h \
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtMultimedia/qmediaobject.h \
@@ -904,8 +872,8 @@ debug/gamepage.o: ../TheThreeBodyGame/gamepage.cpp ../TheThreeBodyGame/gamepage.
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/QGraphicsView \
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qgraphicsview.h \
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtGui/qpainter.h \
-		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtGui/qtextoption.h \
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qscrollarea.h \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/QGraphicsEllipseItem \
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qgraphicsitem.h \
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtGui/QScreen \

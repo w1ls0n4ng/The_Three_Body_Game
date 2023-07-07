@@ -30,12 +30,12 @@ public:
         double distance3e = distance(sun3, earth);
 
         //游戏终止事件
-        if (distance12 < 0.02 | distance23 < 0.02 | distance31 < 0.02){
+        if (distance12 < 0.1 | distance23 < 0.1 | distance31 < 0.1){
             game_status=-1;
             gamestop_information="恒星相撞，数万度高温彻底摧毁了行星！";
             cout << "恒星相撞，数万度高温彻底摧毁了行星！" << "当前文明号" << current_civilization_num;
         }
-        if (distance1e < 0.02 | distance2e < 0.02 | distance3e < 0.02){
+        if (distance1e < 0.1 | distance2e < 0.1 | distance3e < 0.1){
             game_status=-1;
             gamestop_information="行星被吞噬！";
             cout << "行星被吞噬！" << "当前文明号" << current_civilization_num;

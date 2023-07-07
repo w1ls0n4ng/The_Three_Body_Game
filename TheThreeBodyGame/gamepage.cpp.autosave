@@ -223,6 +223,8 @@ void Gamepage::updateUI()
         str = str + "灭亡";
     }
     ui->civilization_count->setText(str);
+    
+    //查看是否满足游戏结束条件，若满足，跳出游戏结束窗口
 
 }
 
