@@ -660,7 +660,7 @@ color: rgb(0, 0, 255);</string>
       <rect>
        <x>30</x>
        <y>15</y>
-       <width>101</width>
+       <width>141</width>
        <height>21</height>
       </rect>
      </property>
@@ -1085,22 +1085,9 @@ font: 75 12pt &quot;Microsoft YaHei UI&quot;;
 color: rgb(0, 0, 255);</string>
      </property>
      <property name="text">
-      <string>预言展示：</string>
+      <string>玩家预言展示：</string>
      </property>
     </widget>
-   </widget>
-   <widget class="QGroupBox" name="groupBox_5">
-    <property name="geometry">
-     <rect>
-      <x>1030</x>
-      <y>650</y>
-      <width>120</width>
-      <height>80</height>
-     </rect>
-    </property>
-    <property name="title">
-     <string>GroupBox</string>
-    </property>
    </widget>
    <widget class="QGroupBox" name="groupBox_4">
     <property name="geometry">

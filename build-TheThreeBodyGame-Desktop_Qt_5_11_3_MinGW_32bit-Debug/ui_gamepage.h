@@ -69,7 +69,6 @@ public:
     QLabel *label2_3;
     QLabel *label3_3;
     QLabel *title_label;
-    QGroupBox *groupBox_5;
     QGroupBox *groupBox_4;
     QLabel *label_5;
     QRadioButton *radioButton;
@@ -293,7 +292,7 @@ public:
 "color: rgb(0, 0, 255);"));
         title_label = new QLabel(groupBox_3);
         title_label->setObjectName(QStringLiteral("title_label"));
-        title_label->setGeometry(QRect(30, 15, 101, 21));
+        title_label->setGeometry(QRect(30, 15, 141, 21));
         QPalette palette;
         QBrush brush(QColor(0, 0, 255, 255));
         brush.setStyle(Qt::SolidPattern);
@@ -366,9 +365,6 @@ public:
         title_label->setStyleSheet(QLatin1String("background: transparent;\n"
 "font: 75 12pt \"Microsoft YaHei UI\";\n"
 "color: rgb(0, 0, 255);"));
-        groupBox_5 = new QGroupBox(centralwidget);
-        groupBox_5->setObjectName(QStringLiteral("groupBox_5"));
-        groupBox_5->setGeometry(QRect(1030, 650, 120, 80));
         groupBox_4 = new QGroupBox(centralwidget);
         groupBox_4->setObjectName(QStringLiteral("groupBox_4"));
         groupBox_4->setGeometry(QRect(800, 840, 611, 141));
@@ -458,8 +454,7 @@ public:
         label1_3->setText(QString());
         label2_3->setText(QString());
         label3_3->setText(QString());
-        title_label->setText(QApplication::translate("Gamepage", "\351\242\204\350\250\200\345\261\225\347\244\272\357\274\232", nullptr));
-        groupBox_5->setTitle(QApplication::translate("Gamepage", "GroupBox", nullptr));
+        title_label->setText(QApplication::translate("Gamepage", "\347\216\251\345\256\266\351\242\204\350\250\200\345\261\225\347\244\272\357\274\232", nullptr));
         label_5->setText(QApplication::translate("Gamepage", "\347\216\251\345\256\266\351\242\204\350\250\200\357\274\232", nullptr));
         radioButton->setText(QApplication::translate("Gamepage", "\350\203\234\345\210\251", nullptr));
         radioButton_2->setText(QApplication::translate("Gamepage", "\345\244\261\350\264\245", nullptr));

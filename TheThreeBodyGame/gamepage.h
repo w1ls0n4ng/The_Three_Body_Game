@@ -7,6 +7,7 @@
 #include "gamestatus.h"
 #include "players.h"
 #include <QMainWindow>
+#include <QKeyEvent>
 #include <QTimer>
 #include <QGraphicsScene>
 
@@ -21,6 +22,7 @@ class Gamepage : public QMainWindow
 public:
     explicit Gamepage(QWidget *parent = nullptr);
     ~Gamepage();
+    gamestatus gamestatus1;
 
 
 public slots:
@@ -28,6 +30,9 @@ public slots:
     void updateUI();
     void updatePosition();
     void updateGameState();
+
+protected:
+    void keyPressEvent(QKeyEvent *event);
 
 private:
     Ui::Gamepage *ui;
@@ -41,7 +46,6 @@ private:
     sun sun1, sun2, sun3;
     planet earth;
     civilization threebodyman;
-    gamestatus gamestatus1;
     players player1;
     float time = 0;
     // 设置G值

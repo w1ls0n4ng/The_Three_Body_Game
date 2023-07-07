@@ -4,6 +4,8 @@
 #include "sun.h"
 #include "civilization.h"
 #include "players.h"
+#include "pausewindow.h"
+#include "ending.h"
 #include <QGroupBox>
 #include <QVBoxLayout>
 #include <QCheckBox>
@@ -15,6 +17,7 @@
 #include <QGraphicsView>
 #include <QGraphicsEllipseItem>
 #include <QScreen>
+#include <QKeyEvent>
 
 Gamepage::Gamepage(QWidget *parent) :
     QMainWindow(parent),
@@ -158,6 +161,8 @@ Gamepage::Gamepage(QWidget *parent) :
     timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()),this,SLOT(updateGameState()));
     timer->start(1);
+
+    connect(this, &Gamepage::keyPressEvent, this, &Gamepage::keyPressEvent);
 }
 
 
@@ -224,6 +229,12 @@ void Gamepage::updateUI()
     }
     ui->civilization_count->setText(str);
 
+    //更新游戏状态
+    if (gamestatus1.game_status != 0){
+        close();
+        ending* gameending = new ending();
+        gameending->show();
+    }
 }
 
 void Gamepage::updatePosition()
@@ -258,6 +269,16 @@ void Gamepage::updatePosition()
         QRectF newSceneRect = scene->sceneRect().united(circlesRect);
         scene->setSceneRect(newSceneRect);
     }
+}
+
+void Gamepage::keyPressEvent(QKeyEvent * event)
+{
+    if (event->key() == Qt::Key_Escape)
+    {
+        PauseWindow *pause = new PauseWindow();
+        pause->show();
+    }
+
 }
 
 void Gamepage::updateGameState()
