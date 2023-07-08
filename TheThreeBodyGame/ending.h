@@ -2,6 +2,8 @@
 #define ENDING_H
 
 #include <QDialog>
+#include "gamestatus.h"
+#include "players.h"
 
 namespace Ui {
 class ending;
@@ -14,6 +16,10 @@ class ending : public QDialog
 public:
     explicit ending(QWidget *parent = nullptr);
     ~ending();
+    void getstatus(gamestatus status);
+    void getprediction(players player);
+    gamestatus gamestatus2;
+    players player2;
 
 private slots:
     void on_pushButton_clicked();

@@ -23,6 +23,7 @@ public:
     explicit Gamepage(QWidget *parent = nullptr);
     ~Gamepage();
     gamestatus gamestatus1;
+    players player1;
 
 
 public slots:
@@ -46,7 +47,6 @@ private:
     sun sun1, sun2, sun3;
     planet earth;
     civilization threebodyman;
-    players player1;
     float time = 0;
     // 设置G值
     double G = 3.1415926 * 3.1415926;

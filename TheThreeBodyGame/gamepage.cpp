@@ -239,8 +239,10 @@ void Gamepage::updateUI()
     //游戏终止条件
     if (gamestatus1.game_status != 0){
         timer->stop();
-        close();
         ending* gameending = new ending();
+        gameending->getstatus(gamestatus1);
+        gameending->getprediction(player1);
+        close();
         gameending->show();
     }
 }

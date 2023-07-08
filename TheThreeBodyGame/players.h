@@ -15,11 +15,13 @@ public:
     void initialize(){
         guess_count=0;
         for (int i=0;i<3;++i){
-            guess_num[i]=0;
+            guess_num[i]=-1;
             guess_current_num[i]=0;
             guess_status[i]=0;
         }
     }
 };
+
+
 
 #endif // PLAYERS_H
