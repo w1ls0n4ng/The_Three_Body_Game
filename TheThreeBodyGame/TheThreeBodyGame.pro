@@ -34,6 +34,7 @@ SOURCES += \
         main.cpp \
     mainwindow.cpp \
     gamepage.cpp \
+    pausewindow.cpp \
     test.cpp
 
 HEADERS += \
@@ -44,10 +45,12 @@ HEADERS += \
     civilization.h \
     gamestatus.h \
     players.h \
+    pausewindow.h \
     test.h
 
 FORMS += \
     mainwindow.ui \
+    pausewindow.ui \
     gamepage.ui
 
 # Default rules for deployment.

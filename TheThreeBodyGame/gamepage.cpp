@@ -3,6 +3,8 @@
 #include "planet.h"
 #include "sun.h"
 #include "civilization.h"
+#include "pausewindow.h"
+#include "mainwindow.h"
 #include <QGroupBox>
 #include <QVBoxLayout>
 #include <QCheckBox>
@@ -14,6 +16,8 @@
 #include <QGraphicsView>
 #include <QGraphicsEllipseItem>
 #include <QScreen>
+#include <QFile>
+#include <QKeyEvent>
 
 Gamepage::Gamepage(QWidget *parent) :
     QMainWindow(parent),
@@ -24,8 +28,8 @@ Gamepage::Gamepage(QWidget *parent) :
     this->setStyleSheet(backgroundImage);
 
     // 设置游戏音乐
-    QMediaPlayer* mediaPlayer = new QMediaPlayer;
-    QMediaPlaylist* playlist = new QMediaPlaylist;
+    mediaPlayer = new QMediaPlayer;
+    playlist = new QMediaPlaylist;
 
     playlist->addMedia(QUrl::fromLocalFile("../Assests/game_bgm.mp3"));
     playlist->setPlaybackMode(QMediaPlaylist::Loop);
@@ -220,6 +224,9 @@ Gamepage::Gamepage(QWidget *parent) :
     timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()),this,SLOT(updateGameState()));
     timer->start(1);
+
+    // 连接暂停游戏界面
+    connect(this, &Gamepage::keyPressEvent, this, &Gamepage::keyPressEvent);
 }
 
 
@@ -375,4 +382,40 @@ void Gamepage::updateGameState()
     updateUI();
 }
 
+void Gamepage::saveGame()
+{
+
+    QFile file("savegame.txt");
+    file.open(QIODevice::WriteOnly);
+    QTextStream stream(&file);
+    stream << "1\n";
+    file.close();
+}
+
+void Gamepage::keyPressEvent(QKeyEvent * event)
+{
+    if (event->key() == Qt::Key_Escape)
+    {
+        PauseWindow *pause = new PauseWindow();
+        pause->show();
+        gap = 0;
+        if (pause->exec())
+        {
+            gap = 25;
+        }
+        else
+        {
+            saveGame();
+            close();
+
+            // 关闭音乐
+            mediaPlayer->stop();
+
+            // 打开主界页面
+            MainWindow *main = new MainWindow();
+            main->showMaximized();
+        }
+    }
+
+}
 
