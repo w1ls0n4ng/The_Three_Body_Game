@@ -719,6 +719,12 @@ font: 75 8pt &quot;Microsoft YaHei UI&quot;;</string>
      </rect>
     </property>
    </widget>
+   <zorder>groupBox_3</zorder>
+   <zorder>groupBox_4</zorder>
+   <zorder>groupBox</zorder>
+   <zorder>groupBox_2</zorder>
+   <zorder>upperRightwidget</zorder>
+   <zorder>upperLeftwidget</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

@@ -102,10 +102,10 @@ Gamepage::Gamepage(QWidget *parent) :
     player1.initialize();
 
     // 创造圆形并加入到scene当中
-    circle1 = scene->addEllipse(sun1.location[0]*10, sun1.location[1]*10, 10, 10);
-    circle2 = scene->addEllipse(sun2.location[0]*10, sun2.location[1]*10, 10, 10);
-    circle3 = scene->addEllipse(sun3.location[0]*10, sun3.location[1]*10, 10, 10);
-    circle4 = scene->addEllipse(earth.location[0]*10, earth.location[1]*10, 5, 5);
+    circle1 = scene->addEllipse(0, 0, 10, 10);
+    circle2 = scene->addEllipse(0, 0, 10, 10);
+    circle3 = scene->addEllipse(0, 0, 10, 10);
+    circle4 = scene->addEllipse(0, 0, 5, 5);
 
     circle1->setFlag(QGraphicsItem::ItemIsFocusable);
     circle1->setFocus();
@@ -128,21 +128,6 @@ Gamepage::Gamepage(QWidget *parent) :
     // 设置view大小为1119x951
     view->setFixedSize(1119, 951);
 
-    // 设置滚动条为透明
-    QString scrollBarStyle = "QScrollBar:vertical, QScrollBar:horizontal {"
-                             "    background: transparent;"
-                             "}"
-                             "QScrollBar::handle:vertical, QScrollBar::handle:horizontal {"
-                             "    background: rgba(0, 0, 0, 0);"
-                             "}"
-                             "QScrollBar::sub-page:vertical, QScrollBar::sub-page:horizontal {"
-                             "    background: rgba(0, 0, 0, 0);"
-                             "}"
-                             "QScrollBar::add-page:vertical, QScrollBar::add-page:horizontal {"
-                             "    background: rgba(0, 0, 0, 0);"
-                             "}";
-    view->setStyleSheet(scrollBarStyle);
-
     // 将视图放置在屏幕中央
     if (!screens.isEmpty()) {
         QRect screenRect = screens.first()->availableGeometry();
@@ -159,6 +144,81 @@ Gamepage::Gamepage(QWidget *parent) :
 
     // 添加小部件到layout
     horizontalLayout->addWidget(view);
+
+    //右上视图
+    QWidget* widget = ui->upperRightwidget;
+
+    // 创建 QGraphicsView 和 QGraphicsScene
+    QGraphicsView* view = new QGraphicsView(widget);
+    QGraphicsScene* scene = new QGraphicsScene(widget);
+
+    // 创建球体（QGraphicsEllipseItem）
+    ball1 = new QGraphicsEllipseItem(0, 0, 8, 8);
+    ball1->setBrush(Qt::red);  // 设置球体的颜色
+    ball2 = new QGraphicsEllipseItem(0, 0, 8, 8);
+    ball2->setBrush(Qt::green);  // 设置球体的颜色
+    ball3 = new QGraphicsEllipseItem(0, 0, 8, 8);
+    ball3->setBrush(Qt::blue);  // 设置球体的颜色
+    ball4 = new QGraphicsEllipseItem(0, 0, 4, 4);
+    ball4->setBrush(Qt::white);  // 设置球体的颜色
+
+    // 将球体添加到 QGraphicsScene 中
+    scene->addItem(ball1);
+    scene->addItem(ball2);
+    scene->addItem(ball3);
+    scene->addItem(ball4);
+
+    // 设置 QGraphicsScene 给 QGraphicsView
+    view->setScene(scene);
+
+    // 创建布局管理器，并将 QGraphicsView 添加到布局中
+    QVBoxLayout* layout = new QVBoxLayout(widget);
+    layout->addWidget(view);
+
+    widget->setLayout(layout);
+
+    //设置右上视图的背景
+    ui->upperRightwidget->setStyleSheet("background-image: url(../Assests/space1.png);"
+                                         "border: 2px ridge rgb(60,255,255);"
+                                         "margin: 0px;");
+
+    //左上视图
+    QWidget* leftWidget = ui->upperLeftwidget;
+
+    // 创建 QGraphicsView 和 QGraphicsScene
+    view = new QGraphicsView(leftWidget);
+    scene = new QGraphicsScene(leftWidget);
+
+    // 创建球体（QGraphicsEllipseItem）
+    ball1_1 = new QGraphicsEllipseItem(0, 0, 10, 10);
+    ball1_1->setBrush(Qt::red);  // 设置球体的颜色
+    ball2_1 = new QGraphicsEllipseItem(0, 0, 10, 10);
+    ball2_1->setBrush(Qt::green);  // 设置球体的颜色
+    ball3_1 = new QGraphicsEllipseItem(0, 0, 10, 10);
+    ball3_1->setBrush(Qt::blue);  // 设置球体的颜色
+    ball4_1 = new QGraphicsEllipseItem(0, 0, 5, 5);
+    ball4_1->setBrush(Qt::white);  // 设置球体的颜色
+
+    // 将球体添加到 QGraphicsScene 中
+    scene->addItem(ball1_1);
+    scene->addItem(ball2_1);
+    scene->addItem(ball3_1);
+    scene->addItem(ball4_1);
+
+    // 设置 QGraphicsScene 给 QGraphicsView
+    view->setScene(scene);
+
+    // 创建布局管理器，并将 QGraphicsView 添加到布局中
+    layout = new QVBoxLayout(leftWidget);
+    layout->addWidget(view);
+
+    leftWidget->setLayout(layout);
+
+    //设置左上视图的背景
+    ui->upperLeftwidget->setStyleSheet("background-image: url(../Assests/space1.png);"
+                                         "border: 2px ridge rgb(60,255,255);"
+                                         "margin: 0px;");
+
 
     // 以1毫秒（1000帧）刷新
     timer = new QTimer(this);
@@ -187,24 +247,34 @@ void Gamepage::updateUI()
 {
     QString str;
 
+    str = "行星520号";
+    ui->planet_no->setText(str);
+
+    // 更新文明序号
+    str = "第" + QString::number(gamestatus1.current_civilization_num) + "号文明";
+    if("文明孕育中" == QString::fromStdString(threebodyman.current_stage)){ str += "(灭亡)"; }
+    if(QString::number(gamestatus1.current_civilization_num) == "0"){ str = "尚未诞生文明";}
+    ui->civilization_no->setText(str);
+
+
     // 更新年
-    str = QString::number(earth.year);
+    str = QString::number(earth.year,'f',0);
     ui->year->setText(str);
 
     // 更新恒纪元
-    str = QString::number(earth.constant_era);
+    str = QString::number(earth.constant_era,'f',0);
     ui->constant_era->setText(str);
 
     // 更新乱纪元
-    str = QString::number(earth.chaotic_era);
+    str = QString::number(earth.chaotic_era,'f',0);
     ui->chaotic_era->setText(str);
 
     // 更新连续恒纪元
-    str = QString::number(earth.continue_constant_era);
+    str = QString::number(earth.continue_constant_era,'f',0);
     ui->continue_constant_era->setText(str);
 
     // 更新平均温度
-    str = QString::number(earth.temperature);
+    str = QString::number(earth.temperature,'f',2);
     ui->ave_temp->setText(str);
 
     // 更新文明阶段
@@ -244,6 +314,10 @@ void Gamepage::updateUI()
     }
 }
 
+//定义一个全局变量，用于行星运动的倍数
+extern double p;
+double p=8.0;
+
 void Gamepage::updatePosition()
 {
     // 更新恒星、行星和文明的数据
@@ -254,29 +328,70 @@ void Gamepage::updatePosition()
     //更新游戏状态
     gamestatus1.update(sun1,sun2,sun3,earth,threebodyman);
 
-    // 设置圆圈位置
-    circle1->setPos(sun1.location[0]*10+200, sun1.location[1]*10+200);
-    circle2->setPos(sun2.location[0]*10+200, sun2.location[1]*10+200);
-    circle3->setPos(sun3.location[0]*10+200, sun3.location[1]*10+200);
-    circle4->setPos(earth.location[0]*10+200, earth.location[1]*10+200);
+    //-------------------------------------------------------------------------------------------------
+    //主视图    x-y轴
+    qreal xOffset;
+    qreal yOffset;
+    while(true){
 
-    // 检查圆圈是否已经移出了可见区域
-    QRectF visibleRect = view->mapToScene(view->viewport()->geometry()).boundingRect();
-    QRectF circlesRect = circle1->sceneBoundingRect().united(circle2->sceneBoundingRect()).united(circle3->sceneBoundingRect());
+        // 获取视图和planet的中心位置
+        QPointF viewCenter = view->mapToScene(view->viewport()->rect().center());
+        QPointF circlesCenter = QPointF((sun1.location[0]+sun2.location[0]+sun3.location[0])*p/3,(sun1.location[1]+sun2.location[1]+sun3.location[1])*p/3);
 
-    if (!visibleRect.contains(circlesRect)) {
         // 计算偏移量以重新定位视图
-        qreal xOffset = circlesRect.center().x() - visibleRect.center().x();
-        qreal yOffset = circlesRect.center().y() - visibleRect.center().y();
-
-        // 调整视图的中心
-        view->centerOn(view->mapToScene(view->viewport()->rect().center()) + QPointF(xOffset, yOffset));
-
-        // 放大场景以包括圆圈的新位置
-        QRectF newSceneRect = scene->sceneRect().united(circlesRect);
-        scene->setSceneRect(newSceneRect);
+        xOffset = circlesCenter.x() - viewCenter.x();
+        yOffset = circlesCenter.y() - viewCenter.y();
+        cout << viewCenter.x() << "," << viewCenter.y() << "------" <<circlesCenter.x() <<',' <<circlesCenter.y() << endl;
+        cout << xOffset <<',' << yOffset<<endl;
+        QRectF visibleRect = view->mapToScene(view->viewport()->geometry()).boundingRect();
+        if(visibleRect.contains(QPointF(earth.location[0]*p-xOffset, earth.location[1]*p-yOffset))) break;
+        else p -= 0.5;
     }
+
+
+    // 设置圆圈位置
+    circle1->setPos(sun1.location[0]*p-xOffset, sun1.location[1]*p-yOffset);
+    circle2->setPos(sun2.location[0]*p-xOffset, sun2.location[1]*p-yOffset);
+    circle3->setPos(sun3.location[0]*p-xOffset, sun3.location[1]*p-yOffset);
+    circle4->setPos(earth.location[0]*p-xOffset, earth.location[1]*p-yOffset);
+
+    //----------------------------------------------------------------------------------------------------------
+    //右上视图    z-x轴
+    // 获取视图和planet的中心位置
+    QPointF widgetCenter = QPointF((-5+250)/2,(-5+290)/2);
+    QPointF ballsCenter = QPointF((sun1.location[2]+sun2.location[2]+sun3.location[2])/3,(sun1.location[0]+sun2.location[0]+sun3.location[0])/3);
+
+    // 计算偏移量以重新定位视图
+    xOffset = ballsCenter.x() - widgetCenter.x() + 50;
+    yOffset = ballsCenter.y() - widgetCenter.y() + 50;
+//    cout << ballsCenter.x() << "," << ballsCenter.y() << "------" <<widgetCenter.x() <<',' <<widgetCenter.y() << endl;
+//    cout << xOffset <<',' << yOffset<<endl;
+
+
+    ball1->setPos(sun1.location[2]-xOffset-5, sun1.location[0]-yOffset-5);
+    ball2->setPos(sun2.location[2]-xOffset-5, sun2.location[0]-yOffset-5);
+    ball3->setPos(sun3.location[2]-xOffset-5, sun3.location[0]-yOffset-5);
+    ball4->setPos(earth.location[2]-xOffset-5, earth.location[0]-yOffset-5);
+
+    //----------------------------------------------------------------------------------------------------------
+    //左上视图      y-z轴
+    // 获取视图和planet的中心位置
+    double mag = 2.2;
+    widgetCenter = QPointF(320/2,370/2);
+    ballsCenter = QPointF((sun1.location[1]+sun2.location[1]+sun3.location[1])*mag/3,(sun1.location[2]+sun2.location[2]+sun3.location[2])*mag/3);
+
+    // 计算偏移量以重新定位视图
+    xOffset = ballsCenter.x() - widgetCenter.x() + 150;
+    yOffset = ballsCenter.y() - widgetCenter.y() + 150;
+//    cout << ballsCenter.x() << "," << ballsCenter.y() << "------" <<widgetCenter.x() <<',' <<widgetCenter.y() << endl;
+//    cout << xOffset <<',' << yOffset<<endl;
+
+    ball1_1->setPos(sun1.location[1]*mag-xOffset, sun1.location[2]*mag-yOffset);
+    ball2_1->setPos(sun2.location[1]*mag-xOffset, sun2.location[2]*mag-yOffset);
+    ball3_1->setPos(sun3.location[1]*mag-xOffset, sun3.location[2]*mag-yOffset);
+    ball4_1->setPos(earth.location[1]*mag-xOffset, earth.location[2]*mag-yOffset);
 }
+
 
 void Gamepage::updateGameState()
 {

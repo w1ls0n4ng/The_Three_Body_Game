@@ -48,6 +48,14 @@ private:
     QGraphicsEllipseItem* circle2;
     QGraphicsEllipseItem* circle3;
     QGraphicsEllipseItem* circle4;
+    QGraphicsEllipseItem* ball1;
+    QGraphicsEllipseItem* ball2;
+    QGraphicsEllipseItem* ball3;
+    QGraphicsEllipseItem* ball4;
+    QGraphicsEllipseItem* ball1_1;
+    QGraphicsEllipseItem* ball2_1;
+    QGraphicsEllipseItem* ball3_1;
+    QGraphicsEllipseItem* ball4_1;
     sun sun1, sun2, sun3;
     planet earth;
     civilization threebodyman;

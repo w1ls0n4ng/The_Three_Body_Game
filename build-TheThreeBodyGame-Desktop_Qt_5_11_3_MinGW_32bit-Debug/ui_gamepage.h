@@ -294,6 +294,12 @@ public:
         upperLeftwidget->setObjectName(QStringLiteral("upperLeftwidget"));
         upperLeftwidget->setGeometry(QRect(20, 20, 360, 410));
         Gamepage->setCentralWidget(centralwidget);
+        groupBox_3->raise();
+        groupBox_4->raise();
+        groupBox->raise();
+        groupBox_2->raise();
+        upperRightwidget->raise();
+        upperLeftwidget->raise();
         menubar = new QMenuBar(Gamepage);
         menubar->setObjectName(QStringLiteral("menubar"));
         menubar->setGeometry(QRect(0, 0, 1920, 26));
