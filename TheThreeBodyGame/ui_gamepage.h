@@ -20,7 +20,6 @@
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QRadioButton>
 #include <QtWidgets/QStatusBar>
-#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -39,7 +38,6 @@ public:
     QLabel *civilization_label;
     QLabel *civilization_state_label;
     QLabel *deadly_temp_label;
-    QLabel *disastor_temp_label;
     QLabel *constant_era;
     QLabel *continue_constant_era_label;
     QLabel *continue_constant_era;
@@ -47,10 +45,10 @@ public:
     QLabel *civilization;
     QLabel *civilization_state;
     QLabel *deadly_temp;
-    QLabel *disastor_temp;
     QLabel *ave_temp;
     QLabel *ave_temp_label;
-    QLabel *civilization_count;
+    QLabel *civilization_no;
+    QLabel *planet_no;
     QGroupBox *groupBox_2;
     QLabel *unit;
     QLabel *red_label;
@@ -60,10 +58,6 @@ public:
     QLabel *label_2;
     QLabel *label_3;
     QLabel *label_4;
-    QWidget *verticalLayoutWidget;
-    QVBoxLayout *verticalLayout;
-    QWidget *verticalLayoutWidget_2;
-    QVBoxLayout *verticalLayout_2;
     QGroupBox *groupBox_3;
     QLabel *label1_3;
     QLabel *label2_3;
@@ -75,6 +69,8 @@ public:
     QRadioButton *radioButton;
     QRadioButton *radioButton_2;
     QLineEdit *lineEdit;
+    QWidget *upperRightwidget;
+    QWidget *upperLeftwidget;
     QPushButton *pushButton;
     QMenuBar *menubar;
     QStatusBar *statusbar;
@@ -92,124 +88,119 @@ public:
         groupBox->setStyleSheet(QStringLiteral(""));
         population_label = new QLabel(groupBox);
         population_label->setObjectName(QStringLiteral("population_label"));
-        population_label->setGeometry(QRect(25, 90, 55, 21));
+        population_label->setGeometry(QRect(25, 130, 55, 21));
         population_label->setAutoFillBackground(false);
         population_label->setStyleSheet(QLatin1String("background: transparent;\n"
 "font: 75 10pt \"Microsoft YaHei UI\";"));
         population_label->setFrameShadow(QFrame::Plain);
         population = new QProgressBar(groupBox);
         population->setObjectName(QStringLiteral("population"));
-        population->setGeometry(QRect(80, 90, 181, 23));
+        population->setGeometry(QRect(80, 130, 181, 23));
         population->setAutoFillBackground(false);
         population->setStyleSheet(QStringLiteral(""));
         population->setValue(24);
         population->setTextVisible(false);
         year_label = new QLabel(groupBox);
         year_label->setObjectName(QStringLiteral("year_label"));
-        year_label->setGeometry(QRect(25, 120, 30, 21));
+        year_label->setGeometry(QRect(25, 160, 30, 21));
         year_label->setAutoFillBackground(false);
         year_label->setStyleSheet(QLatin1String("background: transparent;\n"
 "font: 75 10pt \"Microsoft YaHei UI\";"));
         year = new QLabel(groupBox);
         year->setObjectName(QStringLiteral("year"));
-        year->setGeometry(QRect(45, 120, 191, 21));
+        year->setGeometry(QRect(45, 160, 191, 21));
         year->setStyleSheet(QLatin1String("background: rgba(255, 255, 255, 0);\n"
 "font: 10pt \"Microsoft YaHei UI\";\n"
 "color: rgb(210, 238, 255);"));
         constant_era_label = new QLabel(groupBox);
         constant_era_label->setObjectName(QStringLiteral("constant_era_label"));
-        constant_era_label->setGeometry(QRect(25, 150, 100, 21));
+        constant_era_label->setGeometry(QRect(25, 190, 100, 21));
         constant_era_label->setStyleSheet(QLatin1String("font: 75 10pt \"Microsoft YaHei UI\";\n"
 "background: transparent;"));
         chaotic_era_label = new QLabel(groupBox);
         chaotic_era_label->setObjectName(QStringLiteral("chaotic_era_label"));
-        chaotic_era_label->setGeometry(QRect(25, 180, 100, 21));
+        chaotic_era_label->setGeometry(QRect(25, 220, 100, 21));
         chaotic_era_label->setStyleSheet(QLatin1String("font: 75 10pt \"Microsoft YaHei UI\";\n"
 "background: transparent;"));
         civilization_label = new QLabel(groupBox);
         civilization_label->setObjectName(QStringLiteral("civilization_label"));
-        civilization_label->setGeometry(QRect(25, 210, 100, 21));
+        civilization_label->setGeometry(QRect(25, 250, 100, 21));
         civilization_label->setStyleSheet(QLatin1String("background: transparent;\n"
 "font: 75 10pt \"Microsoft YaHei UI\";"));
         civilization_state_label = new QLabel(groupBox);
         civilization_state_label->setObjectName(QStringLiteral("civilization_state_label"));
-        civilization_state_label->setGeometry(QRect(25, 240, 80, 21));
+        civilization_state_label->setGeometry(QRect(25, 280, 80, 21));
         civilization_state_label->setStyleSheet(QLatin1String("background: transparent;\n"
 "font: 75 10pt \"Microsoft YaHei UI\";"));
         deadly_temp_label = new QLabel(groupBox);
         deadly_temp_label->setObjectName(QStringLiteral("deadly_temp_label"));
-        deadly_temp_label->setGeometry(QRect(25, 270, 80, 21));
+        deadly_temp_label->setGeometry(QRect(25, 310, 80, 21));
         deadly_temp_label->setStyleSheet(QLatin1String("background: transparent;\n"
-"font: 75 10pt \"Microsoft YaHei UI\";"));
-        disastor_temp_label = new QLabel(groupBox);
-        disastor_temp_label->setObjectName(QStringLiteral("disastor_temp_label"));
-        disastor_temp_label->setGeometry(QRect(25, 300, 80, 21));
-        disastor_temp_label->setStyleSheet(QLatin1String("background: transparent;\n"
 "font: 75 10pt \"Microsoft YaHei UI\";"));
         constant_era = new QLabel(groupBox);
         constant_era->setObjectName(QStringLiteral("constant_era"));
-        constant_era->setGeometry(QRect(115, 150, 71, 21));
+        constant_era->setGeometry(QRect(115, 190, 71, 21));
         constant_era->setStyleSheet(QLatin1String("background: rgba(255, 255, 255, 0);\n"
 "font: 10pt \"Microsoft YaHei UI\";\n"
 "color: rgb(210, 238, 255);"));
         continue_constant_era_label = new QLabel(groupBox);
         continue_constant_era_label->setObjectName(QStringLiteral("continue_constant_era_label"));
-        continue_constant_era_label->setGeometry(QRect(190, 150, 100, 21));
+        continue_constant_era_label->setGeometry(QRect(190, 190, 100, 21));
         continue_constant_era_label->setStyleSheet(QLatin1String("font: 75 10pt \"Microsoft YaHei UI\";\n"
 "background: transparent;"));
         continue_constant_era = new QLabel(groupBox);
         continue_constant_era->setObjectName(QStringLiteral("continue_constant_era"));
-        continue_constant_era->setGeometry(QRect(280, 150, 71, 21));
+        continue_constant_era->setGeometry(QRect(280, 190, 71, 21));
         continue_constant_era->setStyleSheet(QLatin1String("background: rgba(255, 255, 255, 0);\n"
 "font: 10pt \"Microsoft YaHei UI\";\n"
 "color: rgb(210, 238, 255);"));
         chaotic_era = new QLabel(groupBox);
         chaotic_era->setObjectName(QStringLiteral("chaotic_era"));
-        chaotic_era->setGeometry(QRect(115, 180, 71, 21));
+        chaotic_era->setGeometry(QRect(115, 220, 71, 21));
         chaotic_era->setStyleSheet(QLatin1String("background: rgba(255, 255, 255, 0);\n"
 "font: 10pt \"Microsoft YaHei UI\";\n"
 "color: rgb(210, 238, 255);"));
         civilization = new QLabel(groupBox);
         civilization->setObjectName(QStringLiteral("civilization"));
-        civilization->setGeometry(QRect(100, 210, 71, 21));
+        civilization->setGeometry(QRect(100, 250, 71, 21));
         civilization->setStyleSheet(QLatin1String("background: rgba(255, 255, 255, 0);\n"
 "font: 10pt \"Microsoft YaHei UI\";\n"
 "color: rgb(210, 238, 255);"));
         civilization_state = new QLabel(groupBox);
         civilization_state->setObjectName(QStringLiteral("civilization_state"));
-        civilization_state->setGeometry(QRect(100, 240, 71, 21));
+        civilization_state->setGeometry(QRect(100, 280, 71, 21));
         civilization_state->setStyleSheet(QLatin1String("background: rgba(255, 255, 255, 0);\n"
 "font: 10pt \"Microsoft YaHei UI\";\n"
 "color: rgb(210, 238, 255);"));
         deadly_temp = new QLabel(groupBox);
         deadly_temp->setObjectName(QStringLiteral("deadly_temp"));
-        deadly_temp->setGeometry(QRect(100, 270, 191, 21));
+        deadly_temp->setGeometry(QRect(100, 310, 191, 21));
         deadly_temp->setStyleSheet(QLatin1String("background: rgba(255, 255, 255, 0);\n"
-"font: 10pt \"Microsoft YaHei UI\";\n"
-"color: rgb(210, 238, 255);"));
-        disastor_temp = new QLabel(groupBox);
-        disastor_temp->setObjectName(QStringLiteral("disastor_temp"));
-        disastor_temp->setGeometry(QRect(100, 300, 71, 21));
-        disastor_temp->setStyleSheet(QLatin1String("background: rgba(255, 255, 255, 0);\n"
 "font: 10pt \"Microsoft YaHei UI\";\n"
 "color: rgb(210, 238, 255);"));
         ave_temp = new QLabel(groupBox);
         ave_temp->setObjectName(QStringLiteral("ave_temp"));
-        ave_temp->setGeometry(QRect(265, 180, 71, 21));
+        ave_temp->setGeometry(QRect(265, 220, 71, 21));
         ave_temp->setStyleSheet(QLatin1String("background: rgba(255, 255, 255, 0);\n"
 "font: 10pt \"Microsoft YaHei UI\";\n"
 "color: rgb(210, 238, 255);"));
         ave_temp_label = new QLabel(groupBox);
         ave_temp_label->setObjectName(QStringLiteral("ave_temp_label"));
-        ave_temp_label->setGeometry(QRect(190, 180, 100, 21));
+        ave_temp_label->setGeometry(QRect(190, 220, 100, 21));
         ave_temp_label->setStyleSheet(QLatin1String("font: 75 10pt \"Microsoft YaHei UI\";\n"
 "background: transparent;"));
-        civilization_count = new QLabel(groupBox);
-        civilization_count->setObjectName(QStringLiteral("civilization_count"));
-        civilization_count->setGeometry(QRect(30, 40, 251, 31));
-        civilization_count->setStyleSheet(QLatin1String("background: transparent;\n"
-"font: 75 10pt \"Microsoft YaHei UI\";\n"
-"color: rgb(0, 255, 255);"));
+        civilization_no = new QLabel(groupBox);
+        civilization_no->setObjectName(QStringLiteral("civilization_no"));
+        civilization_no->setGeometry(QRect(80, 80, 181, 31));
+        civilization_no->setStyleSheet(QLatin1String("color: rgb(85, 255, 255);\n"
+"font: 10pt \"Microsoft YaHei UI\";\n"
+"background: transparent;"));
+        planet_no = new QLabel(groupBox);
+        planet_no->setObjectName(QStringLiteral("planet_no"));
+        planet_no->setGeometry(QRect(80, 50, 121, 16));
+        planet_no->setStyleSheet(QLatin1String("color: rgb(85, 255, 255);\n"
+"font: 10pt \"Microsoft YaHei UI\";\n"
+"background: transparent;"));
         groupBox_2 = new QGroupBox(centralwidget);
         groupBox_2->setObjectName(QStringLiteral("groupBox_2"));
         groupBox_2->setGeometry(QRect(1600, 360, 290, 172));
@@ -258,18 +249,6 @@ public:
         label_4->setGeometry(QRect(40, 50, 201, 21));
         label_4->setStyleSheet(QLatin1String("background: transparent;\n"
 "font: 75 8pt \"Microsoft YaHei UI\";"));
-        verticalLayoutWidget = new QWidget(centralwidget);
-        verticalLayoutWidget->setObjectName(QStringLiteral("verticalLayoutWidget"));
-        verticalLayoutWidget->setGeometry(QRect(1600, 10, 291, 341));
-        verticalLayout = new QVBoxLayout(verticalLayoutWidget);
-        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        verticalLayout->setContentsMargins(0, 0, 0, 0);
-        verticalLayoutWidget_2 = new QWidget(centralwidget);
-        verticalLayoutWidget_2->setObjectName(QStringLiteral("verticalLayoutWidget_2"));
-        verticalLayoutWidget_2->setGeometry(QRect(20, 10, 361, 331));
-        verticalLayout_2 = new QVBoxLayout(verticalLayoutWidget_2);
-        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
-        verticalLayout_2->setContentsMargins(0, 0, 0, 0);
         groupBox_3 = new QGroupBox(centralwidget);
         groupBox_3->setObjectName(QStringLiteral("groupBox_3"));
         groupBox_3->setGeometry(QRect(1600, 540, 291, 431));
@@ -395,6 +374,19 @@ public:
         radioButton_2->setChecked(false);
         lineEdit = new QLineEdit(groupBox_4);
         lineEdit->setObjectName(QStringLiteral("lineEdit"));
+        lineEdit->setGeometry(QRect(242, 40, 191, 41));
+        upperRightwidget = new QWidget(centralwidget);
+        upperRightwidget->setObjectName(QStringLiteral("upperRightwidget"));
+        upperRightwidget->setGeometry(QRect(1600, 20, 290, 330));
+        QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(upperRightwidget->sizePolicy().hasHeightForWidth());
+        upperRightwidget->setSizePolicy(sizePolicy);
+        upperRightwidget->setStyleSheet(QStringLiteral(""));
+        upperLeftwidget = new QWidget(centralwidget);
+        upperLeftwidget->setObjectName(QStringLiteral("upperLeftwidget"));
+        upperLeftwidget->setGeometry(QRect(20, 20, 360, 410));
         lineEdit->setGeometry(QRect(240, 50, 191, 41));
         lineEdit->setStyleSheet(QLatin1String("background: transparent;\n"
 "font: 75 12pt \"Microsoft YaHei UI\";\n"
@@ -433,7 +425,6 @@ public:
         civilization_label->setText(QApplication::translate("Gamepage", "<html><head/><body><p><span style=\" color:#55ffff;\">\346\226\207\346\230\216\345\255\225\350\202\262\344\270\255</span></p></body></html>", nullptr));
         civilization_state_label->setText(QApplication::translate("Gamepage", "<html><head/><body><p><span style=\" color:#55ffff;\">\346\226\207\346\230\216\347\212\266\346\200\201</span></p></body></html>", nullptr));
         deadly_temp_label->setText(QApplication::translate("Gamepage", "<html><head/><body><p><span style=\" color:#55ffff;\">\350\207\264\345\221\275\346\270\251\345\272\246</span></p></body></html>", nullptr));
-        disastor_temp_label->setText(QApplication::translate("Gamepage", "<html><head/><body><p><span style=\" color:#55ffff;\">\347\201\276\351\232\276\346\270\251\345\272\246</span></p></body></html>", nullptr));
         constant_era->setText(QApplication::translate("Gamepage", "200", nullptr));
         continue_constant_era_label->setText(QApplication::translate("Gamepage", "<html><head/><body><p><span style=\" color:#55ffff;\">\350\277\236\347\273\255\346\201\222\347\272\252\345\205\203</span></p></body></html>", nullptr));
         continue_constant_era->setText(QApplication::translate("Gamepage", "200", nullptr));
@@ -441,10 +432,10 @@ public:
         civilization->setText(QApplication::translate("Gamepage", "200", nullptr));
         civilization_state->setText(QApplication::translate("Gamepage", "200", nullptr));
         deadly_temp->setText(QApplication::translate("Gamepage", "200", nullptr));
-        disastor_temp->setText(QString());
         ave_temp->setText(QApplication::translate("Gamepage", "200", nullptr));
         ave_temp_label->setText(QApplication::translate("Gamepage", "<html><head/><body><p><span style=\" color:#55ffff;\">\345\271\263\345\235\207\346\270\251\345\272\246</span></p></body></html>", nullptr));
-        civilization_count->setText(QApplication::translate("Gamepage", "\346\226\207\346\230\216\350\256\241\346\225\260", nullptr));
+        civilization_no->setText(QApplication::translate("Gamepage", "<html><head/><body><p>\347\254\254\345\207\240\345\217\267\346\226\207\346\230\216</p></body></html>", nullptr));
+        planet_no->setText(QApplication::translate("Gamepage", "\350\241\214\346\230\237520\345\217\267", nullptr));
         groupBox_2->setTitle(QString());
         unit->setText(QApplication::translate("Gamepage", "<html><head/><body><p align=\"justify\"><span style=\" color:#55ffff;\">\345\215\225\344\275\215</span><span style=\" color:#9fb3c3;\"> A.U.</span><span style=\" color:#55ffff;\">/</span><span style=\" color:#9fb3c3;\">10^30kg</span><span style=\" color:#55ffff;\">/</span><span style=\" color:#9fb3c3;\">A.U./\345\215\201\345\271\264</span><span style=\" color:#55ffff;\">/</span><span style=\" color:#9fb3c3;\">\345\271\264</span></p></body></html>", nullptr));
         red_label->setText(QApplication::translate("Gamepage", "<html><head/><body><p><span style=\" color:#ff0000;\">\347\272\242\357\274\232</span></p></body></html>", nullptr));

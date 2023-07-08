@@ -52,3 +52,16 @@ void MainWindow::on_startgame_clicked()
     Gamepage* game = new Gamepage();
     game->showMaximized();
 }
+
+void MainWindow::on_exitgame_clicked()
+{
+    // 设置按键音效
+    QMediaPlayer* buttonPlayer = new QMediaPlayer;
+    QMediaPlaylist* playlist = new QMediaPlaylist;
+
+    playlist->addMedia(QUrl::fromLocalFile("../Assests/button_effect.mp3"));
+    buttonPlayer->setPlaylist(playlist);
+    buttonPlayer->play();
+
+    close();
+}

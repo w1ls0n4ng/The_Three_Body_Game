@@ -33,7 +33,7 @@
      <property name="geometry">
       <rect>
        <x>25</x>
-       <y>90</y>
+       <y>130</y>
        <width>55</width>
        <height>21</height>
       </rect>
@@ -56,7 +56,7 @@ font: 75 10pt &quot;Microsoft YaHei UI&quot;;</string>
      <property name="geometry">
       <rect>
        <x>80</x>
-       <y>90</y>
+       <y>130</y>
        <width>181</width>
        <height>23</height>
       </rect>
@@ -78,7 +78,7 @@ font: 75 10pt &quot;Microsoft YaHei UI&quot;;</string>
      <property name="geometry">
       <rect>
        <x>25</x>
-       <y>120</y>
+       <y>160</y>
        <width>30</width>
        <height>21</height>
       </rect>
@@ -98,7 +98,7 @@ font: 75 10pt &quot;Microsoft YaHei UI&quot;;</string>
      <property name="geometry">
       <rect>
        <x>45</x>
-       <y>120</y>
+       <y>160</y>
        <width>191</width>
        <height>21</height>
       </rect>
@@ -116,7 +116,7 @@ color: rgb(210, 238, 255);</string>
      <property name="geometry">
       <rect>
        <x>25</x>
-       <y>150</y>
+       <y>190</y>
        <width>100</width>
        <height>21</height>
       </rect>
@@ -133,7 +133,7 @@ background: transparent;</string>
      <property name="geometry">
       <rect>
        <x>25</x>
-       <y>180</y>
+       <y>220</y>
        <width>100</width>
        <height>21</height>
       </rect>
@@ -150,7 +150,7 @@ background: transparent;</string>
      <property name="geometry">
       <rect>
        <x>25</x>
-       <y>210</y>
+       <y>250</y>
        <width>100</width>
        <height>21</height>
       </rect>
@@ -167,7 +167,7 @@ font: 75 10pt &quot;Microsoft YaHei UI&quot;;</string>
      <property name="geometry">
       <rect>
        <x>25</x>
-       <y>240</y>
+       <y>280</y>
        <width>80</width>
        <height>21</height>
       </rect>
@@ -184,7 +184,7 @@ font: 75 10pt &quot;Microsoft YaHei UI&quot;;</string>
      <property name="geometry">
       <rect>
        <x>25</x>
-       <y>270</y>
+       <y>310</y>
        <width>80</width>
        <height>21</height>
       </rect>
@@ -197,28 +197,11 @@ font: 75 10pt &quot;Microsoft YaHei UI&quot;;</string>
       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#55ffff;&quot;&gt;致命温度&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
-    <widget class="QLabel" name="disastor_temp_label">
-     <property name="geometry">
-      <rect>
-       <x>25</x>
-       <y>300</y>
-       <width>80</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background: transparent;
-font: 75 10pt &quot;Microsoft YaHei UI&quot;;</string>
-     </property>
-     <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#55ffff;&quot;&gt;灾难温度&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-    </widget>
     <widget class="QLabel" name="constant_era">
      <property name="geometry">
       <rect>
        <x>115</x>
-       <y>150</y>
+       <y>190</y>
        <width>71</width>
        <height>21</height>
       </rect>
@@ -236,7 +219,7 @@ color: rgb(210, 238, 255);</string>
      <property name="geometry">
       <rect>
        <x>190</x>
-       <y>150</y>
+       <y>190</y>
        <width>100</width>
        <height>21</height>
       </rect>
@@ -253,7 +236,7 @@ background: transparent;</string>
      <property name="geometry">
       <rect>
        <x>280</x>
-       <y>150</y>
+       <y>190</y>
        <width>71</width>
        <height>21</height>
       </rect>
@@ -271,7 +254,7 @@ color: rgb(210, 238, 255);</string>
      <property name="geometry">
       <rect>
        <x>115</x>
-       <y>180</y>
+       <y>220</y>
        <width>71</width>
        <height>21</height>
       </rect>
@@ -289,7 +272,7 @@ color: rgb(210, 238, 255);</string>
      <property name="geometry">
       <rect>
        <x>100</x>
-       <y>210</y>
+       <y>250</y>
        <width>71</width>
        <height>21</height>
       </rect>
@@ -307,7 +290,7 @@ color: rgb(210, 238, 255);</string>
      <property name="geometry">
       <rect>
        <x>100</x>
-       <y>240</y>
+       <y>280</y>
        <width>71</width>
        <height>21</height>
       </rect>
@@ -325,7 +308,7 @@ color: rgb(210, 238, 255);</string>
      <property name="geometry">
       <rect>
        <x>100</x>
-       <y>270</y>
+       <y>310</y>
        <width>191</width>
        <height>21</height>
       </rect>
@@ -339,29 +322,11 @@ color: rgb(210, 238, 255);</string>
       <string>200</string>
      </property>
     </widget>
-    <widget class="QLabel" name="disastor_temp">
-     <property name="geometry">
-      <rect>
-       <x>100</x>
-       <y>300</y>
-       <width>71</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background: rgba(255, 255, 255, 0);
-font: 10pt &quot;Microsoft YaHei UI&quot;;
-color: rgb(210, 238, 255);</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
     <widget class="QLabel" name="ave_temp">
      <property name="geometry">
       <rect>
        <x>265</x>
-       <y>180</y>
+       <y>220</y>
        <width>71</width>
        <height>21</height>
       </rect>
@@ -379,7 +344,7 @@ color: rgb(210, 238, 255);</string>
      <property name="geometry">
       <rect>
        <x>190</x>
-       <y>180</y>
+       <y>220</y>
        <width>100</width>
        <height>21</height>
       </rect>
@@ -392,22 +357,40 @@ background: transparent;</string>
       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#55ffff;&quot;&gt;平均温度&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
-    <widget class="QLabel" name="civilization_count">
+    <widget class="QLabel" name="civilization_no">
      <property name="geometry">
       <rect>
-       <x>30</x>
-       <y>40</y>
-       <width>251</width>
+       <x>80</x>
+       <y>80</y>
+       <width>181</width>
        <height>31</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background: transparent;
-font: 75 10pt &quot;Microsoft YaHei UI&quot;;
-color: rgb(0, 255, 255);</string>
+      <string notr="true">color: rgb(85, 255, 255);
+font: 10pt &quot;Microsoft YaHei UI&quot;;
+background: transparent;</string>
      </property>
      <property name="text">
-      <string>文明计数</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;第几号文明&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="planet_no">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>50</y>
+       <width>121</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(85, 255, 255);
+font: 10pt &quot;Microsoft YaHei UI&quot;;
+background: transparent;</string>
+     </property>
+     <property name="text">
+      <string>行星520号</string>
      </property>
     </widget>
    </widget>
@@ -567,28 +550,6 @@ font: 75 8pt &quot;Microsoft YaHei UI&quot;;</string>
      </property>
     </widget>
    </widget>
-   <widget class="QWidget" name="verticalLayoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>1600</x>
-      <y>10</y>
-      <width>291</width>
-      <height>341</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout"/>
-   </widget>
-   <widget class="QWidget" name="verticalLayoutWidget_2">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>10</y>
-      <width>361</width>
-      <height>331</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout_2"/>
-   </widget>
    <widget class="QGroupBox" name="groupBox_3">
     <property name="geometry">
      <rect>
@@ -607,13 +568,8 @@ font: 75 8pt &quot;Microsoft YaHei UI&quot;;</string>
        <x>20</x>
        <y>60</y>
        <width>241</width>
-       <height>31</height>
+       <height>16</height>
       </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background: transparent;
-font: 75 12pt &quot;Microsoft YaHei UI&quot;;
-color: rgb(0, 0, 255);</string>
      </property>
      <property name="text">
       <string/>
@@ -625,13 +581,8 @@ color: rgb(0, 0, 255);</string>
        <x>20</x>
        <y>90</y>
        <width>241</width>
-       <height>31</height>
+       <height>16</height>
       </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background: transparent;
-font: 75 12pt &quot;Microsoft YaHei UI&quot;;
-color: rgb(0, 0, 255);</string>
      </property>
      <property name="text">
       <string/>
@@ -643,13 +594,8 @@ color: rgb(0, 0, 255);</string>
        <x>20</x>
        <y>120</y>
        <width>241</width>
-       <height>31</height>
+       <height>16</height>
       </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background: transparent;
-font: 75 12pt &quot;Microsoft YaHei UI&quot;;
-color: rgb(0, 0, 255);</string>
      </property>
      <property name="text">
       <string/>
@@ -659,544 +605,119 @@ color: rgb(0, 0, 255);</string>
      <property name="geometry">
       <rect>
        <x>30</x>
-       <y>15</y>
-       <width>141</width>
-       <height>21</height>
+       <y>20</y>
+       <width>72</width>
+       <height>15</height>
       </rect>
      </property>
-     <property name="palette">
-      <palette>
-       <active>
-        <colorrole role="WindowText">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>0</red>
-           <green>0</green>
-           <blue>255</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="Button">
-         <brush brushstyle="SolidPattern">
-          <color alpha="0">
-           <red>0</red>
-           <green>0</green>
-           <blue>0</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="Light">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>119</red>
-           <green>143</green>
-           <blue>255</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="Midlight">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>66</red>
-           <green>98</green>
-           <blue>247</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="Dark">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>6</red>
-           <green>27</green>
-           <blue>120</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="Mid">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>8</red>
-           <green>36</green>
-           <blue>160</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="Text">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>0</red>
-           <green>0</green>
-           <blue>255</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="BrightText">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>255</red>
-           <green>255</green>
-           <blue>255</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="ButtonText">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>0</red>
-           <green>0</green>
-           <blue>255</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="Base">
-         <brush brushstyle="SolidPattern">
-          <color alpha="0">
-           <red>0</red>
-           <green>0</green>
-           <blue>0</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="Window">
-         <brush brushstyle="SolidPattern">
-          <color alpha="0">
-           <red>0</red>
-           <green>0</green>
-           <blue>0</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="Shadow">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>0</red>
-           <green>0</green>
-           <blue>0</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="AlternateBase">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>134</red>
-           <green>154</green>
-           <blue>247</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="ToolTipBase">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>255</red>
-           <green>255</green>
-           <blue>220</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="ToolTipText">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>0</red>
-           <green>0</green>
-           <blue>0</blue>
-          </color>
-         </brush>
-        </colorrole>
-       </active>
-       <inactive>
-        <colorrole role="WindowText">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>0</red>
-           <green>0</green>
-           <blue>255</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="Button">
-         <brush brushstyle="SolidPattern">
-          <color alpha="0">
-           <red>0</red>
-           <green>0</green>
-           <blue>0</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="Light">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>119</red>
-           <green>143</green>
-           <blue>255</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="Midlight">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>66</red>
-           <green>98</green>
-           <blue>247</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="Dark">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>6</red>
-           <green>27</green>
-           <blue>120</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="Mid">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>8</red>
-           <green>36</green>
-           <blue>160</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="Text">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>0</red>
-           <green>0</green>
-           <blue>255</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="BrightText">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>255</red>
-           <green>255</green>
-           <blue>255</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="ButtonText">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>0</red>
-           <green>0</green>
-           <blue>255</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="Base">
-         <brush brushstyle="SolidPattern">
-          <color alpha="0">
-           <red>0</red>
-           <green>0</green>
-           <blue>0</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="Window">
-         <brush brushstyle="SolidPattern">
-          <color alpha="0">
-           <red>0</red>
-           <green>0</green>
-           <blue>0</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="Shadow">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>0</red>
-           <green>0</green>
-           <blue>0</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="AlternateBase">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>134</red>
-           <green>154</green>
-           <blue>247</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="ToolTipBase">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>255</red>
-           <green>255</green>
-           <blue>220</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="ToolTipText">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>0</red>
-           <green>0</green>
-           <blue>0</blue>
-          </color>
-         </brush>
-        </colorrole>
-       </inactive>
-       <disabled>
-        <colorrole role="WindowText">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>0</red>
-           <green>0</green>
-           <blue>255</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="Button">
-         <brush brushstyle="SolidPattern">
-          <color alpha="0">
-           <red>0</red>
-           <green>0</green>
-           <blue>0</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="Light">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>119</red>
-           <green>143</green>
-           <blue>255</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="Midlight">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>66</red>
-           <green>98</green>
-           <blue>247</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="Dark">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>6</red>
-           <green>27</green>
-           <blue>120</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="Mid">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>8</red>
-           <green>36</green>
-           <blue>160</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="Text">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>0</red>
-           <green>0</green>
-           <blue>255</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="BrightText">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>255</red>
-           <green>255</green>
-           <blue>255</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="ButtonText">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>0</red>
-           <green>0</green>
-           <blue>255</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="Base">
-         <brush brushstyle="SolidPattern">
-          <color alpha="0">
-           <red>0</red>
-           <green>0</green>
-           <blue>0</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="Window">
-         <brush brushstyle="SolidPattern">
-          <color alpha="0">
-           <red>0</red>
-           <green>0</green>
-           <blue>0</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="Shadow">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>0</red>
-           <green>0</green>
-           <blue>0</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="AlternateBase">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>13</red>
-           <green>54</green>
-           <blue>240</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="ToolTipBase">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>255</red>
-           <green>255</green>
-           <blue>220</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="ToolTipText">
-         <brush brushstyle="SolidPattern">
-          <color alpha="255">
-           <red>0</red>
-           <green>0</green>
-           <blue>0</blue>
-          </color>
-         </brush>
-        </colorrole>
-       </disabled>
-      </palette>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background: transparent;
-font: 75 12pt &quot;Microsoft YaHei UI&quot;;
-color: rgb(0, 0, 255);</string>
-     </property>
      <property name="text">
-      <string>玩家预言展示：</string>
+      <string>预言展示：</string>
      </property>
     </widget>
    </widget>
    <widget class="QGroupBox" name="groupBox_4">
     <property name="geometry">
      <rect>
-      <x>800</x>
+      <x>690</x>
       <y>840</y>
       <width>611</width>
-      <height>141</height>
+      <height>131</height>
      </rect>
     </property>
-    <widget class="QLabel" name="label_5">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>50</y>
-       <width>101</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background: transparent;
-font: 75 12pt &quot;Microsoft YaHei UI&quot;;
-color: rgb(0, 0, 255);</string>
-     </property>
-     <property name="text">
-      <string>玩家预言：</string>
-     </property>
-    </widget>
+    <property name="title">
+     <string/>
+    </property>
     <widget class="QRadioButton" name="radioButton">
      <property name="geometry">
       <rect>
-       <x>130</x>
-       <y>40</y>
-       <width>81</width>
+       <x>140</x>
+       <y>30</y>
+       <width>115</width>
        <height>19</height>
       </rect>
      </property>
-     <property name="styleSheet">
-      <string notr="true">background: transparent;
-font: 75 12pt &quot;Microsoft YaHei UI&quot;;
-color: rgb(255, 0, 0);</string>
-     </property>
      <property name="text">
       <string>胜利</string>
-     </property>
-     <property name="checked">
-      <bool>false</bool>
      </property>
     </widget>
     <widget class="QRadioButton" name="radioButton_2">
      <property name="geometry">
       <rect>
-       <x>130</x>
-       <y>90</y>
-       <width>81</width>
+       <x>140</x>
+       <y>80</y>
+       <width>115</width>
        <height>19</height>
       </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background: transparent;
-font: 75 12pt &quot;Microsoft YaHei UI&quot;;
-color: rgb(0, 255, 0);</string>
      </property>
      <property name="text">
       <string>失败</string>
      </property>
-     <property name="checkable">
-      <bool>true</bool>
-     </property>
-     <property name="checked">
-      <bool>false</bool>
-     </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit">
+    <widget class="QLabel" name="label_5">
      <property name="geometry">
       <rect>
-       <x>240</x>
-       <y>50</y>
-       <width>191</width>
+       <x>40</x>
+       <y>40</y>
+       <width>101</width>
        <height>41</height>
       </rect>
      </property>
-     <property name="styleSheet">
-      <string notr="true">background: transparent;
-font: 75 12pt &quot;Microsoft YaHei UI&quot;;
-color: rgb(0, 0, 0);</string>
-     </property>
      <property name="text">
-      <string>68</string>
+      <string>玩家预言：</string>
      </property>
     </widget>
     <widget class="QPushButton" name="pushButton">
      <property name="geometry">
       <rect>
        <x>470</x>
-       <y>60</y>
+       <y>50</y>
        <width>93</width>
        <height>28</height>
       </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background: transparent;
-font: 75 12pt &quot;Microsoft YaHei UI&quot;;
-color: rgb(0, 0, 0);</string>
      </property>
      <property name="text">
       <string>确定</string>
      </property>
     </widget>
+    <widget class="QLineEdit" name="lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>242</x>
+       <y>40</y>
+       <width>191</width>
+       <height>41</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="upperRightwidget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>1600</x>
+      <y>20</y>
+      <width>290</width>
+      <height>330</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+   </widget>
+   <widget class="QWidget" name="upperLeftwidget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>360</width>
+      <height>410</height>
+     </rect>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

@@ -19,6 +19,8 @@ public:
 private slots:
     void on_startgame_clicked();
 
+    void on_exitgame_clicked();
+
 private:
     Ui::MainWindow *ui;
     QMediaPlayer* mediaPlayer;
