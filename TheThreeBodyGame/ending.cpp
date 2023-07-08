@@ -11,14 +11,7 @@ ending::ending(QWidget *parent) :
 {
     ui->setupUi(this);
     string s;
-    s = "行星第" + to_string(gamestatus2.current_civilization_num) + "号文明" ;
-    if (gamestatus2.current_civilization_state==1){
-        s = s + "胜利!\n";
-    }
-    if (gamestatus2.current_civilization_state==-1){
-        s = s + "失败!\n";
-    }
-    s = s + "原因：" + gamestatus2.gamestop_information + "\n";
+    s = "游戏结束，";
     s = s + "玩家得分：" ;
     int score = 0;
     for (int i=0;i<3;++i){
