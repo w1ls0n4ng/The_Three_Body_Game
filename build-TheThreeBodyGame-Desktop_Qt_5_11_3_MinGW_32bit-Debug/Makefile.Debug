@@ -1374,7 +1374,63 @@ debug/ending.o: ../TheThreeBodyGame/ending.cpp ../TheThreeBodyGame/ending.h \
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtCore/qfiledevice.h \
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtGui/qvector2d.h \
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtGui/qtouchdevice.h \
-		ui_ending.h
+		../TheThreeBodyGame/ui_ending.h \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtCore/QVariant \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/QApplication \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qapplication.h \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtCore/qcoreapplication.h \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtCore/qeventloop.h \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qdesktopwidget.h \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtGui/qguiapplication.h \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtGui/qinputmethod.h \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/QLabel \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qlabel.h \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qframe.h \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/QPushButton \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qpushbutton.h \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qabstractbutton.h \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtGui/qicon.h \
+		../TheThreeBodyGame/gamepage.h \
+		../TheThreeBodyGame/planet.h \
+		../TheThreeBodyGame/sun.h \
+		../TheThreeBodyGame/civilization.h \
+		../TheThreeBodyGame/gamestatus.h \
+		../TheThreeBodyGame/players.h \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/QMainWindow \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qmainwindow.h \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qtabwidget.h \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/Qt3DInput/QKeyEvent \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/Qt3DInput/qkeyevent.h \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/Qt3DInput/qt3dinput_global.h \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/Qt3DCore/qt3dcore_global.h \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/Qt3DCore/qt3dcore-config.h \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtCore/QObject \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtGui/QKeyEvent \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtCore/QTimer \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtCore/qtimer.h \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtCore/qbasictimer.h \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/QGraphicsScene \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qgraphicsscene.h \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtGui/qpen.h \
+		../TheThreeBodyGame/mainwindow.h \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtMultimedia/QMediaPlayer \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtMultimedia/qmediaplayer.h \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtMultimedia/qmediaobject.h \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtMultimedia/qtmultimediaglobal.h \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtMultimedia/qtmultimedia-config.h \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtMultimedia/qmultimedia.h \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtMultimedia/qmediacontent.h \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtMultimedia/qmediaresource.h \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtNetwork/qnetworkrequest.h \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtNetwork/qtnetworkglobal.h \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtNetwork/qtnetwork-config.h \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtCore/QSharedDataPointer \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtCore/QString \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtCore/QUrl \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtMultimedia/qmediaenumdebug.h \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtCore/qmetaobject.h \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtMultimedia/qaudio.h \
+		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtNetwork/qnetworkconfiguration.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\ending.o ..\TheThreeBodyGame\ending.cpp
 
 debug/moc_mainwindow.o: debug/moc_mainwindow.cpp 
