@@ -33,7 +33,8 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
     mainwindow.cpp \
-    gamepage.cpp
+    gamepage.cpp \
+    test.cpp
 
 HEADERS += \
     mainwindow.h \
@@ -42,7 +43,8 @@ HEADERS += \
     planet.h \
     civilization.h \
     gamestatus.h \
-    players.h
+    players.h \
+    test.h
 
 FORMS += \
     mainwindow.ui \

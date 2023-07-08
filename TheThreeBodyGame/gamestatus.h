@@ -61,5 +61,6 @@ public:
         }
     }
 };
+extern gamestatus gamestatus1;
 
 #endif // GAMESTATUS_H

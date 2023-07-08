@@ -33,7 +33,7 @@
      <property name="geometry">
       <rect>
        <x>25</x>
-       <y>90</y>
+       <y>130</y>
        <width>55</width>
        <height>21</height>
       </rect>
@@ -56,7 +56,7 @@ font: 75 10pt &quot;Microsoft YaHei UI&quot;;</string>
      <property name="geometry">
       <rect>
        <x>80</x>
-       <y>90</y>
+       <y>130</y>
        <width>181</width>
        <height>23</height>
       </rect>
@@ -78,7 +78,7 @@ font: 75 10pt &quot;Microsoft YaHei UI&quot;;</string>
      <property name="geometry">
       <rect>
        <x>25</x>
-       <y>120</y>
+       <y>160</y>
        <width>30</width>
        <height>21</height>
       </rect>
@@ -98,7 +98,7 @@ font: 75 10pt &quot;Microsoft YaHei UI&quot;;</string>
      <property name="geometry">
       <rect>
        <x>45</x>
-       <y>120</y>
+       <y>160</y>
        <width>191</width>
        <height>21</height>
       </rect>
@@ -116,7 +116,7 @@ color: rgb(210, 238, 255);</string>
      <property name="geometry">
       <rect>
        <x>25</x>
-       <y>150</y>
+       <y>190</y>
        <width>100</width>
        <height>21</height>
       </rect>
@@ -133,7 +133,7 @@ background: transparent;</string>
      <property name="geometry">
       <rect>
        <x>25</x>
-       <y>180</y>
+       <y>220</y>
        <width>100</width>
        <height>21</height>
       </rect>
@@ -150,7 +150,7 @@ background: transparent;</string>
      <property name="geometry">
       <rect>
        <x>25</x>
-       <y>210</y>
+       <y>250</y>
        <width>100</width>
        <height>21</height>
       </rect>
@@ -167,7 +167,7 @@ font: 75 10pt &quot;Microsoft YaHei UI&quot;;</string>
      <property name="geometry">
       <rect>
        <x>25</x>
-       <y>240</y>
+       <y>280</y>
        <width>80</width>
        <height>21</height>
       </rect>
@@ -184,7 +184,7 @@ font: 75 10pt &quot;Microsoft YaHei UI&quot;;</string>
      <property name="geometry">
       <rect>
        <x>25</x>
-       <y>270</y>
+       <y>310</y>
        <width>80</width>
        <height>21</height>
       </rect>
@@ -197,28 +197,11 @@ font: 75 10pt &quot;Microsoft YaHei UI&quot;;</string>
       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#55ffff;&quot;&gt;致命温度&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
-    <widget class="QLabel" name="disastor_temp_label">
-     <property name="geometry">
-      <rect>
-       <x>25</x>
-       <y>300</y>
-       <width>80</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background: transparent;
-font: 75 10pt &quot;Microsoft YaHei UI&quot;;</string>
-     </property>
-     <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#55ffff;&quot;&gt;灾难温度&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-    </widget>
     <widget class="QLabel" name="constant_era">
      <property name="geometry">
       <rect>
        <x>115</x>
-       <y>150</y>
+       <y>190</y>
        <width>71</width>
        <height>21</height>
       </rect>
@@ -236,7 +219,7 @@ color: rgb(210, 238, 255);</string>
      <property name="geometry">
       <rect>
        <x>190</x>
-       <y>150</y>
+       <y>190</y>
        <width>100</width>
        <height>21</height>
       </rect>
@@ -253,7 +236,7 @@ background: transparent;</string>
      <property name="geometry">
       <rect>
        <x>280</x>
-       <y>150</y>
+       <y>190</y>
        <width>71</width>
        <height>21</height>
       </rect>
@@ -271,7 +254,7 @@ color: rgb(210, 238, 255);</string>
      <property name="geometry">
       <rect>
        <x>115</x>
-       <y>180</y>
+       <y>220</y>
        <width>71</width>
        <height>21</height>
       </rect>
@@ -289,7 +272,7 @@ color: rgb(210, 238, 255);</string>
      <property name="geometry">
       <rect>
        <x>100</x>
-       <y>210</y>
+       <y>250</y>
        <width>71</width>
        <height>21</height>
       </rect>
@@ -307,7 +290,7 @@ color: rgb(210, 238, 255);</string>
      <property name="geometry">
       <rect>
        <x>100</x>
-       <y>240</y>
+       <y>280</y>
        <width>71</width>
        <height>21</height>
       </rect>
@@ -325,7 +308,7 @@ color: rgb(210, 238, 255);</string>
      <property name="geometry">
       <rect>
        <x>100</x>
-       <y>270</y>
+       <y>310</y>
        <width>191</width>
        <height>21</height>
       </rect>
@@ -339,29 +322,11 @@ color: rgb(210, 238, 255);</string>
       <string>200</string>
      </property>
     </widget>
-    <widget class="QLabel" name="disastor_temp">
-     <property name="geometry">
-      <rect>
-       <x>100</x>
-       <y>300</y>
-       <width>71</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background: rgba(255, 255, 255, 0);
-font: 10pt &quot;Microsoft YaHei UI&quot;;
-color: rgb(210, 238, 255);</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
     <widget class="QLabel" name="ave_temp">
      <property name="geometry">
       <rect>
        <x>265</x>
-       <y>180</y>
+       <y>220</y>
        <width>71</width>
        <height>21</height>
       </rect>
@@ -379,7 +344,7 @@ color: rgb(210, 238, 255);</string>
      <property name="geometry">
       <rect>
        <x>190</x>
-       <y>180</y>
+       <y>220</y>
        <width>100</width>
        <height>21</height>
       </rect>
@@ -390,6 +355,42 @@ background: transparent;</string>
      </property>
      <property name="text">
       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#55ffff;&quot;&gt;平均温度&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="civilization_no">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>80</y>
+       <width>181</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(85, 255, 255);
+font: 10pt &quot;Microsoft YaHei UI&quot;;
+background: transparent;</string>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;第几号文明&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="planet_no">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>50</y>
+       <width>121</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(85, 255, 255);
+font: 10pt &quot;Microsoft YaHei UI&quot;;
+background: transparent;</string>
+     </property>
+     <property name="text">
+      <string>行星520号</string>
      </property>
     </widget>
    </widget>
@@ -549,28 +550,6 @@ font: 75 8pt &quot;Microsoft YaHei UI&quot;;</string>
      </property>
     </widget>
    </widget>
-   <widget class="QWidget" name="verticalLayoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>1600</x>
-      <y>10</y>
-      <width>291</width>
-      <height>341</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout"/>
-   </widget>
-   <widget class="QWidget" name="verticalLayoutWidget_2">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>10</y>
-      <width>361</width>
-      <height>331</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout_2"/>
-   </widget>
    <widget class="QGroupBox" name="groupBox_3">
     <property name="geometry">
      <rect>
@@ -711,17 +690,33 @@ font: 75 8pt &quot;Microsoft YaHei UI&quot;;</string>
      </property>
     </widget>
    </widget>
-   <widget class="QGroupBox" name="groupBox_5">
+   <widget class="QWidget" name="upperRightwidget" native="true">
     <property name="geometry">
      <rect>
-      <x>1030</x>
-      <y>650</y>
-      <width>120</width>
-      <height>80</height>
+      <x>1600</x>
+      <y>20</y>
+      <width>290</width>
+      <height>330</height>
      </rect>
     </property>
-    <property name="title">
-     <string>GroupBox</string>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+   </widget>
+   <widget class="QWidget" name="upperLeftwidget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>360</width>
+      <height>410</height>
+     </rect>
     </property>
    </widget>
   </widget>

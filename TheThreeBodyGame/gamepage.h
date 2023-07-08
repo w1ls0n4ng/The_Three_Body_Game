@@ -13,6 +13,7 @@ namespace Ui {
 class Gamepage;
 }
 
+extern gamestatus gamestatus1;
 class Gamepage : public QMainWindow
 {
     Q_OBJECT
@@ -20,7 +21,6 @@ class Gamepage : public QMainWindow
 public:
     explicit Gamepage(QWidget *parent = nullptr);
     ~Gamepage();
-
 
 public slots:
     void myfunction();
@@ -37,16 +37,24 @@ private:
     QGraphicsEllipseItem* circle2;
     QGraphicsEllipseItem* circle3;
     QGraphicsEllipseItem* circle4;
+    QGraphicsEllipseItem* ball1;
+    QGraphicsEllipseItem* ball2;
+    QGraphicsEllipseItem* ball3;
+    QGraphicsEllipseItem* ball4;
+    QGraphicsEllipseItem* ball1_1;
+    QGraphicsEllipseItem* ball2_1;
+    QGraphicsEllipseItem* ball3_1;
+    QGraphicsEllipseItem* ball4_1;
     sun sun1, sun2, sun3;
     planet earth;
-    civilization threebodyman;
     gamestatus gamestatus1;
+    civilization threebodyman;
+
     float time = 0;
     // 设置G值
     double G = 3.1415926 * 3.1415926;
     // 每次更新0.025游戏年
     int gap = 25;
 };
-
 
 #endif // GAMEPAGE_H
