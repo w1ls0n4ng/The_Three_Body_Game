@@ -15,6 +15,7 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    void saveGame();
 
 private slots:
     void on_startgame_clicked();

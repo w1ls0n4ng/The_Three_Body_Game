@@ -1,0 +1,12 @@
+INPUT(
+./release\main.o
+./release\mainwindow.o
+./release\gamepage.o
+./release\pausewindow.o
+./release\test.o
+./release\ending.o
+./release\moc_mainwindow.o
+./release\moc_gamepage.o
+./release\moc_pausewindow.o
+./release\moc_ending.o
+);

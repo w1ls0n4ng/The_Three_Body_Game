@@ -37,9 +37,6 @@ public slots:
 protected:
     void keyPressEvent(QKeyEvent * event);
 
-protected:
-    void keyPressEvent(QKeyEvent *event);
-
 private:
     Ui::Gamepage *ui;
     QMediaPlayer* mediaPlayer;
