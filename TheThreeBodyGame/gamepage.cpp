@@ -321,8 +321,15 @@ void Gamepage::updateUI()
     //游戏终止条件
     if (gamestatus1.game_status != 0){
         timer->stop();
-        close();
+        getscore=0;
+        for (int i=0;i<3;++i){
+            if (player1.guess_num[i]==gamestatus1.current_civilization_num & player1.guess_status[i]==gamestatus1.current_civilization_state){
+                getscore = getscore + (1+player1.guess_num[i]-player1.guess_current_num[i]) * (1+player1.guess_num[i]-player1.guess_current_num[i]);
+            }
+        }
+        gamestopinformation = gamestatus1.gamestop_information;
         ending* gameending = new ending();
+        close();
         gameending->show();
     }
 
@@ -466,7 +473,7 @@ void Gamepage::on_pushButton_clicked()
         QString s = ui->lineEdit->text();
         int guess_num = s.toInt();
         int current = player1.guess_count;
-        player1.guess_current_num[current] = guess_num;
+        player1.guess_num[current] = guess_num;
         player1.guess_status[current] = 1;
         player1.guess_current_num[current] = gamestatus1.current_civilization_num;
         player1.guess_count += 1;
@@ -484,7 +491,7 @@ void Gamepage::on_pushButton_clicked()
         QString s = ui->lineEdit->text();
         int guess_num=s.toInt();
         int current = player1.guess_count;
-        player1.guess_current_num[current] = guess_num;
+        player1.guess_num[current] = guess_num;
         player1.guess_status[current] = -1;
         player1.guess_current_num[current] = gamestatus1.current_civilization_num;
         player1.guess_count += 1;
