@@ -71,12 +71,12 @@ public:
                 if (i == orbit % 3)
                 {
                     location[i] += cos(2 * 3.1415926 * season);
-                    velocity[i] += 3.1415926 * sqrt(father_sun->mass / 2) * sin(2 * 3.1415926 * season);
+                    velocity[i] += 1.5 * 3.1415926 * sqrt(father_sun->mass / 2) * sin(2 * 3.1415926 * season);
                 }
                 if (i == (orbit + 1) % 3)
                 {
                     location[i] += sin(2 * 3.1415926 * season);
-                    velocity[i] += 3.1415926 * sqrt(father_sun->mass / 2) * cos(2 * 3.1415926 * season);
+                    velocity[i] += 1.5 * 3.1415926 * sqrt(father_sun->mass / 2) * cos(2 * 3.1415926 * season);
                 }
             }
         }
@@ -97,29 +97,29 @@ public:
                 if (r1<2){
                     update_vel[i] += G * sun1.mass * (sun1.location[i] - location[i]) / (r1 * 4) * double(gap) / 1000;
                 }
-                if (r1<=2 & r1>=2) {
+                if (r1<=10 & r1>=2) {
                     update_vel[i] += G * sun1.mass * (sun1.location[i] - location[i]) / (r1 * r1 * r1) * double(gap) / 1000;
                 }
-                if (r1>2){
-                    update_vel[i] += G * sun1.mass * (sun1.location[i] - location[i]) / (r1 * r1 * 2) * double(gap) / 1000;
+                if (r1>10){
+                    update_vel[i] += G * sun1.mass * (sun1.location[i] - location[i]) / (r1 * r1 * 10) * double(gap) / 1000;
                 }
                 if (r2<2){
                     update_vel[i] += G * sun2.mass * (sun2.location[i] - location[i]) / (r2 * 4) * double(gap) / 1000;
                 }
-                if (r2<=2 & r2>=2) {
+                if (r2<=10 & r2>=2) {
                     update_vel[i] += G * sun2.mass * (sun2.location[i] - location[i]) / (r2 * r2 * r2) * double(gap) / 1000;
                 }
-                if (r2>2){
-                    update_vel[i] += G * sun2.mass * (sun2.location[i] - location[i]) / (r2 * r2 * 2) * double(gap) / 1000;
+                if (r2>10){
+                    update_vel[i] += G * sun2.mass * (sun2.location[i] - location[i]) / (r2 * r2 * 10) * double(gap) / 1000;
                 }
                 if (r3<2){
                     update_vel[i] += G * sun3.mass * (sun3.location[i] - location[i]) / (r3 * 4) * double(gap) / 1000;
                 }
-                if (r3<=2 & r3>=2) {
+                if (r3<=10 & r3>=2) {
                     update_vel[i] += G * sun3.mass * (sun3.location[i] - location[i]) / (r3 * r3 * r3) * double(gap) / 1000;
                 }
-                if (r3>2){
-                    update_vel[i] += G * sun3.mass * (sun3.location[i] - location[i]) / (r3 * r3 * 2) * double(gap) / 1000;
+                if (r3>10){
+                    update_vel[i] += G * sun3.mass * (sun3.location[i] - location[i]) / (r3 * r3 * 10) * double(gap) / 1000;
                 }
             }
             for (int i = 0; i < 3; ++i)
@@ -140,7 +140,7 @@ public:
             constant_era += double(gap) / 1000;
             continue_constant_era += double(gap) / 1000;
         }
-        if (temperature <= 12 | temperature >= 18)
+        if (temperature <= 13 | temperature >= 17)
         {
             continue_constant_era = 0;
             chaotic_era += double(gap) / 1000;

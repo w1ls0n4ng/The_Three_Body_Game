@@ -5,6 +5,7 @@
 #include "sun.h"
 #include "civilization.h"
 #include "gamestatus.h"
+#include "players.h"
 #include <QMainWindow>
 #include <QKeyEvent>
 #include <QTimer>
@@ -23,6 +24,7 @@ class Gamepage : public QMainWindow
 public:
     explicit Gamepage(QWidget *parent = nullptr);
     ~Gamepage();
+    gamestatus gamestatus1;
 
 public slots:
     void myfunction();
@@ -48,12 +50,17 @@ private:
     sun sun1, sun2, sun3;
     planet earth;
     civilization threebodyman;
-    gamestatus gamestatus1;
+    players player1;
     float time = 0;
     // 设置G值
     double G = 3.1415926 * 3.1415926;
     // 每次更新0.025游戏年
     int gap = 25;
+
+private slots:
+    void on_radioButton_2_pressed();
+    void on_pushButton_clicked();
+    void on_radioButton_clicked();
 };
 
 

@@ -50,6 +50,7 @@ public:
     QLabel *disastor_temp;
     QLabel *ave_temp;
     QLabel *ave_temp_label;
+    QLabel *civilization_count;
     QGroupBox *groupBox_2;
     QLabel *unit;
     QLabel *red_label;
@@ -69,12 +70,11 @@ public:
     QLabel *label3_3;
     QLabel *title_label;
     QGroupBox *groupBox_4;
+    QLabel *label_5;
     QRadioButton *radioButton;
     QRadioButton *radioButton_2;
-    QLabel *label_5;
-    QPushButton *pushButton;
     QLineEdit *lineEdit;
-    QGroupBox *groupBox_5;
+    QPushButton *pushButton;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -203,6 +203,12 @@ public:
         ave_temp_label->setGeometry(QRect(190, 180, 100, 21));
         ave_temp_label->setStyleSheet(QLatin1String("font: 75 10pt \"Microsoft YaHei UI\";\n"
 "background: transparent;"));
+        civilization_count = new QLabel(groupBox);
+        civilization_count->setObjectName(QStringLiteral("civilization_count"));
+        civilization_count->setGeometry(QRect(30, 40, 251, 31));
+        civilization_count->setStyleSheet(QLatin1String("background: transparent;\n"
+"font: 75 10pt \"Microsoft YaHei UI\";\n"
+"color: rgb(0, 255, 255);"));
         groupBox_2 = new QGroupBox(centralwidget);
         groupBox_2->setObjectName(QStringLiteral("groupBox_2"));
         groupBox_2->setGeometry(QRect(1600, 360, 290, 172));
@@ -268,37 +274,133 @@ public:
         groupBox_3->setGeometry(QRect(1600, 540, 291, 431));
         label1_3 = new QLabel(groupBox_3);
         label1_3->setObjectName(QStringLiteral("label1_3"));
-        label1_3->setGeometry(QRect(20, 60, 241, 16));
+        label1_3->setGeometry(QRect(20, 60, 241, 31));
+        label1_3->setStyleSheet(QLatin1String("background: transparent;\n"
+"font: 75 12pt \"Microsoft YaHei UI\";\n"
+"color: rgb(0, 0, 255);"));
         label2_3 = new QLabel(groupBox_3);
         label2_3->setObjectName(QStringLiteral("label2_3"));
-        label2_3->setGeometry(QRect(20, 90, 241, 16));
+        label2_3->setGeometry(QRect(20, 90, 241, 31));
+        label2_3->setStyleSheet(QLatin1String("background: transparent;\n"
+"font: 75 12pt \"Microsoft YaHei UI\";\n"
+"color: rgb(0, 0, 255);"));
         label3_3 = new QLabel(groupBox_3);
         label3_3->setObjectName(QStringLiteral("label3_3"));
-        label3_3->setGeometry(QRect(20, 120, 241, 16));
+        label3_3->setGeometry(QRect(20, 120, 241, 31));
+        label3_3->setStyleSheet(QLatin1String("background: transparent;\n"
+"font: 75 12pt \"Microsoft YaHei UI\";\n"
+"color: rgb(0, 0, 255);"));
         title_label = new QLabel(groupBox_3);
         title_label->setObjectName(QStringLiteral("title_label"));
-        title_label->setGeometry(QRect(30, 20, 72, 15));
+        title_label->setGeometry(QRect(30, 15, 141, 21));
+        QPalette palette;
+        QBrush brush(QColor(0, 0, 255, 255));
+        brush.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::WindowText, brush);
+        QBrush brush1(QColor(0, 0, 0, 0));
+        brush1.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::Button, brush1);
+        QBrush brush2(QColor(119, 143, 255, 255));
+        brush2.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::Light, brush2);
+        QBrush brush3(QColor(66, 98, 247, 255));
+        brush3.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::Midlight, brush3);
+        QBrush brush4(QColor(6, 27, 120, 255));
+        brush4.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::Dark, brush4);
+        QBrush brush5(QColor(8, 36, 160, 255));
+        brush5.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::Mid, brush5);
+        palette.setBrush(QPalette::Active, QPalette::Text, brush);
+        QBrush brush6(QColor(255, 255, 255, 255));
+        brush6.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::BrightText, brush6);
+        palette.setBrush(QPalette::Active, QPalette::ButtonText, brush);
+        palette.setBrush(QPalette::Active, QPalette::Base, brush1);
+        palette.setBrush(QPalette::Active, QPalette::Window, brush1);
+        QBrush brush7(QColor(0, 0, 0, 255));
+        brush7.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::Shadow, brush7);
+        QBrush brush8(QColor(134, 154, 247, 255));
+        brush8.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::AlternateBase, brush8);
+        QBrush brush9(QColor(255, 255, 220, 255));
+        brush9.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::ToolTipBase, brush9);
+        palette.setBrush(QPalette::Active, QPalette::ToolTipText, brush7);
+        palette.setBrush(QPalette::Inactive, QPalette::WindowText, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::Button, brush1);
+        palette.setBrush(QPalette::Inactive, QPalette::Light, brush2);
+        palette.setBrush(QPalette::Inactive, QPalette::Midlight, brush3);
+        palette.setBrush(QPalette::Inactive, QPalette::Dark, brush4);
+        palette.setBrush(QPalette::Inactive, QPalette::Mid, brush5);
+        palette.setBrush(QPalette::Inactive, QPalette::Text, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::BrightText, brush6);
+        palette.setBrush(QPalette::Inactive, QPalette::ButtonText, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::Base, brush1);
+        palette.setBrush(QPalette::Inactive, QPalette::Window, brush1);
+        palette.setBrush(QPalette::Inactive, QPalette::Shadow, brush7);
+        palette.setBrush(QPalette::Inactive, QPalette::AlternateBase, brush8);
+        palette.setBrush(QPalette::Inactive, QPalette::ToolTipBase, brush9);
+        palette.setBrush(QPalette::Inactive, QPalette::ToolTipText, brush7);
+        palette.setBrush(QPalette::Disabled, QPalette::WindowText, brush);
+        palette.setBrush(QPalette::Disabled, QPalette::Button, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::Light, brush2);
+        palette.setBrush(QPalette::Disabled, QPalette::Midlight, brush3);
+        palette.setBrush(QPalette::Disabled, QPalette::Dark, brush4);
+        palette.setBrush(QPalette::Disabled, QPalette::Mid, brush5);
+        palette.setBrush(QPalette::Disabled, QPalette::Text, brush);
+        palette.setBrush(QPalette::Disabled, QPalette::BrightText, brush6);
+        palette.setBrush(QPalette::Disabled, QPalette::ButtonText, brush);
+        palette.setBrush(QPalette::Disabled, QPalette::Base, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::Window, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::Shadow, brush7);
+        QBrush brush10(QColor(13, 54, 240, 255));
+        brush10.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Disabled, QPalette::AlternateBase, brush10);
+        palette.setBrush(QPalette::Disabled, QPalette::ToolTipBase, brush9);
+        palette.setBrush(QPalette::Disabled, QPalette::ToolTipText, brush7);
+        title_label->setPalette(palette);
+        title_label->setStyleSheet(QLatin1String("background: transparent;\n"
+"font: 75 12pt \"Microsoft YaHei UI\";\n"
+"color: rgb(0, 0, 255);"));
         groupBox_4 = new QGroupBox(centralwidget);
         groupBox_4->setObjectName(QStringLiteral("groupBox_4"));
-        groupBox_4->setGeometry(QRect(690, 840, 611, 131));
-        radioButton = new QRadioButton(groupBox_4);
-        radioButton->setObjectName(QStringLiteral("radioButton"));
-        radioButton->setGeometry(QRect(140, 30, 115, 19));
-        radioButton_2 = new QRadioButton(groupBox_4);
-        radioButton_2->setObjectName(QStringLiteral("radioButton_2"));
-        radioButton_2->setGeometry(QRect(140, 80, 115, 19));
+        groupBox_4->setGeometry(QRect(800, 840, 611, 141));
         label_5 = new QLabel(groupBox_4);
         label_5->setObjectName(QStringLiteral("label_5"));
-        label_5->setGeometry(QRect(40, 40, 101, 41));
-        pushButton = new QPushButton(groupBox_4);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(470, 50, 93, 28));
+        label_5->setGeometry(QRect(30, 50, 101, 41));
+        label_5->setStyleSheet(QLatin1String("background: transparent;\n"
+"font: 75 12pt \"Microsoft YaHei UI\";\n"
+"color: rgb(0, 0, 255);"));
+        radioButton = new QRadioButton(groupBox_4);
+        radioButton->setObjectName(QStringLiteral("radioButton"));
+        radioButton->setGeometry(QRect(130, 40, 81, 19));
+        radioButton->setStyleSheet(QLatin1String("background: transparent;\n"
+"font: 75 12pt \"Microsoft YaHei UI\";\n"
+"color: rgb(255, 0, 0);"));
+        radioButton->setChecked(false);
+        radioButton_2 = new QRadioButton(groupBox_4);
+        radioButton_2->setObjectName(QStringLiteral("radioButton_2"));
+        radioButton_2->setGeometry(QRect(130, 90, 81, 19));
+        radioButton_2->setStyleSheet(QLatin1String("background: transparent;\n"
+"font: 75 12pt \"Microsoft YaHei UI\";\n"
+"color: rgb(0, 255, 0);"));
+        radioButton_2->setCheckable(true);
+        radioButton_2->setChecked(false);
         lineEdit = new QLineEdit(groupBox_4);
         lineEdit->setObjectName(QStringLiteral("lineEdit"));
-        lineEdit->setGeometry(QRect(242, 40, 191, 41));
-        groupBox_5 = new QGroupBox(centralwidget);
-        groupBox_5->setObjectName(QStringLiteral("groupBox_5"));
-        groupBox_5->setGeometry(QRect(1030, 650, 120, 80));
+        lineEdit->setGeometry(QRect(240, 50, 191, 41));
+        lineEdit->setStyleSheet(QLatin1String("background: transparent;\n"
+"font: 75 12pt \"Microsoft YaHei UI\";\n"
+"color: rgb(0, 0, 0);"));
+        pushButton = new QPushButton(groupBox_4);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setGeometry(QRect(470, 60, 93, 28));
+        pushButton->setStyleSheet(QLatin1String("background: transparent;\n"
+"font: 75 12pt \"Microsoft YaHei UI\";\n"
+"color: rgb(0, 0, 0);"));
         Gamepage->setCentralWidget(centralwidget);
         menubar = new QMenuBar(Gamepage);
         menubar->setObjectName(QStringLiteral("menubar"));
@@ -338,6 +440,7 @@ public:
         disastor_temp->setText(QString());
         ave_temp->setText(QApplication::translate("Gamepage", "200", nullptr));
         ave_temp_label->setText(QApplication::translate("Gamepage", "<html><head/><body><p><span style=\" color:#55ffff;\">\345\271\263\345\235\207\346\270\251\345\272\246</span></p></body></html>", nullptr));
+        civilization_count->setText(QApplication::translate("Gamepage", "\346\226\207\346\230\216\350\256\241\346\225\260", nullptr));
         groupBox_2->setTitle(QString());
         unit->setText(QApplication::translate("Gamepage", "<html><head/><body><p align=\"justify\"><span style=\" color:#55ffff;\">\345\215\225\344\275\215</span><span style=\" color:#9fb3c3;\"> A.U.</span><span style=\" color:#55ffff;\">/</span><span style=\" color:#9fb3c3;\">10^30kg</span><span style=\" color:#55ffff;\">/</span><span style=\" color:#9fb3c3;\">A.U./\345\215\201\345\271\264</span><span style=\" color:#55ffff;\">/</span><span style=\" color:#9fb3c3;\">\345\271\264</span></p></body></html>", nullptr));
         red_label->setText(QApplication::translate("Gamepage", "<html><head/><body><p><span style=\" color:#ff0000;\">\347\272\242\357\274\232</span></p></body></html>", nullptr));
@@ -351,13 +454,12 @@ public:
         label1_3->setText(QString());
         label2_3->setText(QString());
         label3_3->setText(QString());
-        title_label->setText(QApplication::translate("Gamepage", "\351\242\204\350\250\200\345\261\225\347\244\272\357\274\232", nullptr));
-        groupBox_4->setTitle(QString());
+        title_label->setText(QApplication::translate("Gamepage", "\347\216\251\345\256\266\351\242\204\350\250\200\345\261\225\347\244\272\357\274\232", nullptr));
+        label_5->setText(QApplication::translate("Gamepage", "\347\216\251\345\256\266\351\242\204\350\250\200\357\274\232", nullptr));
         radioButton->setText(QApplication::translate("Gamepage", "\350\203\234\345\210\251", nullptr));
         radioButton_2->setText(QApplication::translate("Gamepage", "\345\244\261\350\264\245", nullptr));
-        label_5->setText(QApplication::translate("Gamepage", "\347\216\251\345\256\266\351\242\204\350\250\200\357\274\232", nullptr));
+        lineEdit->setText(QApplication::translate("Gamepage", "68", nullptr));
         pushButton->setText(QApplication::translate("Gamepage", "\347\241\256\345\256\232", nullptr));
-        groupBox_5->setTitle(QApplication::translate("Gamepage", "GroupBox", nullptr));
     } // retranslateUi
 
 };

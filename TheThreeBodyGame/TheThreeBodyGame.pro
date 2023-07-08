@@ -34,7 +34,8 @@ SOURCES += \
         main.cpp \
     mainwindow.cpp \
     gamepage.cpp \
-    pausewindow.cpp
+    pausewindow.cpp \
+    ending.cpp
 
 HEADERS += \
     mainwindow.h \
@@ -44,12 +45,14 @@ HEADERS += \
     civilization.h \
     gamestatus.h \
     players.h \
-    pausewindow.h
+    pausewindow.h \
+    ending.h
 
 FORMS += \
     mainwindow.ui \
     gamepage.ui \
-    pausewindow.ui
+    pausewindow.ui \
+    ending.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

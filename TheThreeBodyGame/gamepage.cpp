@@ -3,8 +3,10 @@
 #include "planet.h"
 #include "sun.h"
 #include "civilization.h"
+#include "players.h"
 #include "pausewindow.h"
 #include "mainwindow.h"
+#include "ending.h"
 #include <QGroupBox>
 #include <QVBoxLayout>
 #include <QCheckBox>
@@ -68,17 +70,15 @@ Gamepage::Gamepage(QWidget *parent) :
 
     // 设置第三个Groupbox
     styleSheet = "QGroupBox {"
-                         "    background-image: url(../Assests/border2.png);"
                          "    border-radius: 5px;"  // 5像素的圆角边框
-                         "    background-color:rgba(7, 4, 30, 200);"
+                         "    background-color:rgba(255, 255, 255, 200);"
                          "}";
     ui->groupBox_3->setStyleSheet(styleSheet);
 
     // 设置第四个Groupbox
     styleSheet = "QGroupBox {"
-                         "    background-image: url(../Assests/border2.png);"
                          "    border-radius: 5px;"  // 5像素的圆角边框
-                         "    background-color:rgba(7, 4, 30, 200);"
+                         "    background-color:rgba(255, 255, 255, 200);"
                          "}";
     ui->groupBox_4->setStyleSheet(styleSheet);
 
@@ -96,6 +96,7 @@ Gamepage::Gamepage(QWidget *parent) :
     earth.initialize(sun1, sun2, sun3);
     threebodyman.initialize(earth);
     gamestatus1.initialize();
+    player1.initialize();
 
     // 创造圆形并加入到scene当中
     circle1 = scene->addEllipse(sun1.location[0]*10, sun1.location[1]*10, 10, 10);
@@ -161,6 +162,13 @@ Gamepage::Gamepage(QWidget *parent) :
 
     // 连接暂停游戏界面
     connect(this, &Gamepage::keyPressEvent, this, &Gamepage::keyPressEvent);
+
+    //更新游戏状态
+    if (gamestatus1.game_status != 0){
+        close();
+        ending* gameending = new ending();
+        gameending->show();
+    }
 }
 
 
@@ -220,8 +228,20 @@ void Gamepage::updateUI()
     str = QString::number(threebodyman.min_fatal_temp) + "°C/ " + QString::number(threebodyman.max_fatal_temp) + "°C";
     ui->deadly_temp->setText(str);
 
-    // 更新预言标签
-    if (1){}
+    //更新文明数及文明状态
+    str = "当前行星第"+QString::number(gamestatus1.current_civilization_num)+"号文明";
+    if (gamestatus1.current_civilization_state==0){
+        str = str + "灭亡";
+    }
+    ui->civilization_count->setText(str);
+
+    //游戏终止条件
+    if (gamestatus1.game_status != 0){
+        timer->stop();
+        close();
+        ending* gameending = new ending();
+        gameending->show();
+    }
 }
 
 void Gamepage::updatePosition()
@@ -300,4 +320,53 @@ void Gamepage::updateGameState()
     updateUI();
 }
 
+void Gamepage::on_radioButton_clicked()
+{
+    ui->radioButton->setChecked(true);
+}
+
+void Gamepage::on_radioButton_2_pressed()
+{
+    ui->radioButton_2->setChecked(true);
+}
+
+void Gamepage::on_pushButton_clicked()
+{
+    if (ui->radioButton->isChecked() & (player1.guess_count < 3)){
+        QString s = ui->lineEdit->text();
+        int guess_num = s.toInt();
+        int current = player1.guess_count;
+        player1.guess_current_num[current] = guess_num;
+        player1.guess_status[current] = 1;
+        player1.guess_current_num[current] = gamestatus1.current_civilization_num;
+        player1.guess_count += 1;
+        if (player1.guess_count == 1){
+            ui->label1_3->setText("1/3 "+ s +"号文明胜利");
+        }
+        if (player1.guess_count == 2){
+            ui->label2_3->setText("2/3 "+ s +"号文明胜利");
+        }
+        if (player1.guess_count == 3){
+            ui->label3_3->setText("3/3 "+ s +"号文明胜利");
+        }
+    }
+    if (ui->radioButton_2->isChecked() & (player1.guess_count < 3)){
+        QString s = ui->lineEdit->text();
+        int guess_num=s.toInt();
+        int current = player1.guess_count;
+        player1.guess_current_num[current] = guess_num;
+        player1.guess_status[current] = -1;
+        player1.guess_current_num[current] = gamestatus1.current_civilization_num;
+        player1.guess_count += 1;
+        if (player1.guess_count == 1){
+            ui->label1_3->setText("1/3 "+ s +"号文明失败");
+        }
+        if (player1.guess_count == 2){
+            ui->label2_3->setText("2/3 "+ s +"号文明失败");
+        }
+        if (player1.guess_count == 3){
+            ui->label3_3->setText("3/3 "+ s +"号文明失败");
+        }
+    }
+}
 

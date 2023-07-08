@@ -59,37 +59,37 @@ public:
                 update_vel[0][i] = G * sun2.mass * (sun2.location[i] - this->location[i]) / (distance12 * 4) * double(gap) / 1000;
                 update_vel[1][i] = G * this->mass * (this->location[i] - sun2.location[i]) / (distance12  * 4) * double(gap) / 1000;
             }
-            if (distance12<=2 & distance12>=2) {
+            if (distance12<=10 & distance12>=2) {
                 update_vel[0][i] = G * sun2.mass * (sun2.location[i] - this->location[i]) / (distance12 * distance12 * distance12) * double(gap) / 1000;
                 update_vel[1][i] = G * this->mass * (this->location[i] - sun2.location[i]) / (distance12 * distance12 * distance12) * double(gap) / 1000;
             }
-            if (distance12>2){
-                update_vel[0][i] = G * sun2.mass * (sun2.location[i] - this->location[i]) / (distance12 * distance12 * 2) * double(gap) / 1000;
-                update_vel[1][i] = G * this->mass * (this->location[i] - sun2.location[i]) / (distance12  * distance12 * 2) * double(gap) / 1000;
+            if (distance12>10){
+                update_vel[0][i] = G * sun2.mass * (sun2.location[i] - this->location[i]) / (distance12 * distance12 * 10) * double(gap) / 1000;
+                update_vel[1][i] = G * this->mass * (this->location[i] - sun2.location[i]) / (distance12  * distance12 * 10) * double(gap) / 1000;
             }
             if (distance31<2){
                 update_vel[0][i] += G * sun3.mass * (sun3.location[i] - this->location[i]) / (distance31 * 4) * double(gap) / 1000;
                 update_vel[2][i] = G * this->mass * (this->location[i] - sun3.location[i]) / (distance31 * 4) * double(gap) / 1000;
             }
-            if (distance31<=2 & distance31>=2) {
+            if (distance31<=10 & distance31>=2) {
                 update_vel[0][i] += G * sun3.mass * (sun3.location[i] - this->location[i]) / (distance31 * distance31 * distance31) * double(gap) / 1000;
                 update_vel[2][i] = G * this->mass * (this->location[i] - sun3.location[i]) / (distance31 * distance31 * distance31) * double(gap) / 1000;
             }
-            if (distance31>2){
-                update_vel[0][i] += G * sun3.mass * (sun3.location[i] - this->location[i]) / (distance31 * distance31 * 2) * double(gap) / 1000;
-                update_vel[2][i] = G * this->mass * (this->location[i] - sun3.location[i]) / (distance31 * distance31 * 2) * double(gap) / 1000;
+            if (distance31>10){
+                update_vel[0][i] += G * sun3.mass * (sun3.location[i] - this->location[i]) / (distance31 * distance31 * 10) * double(gap) / 1000;
+                update_vel[2][i] = G * this->mass * (this->location[i] - sun3.location[i]) / (distance31 * distance31 * 10) * double(gap) / 1000;
             }
             if (distance23<2){
                 update_vel[1][i] += G * sun3.mass * (sun3.location[i] - sun2.location[i]) / (distance23 * 4) * double(gap) / 1000;
                 update_vel[2][i] += G * sun2.mass * (sun2.location[i] - sun3.location[i]) / (distance23 * 4) * double(gap) / 1000;
             }
-            if (distance23<=2 & distance23>=2){
+            if (distance23<=10 & distance23>=2){
                 update_vel[1][i] += G * sun3.mass * (sun3.location[i] - sun2.location[i]) / (distance23 * distance23 * distance23) * double(gap) / 1000;
                 update_vel[2][i] += G * sun2.mass * (sun2.location[i] - sun3.location[i]) / (distance23 * distance23 * distance23) * double(gap) / 1000;
             }
-            if (distance23>2){
-                update_vel[1][i] += G * sun3.mass * (sun3.location[i] - sun2.location[i]) / (distance23 * distance23 * 2) * double(gap) / 1000;
-                update_vel[2][i] += G * sun2.mass * (sun2.location[i] - sun3.location[i]) / (distance23 * distance23 * 2) * double(gap) / 1000;
+            if (distance23>10){
+                update_vel[1][i] += G * sun3.mass * (sun3.location[i] - sun2.location[i]) / (distance23 * distance23 * 10) * double(gap) / 1000;
+                update_vel[2][i] += G * sun2.mass * (sun2.location[i] - sun3.location[i]) / (distance23 * distance23 * 10) * double(gap) / 1000;
             }
         }
         for (int i = 0; i < 3; ++i)
