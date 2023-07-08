@@ -12,34 +12,34 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
-#include <QtWidgets/QDialogButtonBox>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QPushButton>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_ending
 {
 public:
-    QDialogButtonBox *buttonBox;
     QLabel *label;
+    QPushButton *pushButton;
+    QPushButton *pushButton_2;
 
     void setupUi(QDialog *ending)
     {
         if (ending->objectName().isEmpty())
             ending->setObjectName(QStringLiteral("ending"));
         ending->resize(400, 300);
-        buttonBox = new QDialogButtonBox(ending);
-        buttonBox->setObjectName(QStringLiteral("buttonBox"));
-        buttonBox->setGeometry(QRect(30, 240, 341, 32));
-        buttonBox->setOrientation(Qt::Horizontal);
-        buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
         label = new QLabel(ending);
         label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(100, 80, 181, 91));
+        pushButton = new QPushButton(ending);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setGeometry(QRect(50, 240, 93, 28));
+        pushButton_2 = new QPushButton(ending);
+        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        pushButton_2->setGeometry(QRect(230, 240, 93, 28));
 
         retranslateUi(ending);
-        QObject::connect(buttonBox, SIGNAL(accepted()), ending, SLOT(accept()));
-        QObject::connect(buttonBox, SIGNAL(rejected()), ending, SLOT(reject()));
 
         QMetaObject::connectSlotsByName(ending);
     } // setupUi
@@ -47,7 +47,9 @@ public:
     void retranslateUi(QDialog *ending)
     {
         ending->setWindowTitle(QApplication::translate("ending", "Dialog", nullptr));
-        label->setText(QApplication::translate("ending", "\346\270\270\346\210\217\347\273\223\346\235\237\357\274\210\345\276\205\345\274\200\345\217\221\357\274\211", nullptr));
+        label->setText(QApplication::translate("ending", "\346\270\270\346\210\217\347\273\223\346\235\237", nullptr));
+        pushButton->setText(QApplication::translate("ending", "\345\233\236\345\210\260\344\270\273\347\225\214\351\235\242", nullptr));
+        pushButton_2->setText(QApplication::translate("ending", "\351\200\200\345\207\272\346\270\270\346\210\217", nullptr));
     } // retranslateUi
 
 };

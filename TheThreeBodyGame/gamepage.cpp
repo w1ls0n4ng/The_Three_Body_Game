@@ -163,6 +163,13 @@ Gamepage::Gamepage(QWidget *parent) :
     timer->start(1);
 
     connect(this, &Gamepage::keyPressEvent, this, &Gamepage::keyPressEvent);
+
+    //更新游戏状态
+    if (gamestatus1.game_status != 0){
+        close();
+        ending* gameending = new ending();
+        gameending->show();
+    }
 }
 
 
@@ -229,8 +236,9 @@ void Gamepage::updateUI()
     }
     ui->civilization_count->setText(str);
 
-    //更新游戏状态
+    //游戏终止条件
     if (gamestatus1.game_status != 0){
+        timer->stop();
         close();
         ending* gameending = new ending();
         gameending->show();
