@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "gamepage.h"
+#include "loadgame.h"
 #include <QDesktopWidget>
 #include <QDebug>
 #include <QMediaPlayer>
@@ -48,9 +49,37 @@ void MainWindow::on_startgame_clicked()
     // 关闭主界面面音乐
     mediaPlayer->stop();
 
-    // 创建游戏界面
-    Gamepage* game = new Gamepage();
-    game->showMaximized();
+    QFile file("savegame.txt");
+    file.open(QIODevice::ReadOnly | QIODevice::Text);
+    QTextStream in(&file);
+    QString content;
+    QChar currentChar;
+
+    while (!in.atEnd())
+    {
+        in >> currentChar;
+        if (currentChar == ' ' || currentChar == '\n')
+        {
+            // 停止读入当遇到空格
+            break;
+        }
+
+        content += currentChar;
+    }
+
+    file.close();
+
+    int x = content.toInt();
+    if (x)
+    {
+        LoadGame *load = new LoadGame();
+        load->show();
+    }
+    else {
+        // 创建游戏界面
+        Gamepage* game = new Gamepage();
+        game->showMaximized();
+    }
 }
 
 void MainWindow::on_exitgame_clicked()

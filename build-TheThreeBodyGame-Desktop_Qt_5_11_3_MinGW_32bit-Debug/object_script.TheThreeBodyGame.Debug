@@ -3,10 +3,11 @@ INPUT(
 ./debug\mainwindow.o
 ./debug\gamepage.o
 ./debug\pausewindow.o
-./debug\test.o
 ./debug\ending.o
+./debug\loadgame.o
 ./debug\moc_mainwindow.o
 ./debug\moc_gamepage.o
 ./debug\moc_pausewindow.o
 ./debug\moc_ending.o
+./debug\moc_loadgame.o
 );

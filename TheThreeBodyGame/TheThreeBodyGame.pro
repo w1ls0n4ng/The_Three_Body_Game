@@ -35,7 +35,8 @@ SOURCES += \
     mainwindow.cpp \
     gamepage.cpp \
     pausewindow.cpp \
-    ending.cpp
+    ending.cpp \
+    loadgame.cpp
 
 HEADERS += \
     mainwindow.h \
@@ -46,13 +47,15 @@ HEADERS += \
     gamestatus.h \
     players.h \
     pausewindow.h \
-    ending.h
+    ending.h \
+    loadgame.h
 
 FORMS += \
     mainwindow.ui \
     pausewindow.ui \
     gamepage.ui \
-    ending.ui
+    ending.ui \
+    loadgame.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

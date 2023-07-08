@@ -23,7 +23,7 @@
 #include <QKeyEvent>
 #include <QVector3D>
 
-Gamepage::Gamepage(QWidget *parent) :
+Gamepage::Gamepage(QWidget *parent, bool loadgame) :
     QMainWindow(parent),
     ui(new Ui::Gamepage)
 {
@@ -93,15 +93,21 @@ Gamepage::Gamepage(QWidget *parent) :
    // 设置背景刷为透明
    scene->setBackgroundBrush(Qt::transparent);
 
-   // 初始化恒星、行星
-   sun1.initialize(-10, 0, 0);
-   sun2.initialize(5, 8.66, 0);
-   sun3.initialize(5, -8.66, 0);
-   earth.initialize(sun1, sun2, sun3);
-   threebodyman.initialize(earth);
-   gamestatus1.initialize();
-   player1.initialize();
-
+   if (loadgame)
+   {
+        loadGame();
+   }
+   else
+   {
+       // 初始化恒星、行星
+       sun1.initialize(-10, 0, 0);
+       sun2.initialize(5, 8.66, 0);
+       sun3.initialize(5, -8.66, 0);
+       earth.initialize(sun1, sun2, sun3);
+       threebodyman.initialize(earth);
+       gamestatus1.initialize();
+       player1.initialize();
+   }
 
    // 创造圆形并加入到scene当中
    QWidget* centralwidget = ui->Cwidget;
@@ -442,13 +448,11 @@ void Gamepage::updatePosition()
     ball4_1->setPos(earth.location[1]*mag-xOffset, earth.location[2]*mag-yOffset);
 }
 
-
 void Gamepage::updateGameState()
 {
     updatePosition();
     updateUI();
 }
-
 
 void Gamepage::on_radioButton_clicked()
 {
@@ -507,7 +511,102 @@ void Gamepage::saveGame()
     file.open(QIODevice::WriteOnly);
     QTextStream stream(&file);
     stream << "1\n";
+    stream << QString::number(sun1.location[0]) << " " << QString::number(sun1.location[1]) << " " << QString::number(sun1.location[2]) << "\n";
+    stream << QString::number(sun1.velocity[0]) << " " << QString::number(sun1.velocity[1]) << " " << QString::number(sun1.velocity[2]) << "\n";
+    stream << QString::number(sun1.mass) << "\n";
+    stream << QString::number(sun2.location[0]) << " " << QString::number(sun2.location[1]) << " " << QString::number(sun2.location[2]) << "\n";
+    stream << QString::number(sun2.velocity[0]) << " " << QString::number(sun2.velocity[1]) << " " << QString::number(sun2.velocity[2]) << "\n";
+    stream << QString::number(sun2.mass) << "\n";
+    stream << QString::number(sun3.location[0]) << " " << QString::number(sun3.location[1]) << " " << QString::number(sun3.location[2]) << "\n";
+    stream << QString::number(sun3.velocity[0]) << " " << QString::number(sun3.velocity[1]) << " " << QString::number(sun3.velocity[2]) << "\n";
+    stream << QString::number(sun3.mass) << "\n";
+    stream << QString::number(earth.location[0]) << " " << QString::number(earth.location[1]) << " " << QString::number(earth.location[2]) << "\n";
+    stream << QString::number(earth.velocity[0]) << " " << QString::number(earth.velocity[1]) << " " << QString::number(earth.velocity[2]) << "\n";
+    stream << QString::number(earth.season) << " " << QString::number(earth.orbit) << " " << QString::number(earth.temperature) << "\n";
+    stream << QString::number(earth.continue_constant_era) << " " << QString::number(earth.distance_to_last_catch) << " " << QString::number(earth.constant_era) << "\n";
+    stream << QString::number(earth.chaotic_era) << " " << QString::number(earth.year) << "\n";
+    stream << QString::number(threebodyman.is_alive) << " " << QString::number(threebodyman.develop_index) << " " << QString::fromStdString(threebodyman.current_stage) << "\n";
+    stream << QString::number(threebodyman.max_fatal_temp) << " " << QString::number(threebodyman.min_fatal_temp) << " " << QString::fromStdString(threebodyman.current_state) << "\n";
+    stream << QString::number(threebodyman.develop_speed_multiply) << " " << QString::number(threebodyman.current_num) << " " << QString::number(threebodyman.gap_to_last_civilization) << "\n";
+    stream << QString::number(player1.guess_count) << "\n";
+    stream << QString::number(player1.guess_num[0]) << " " << QString::number(player1.guess_num[1]) << " " << QString::number(player1.guess_num[2]) << "\n";
+    stream << QString::number(player1.guess_current_num[0]) << " " << QString::number(player1.guess_current_num[1]) << " " << QString::number(player1.guess_current_num[2]) << "\n";
+    stream << QString::number(player1.guess_status[0]) << " " << QString::number(player1.guess_status[1]) << " " << QString::number(player1.guess_status[2]) << "\n";
     file.close();
+}
+
+void Gamepage::loadGame()
+{
+    QFile file("savegame.txt");
+    if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        QTextStream in(&file);
+        QString word;
+        QChar currentChar;
+        int status;
+
+        in >> status;
+        in >> sun1.location[0] >> sun1.location[1] >> sun1.location[2];
+        in >> sun1.velocity[0] >> sun1.velocity[1] >> sun1.velocity[2];
+        in >> sun1.mass;
+        in >> sun2.location[0] >> sun2.location[1] >> sun2.location[2];
+        in >> sun2.velocity[0] >> sun2.velocity[1] >> sun2.velocity[2];
+        in >> sun2.mass;
+        in >> sun3.location[0] >> sun3.location[1] >> sun3.location[2];
+        in >> sun3.velocity[0] >> sun3.velocity[1] >> sun3.velocity[2];
+        in >> sun3.mass;
+        in >> earth.location[0] >> earth.location[1] >> earth.location[2];
+        in >> earth.velocity[0] >> earth.velocity[1] >> earth.velocity[2];
+        in >> earth.season >> earth.orbit >> earth.temperature;
+        in >> earth.continue_constant_era >> earth.distance_to_last_catch >> earth.constant_era;
+        in >> earth.chaotic_era >> earth.year;
+        in >> word >> threebodyman.develop_index;
+        threebodyman.is_alive = word.toInt();
+        word = "";
+        while (!in.atEnd())
+        {
+            in >> currentChar;
+            if (currentChar == '\n')
+            {
+                break;
+            }
+            else if (currentChar != ' ')
+                word += currentChar;
+        }
+        threebodyman.current_stage = word.toStdString();
+        in >> threebodyman.max_fatal_temp >> threebodyman.min_fatal_temp;
+        word = "";
+        while (!in.atEnd())
+        {
+            in >> currentChar;
+            if (currentChar == '\n')
+            {
+                break;
+            }
+            else if (currentChar != ' ')
+                word += currentChar;
+        }
+        threebodyman.current_state = word.toStdString();
+        in >> threebodyman.develop_speed_multiply >> threebodyman.current_num >> threebodyman.gap_to_last_civilization;
+        in >> player1.guess_count;
+        in >> player1.guess_num[0] >> player1.guess_num[1] >> player1.guess_num[2];
+        in >> player1.guess_current_num[0] >> player1.guess_current_num[1] >> player1.guess_current_num[2];
+        in >> player1.guess_status[0] >> player1.guess_status[1] >> player1.guess_status[2];
+        file.close();
+
+        if (earth.father_sun_num == 1)
+        {
+            earth.father_sun = &sun1;
+        }
+        else if (earth.father_sun_num == 2)
+        {
+            earth.father_sun = &sun2;
+        }
+        else if (earth.father_sun_num == 3)
+        {
+            earth.father_sun = &sun3;
+        }
+        threebodyman.earth = &earth;
+    }
 }
 
 void Gamepage::keyPressEvent(QKeyEvent * event)

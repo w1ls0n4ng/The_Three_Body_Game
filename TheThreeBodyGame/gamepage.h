@@ -22,7 +22,7 @@ class Gamepage : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit Gamepage(QWidget *parent = nullptr);
+    explicit Gamepage(QWidget *parent = nullptr, bool loadgame = false);
     ~Gamepage();
     gamestatus gamestatus1;
 
@@ -33,6 +33,7 @@ public slots:
     void updatePosition();
     void updateGameState();
     void saveGame();
+    void loadGame();
 
 protected:
     void keyPressEvent(QKeyEvent *event);
