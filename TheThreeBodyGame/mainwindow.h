@@ -19,6 +19,7 @@ public:
 
 private slots:
     void on_startgame_clicked();
+    void on_exitgame_clicked();
 
     void on_exitgame_clicked();
 

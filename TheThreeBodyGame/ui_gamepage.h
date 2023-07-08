@@ -71,6 +71,10 @@ public:
     QLineEdit *lineEdit;
     QWidget *upperRightwidget;
     QWidget *upperLeftwidget;
+<<<<<<< Updated upstream
+=======
+    QWidget *Cwidget;
+>>>>>>> Stashed changes
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -300,13 +304,26 @@ public:
         upperLeftwidget = new QWidget(centralwidget);
         upperLeftwidget->setObjectName(QStringLiteral("upperLeftwidget"));
         upperLeftwidget->setGeometry(QRect(20, 20, 360, 410));
+<<<<<<< Updated upstream
         Gamepage->setCentralWidget(centralwidget);
         groupBox_3->raise();
         groupBox_4->raise();
+=======
+        Cwidget = new QWidget(centralwidget);
+        Cwidget->setObjectName(QStringLiteral("Cwidget"));
+        Cwidget->setGeometry(QRect(380, 20, 1221, 821));
+        Gamepage->setCentralWidget(centralwidget);
+>>>>>>> Stashed changes
         groupBox->raise();
         groupBox_2->raise();
         upperRightwidget->raise();
         upperLeftwidget->raise();
+<<<<<<< Updated upstream
+=======
+        groupBox_3->raise();
+        groupBox_4->raise();
+        Cwidget->raise();
+>>>>>>> Stashed changes
         menubar = new QMenuBar(Gamepage);
         menubar->setObjectName(QStringLiteral("menubar"));
         menubar->setGeometry(QRect(0, 0, 1920, 26));
