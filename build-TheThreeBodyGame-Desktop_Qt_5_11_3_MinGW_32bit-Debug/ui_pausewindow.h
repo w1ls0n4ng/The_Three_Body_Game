@@ -12,36 +12,50 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
-#include <QtWidgets/QDialogButtonBox>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QPushButton>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_PauseWindow
 {
 public:
-    QDialogButtonBox *buttonBox;
+    QPushButton *pushButton;
+    QPushButton *pushButton_2;
+    QLabel *label;
 
     void setupUi(QDialog *PauseWindow)
     {
         if (PauseWindow->objectName().isEmpty())
             PauseWindow->setObjectName(QStringLiteral("PauseWindow"));
-        PauseWindow->resize(640, 480);
-        buttonBox = new QDialogButtonBox(PauseWindow);
-        buttonBox->setObjectName(QStringLiteral("buttonBox"));
-        buttonBox->setGeometry(QRect(10, 440, 621, 32));
-        buttonBox->setOrientation(Qt::Horizontal);
-        buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
+        PauseWindow->resize(640, 280);
+        QFont font;
+        font.setFamily(QStringLiteral("FangSong"));
+        font.setPointSize(14);
+        PauseWindow->setFont(font);
+        pushButton = new QPushButton(PauseWindow);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setGeometry(QRect(110, 170, 101, 41));
+        pushButton->setStyleSheet(QStringLiteral("font: 12pt \"FangSong\";"));
+        pushButton_2 = new QPushButton(PauseWindow);
+        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        pushButton_2->setGeometry(QRect(370, 170, 171, 41));
+        pushButton_2->setStyleSheet(QStringLiteral("font: 12pt \"FangSong\";"));
+        label = new QLabel(PauseWindow);
+        label->setObjectName(QStringLiteral("label"));
+        label->setGeometry(QRect(260, 50, 101, 41));
 
         retranslateUi(PauseWindow);
-        QObject::connect(buttonBox, SIGNAL(accepted()), PauseWindow, SLOT(accept()));
-        QObject::connect(buttonBox, SIGNAL(rejected()), PauseWindow, SLOT(reject()));
 
         QMetaObject::connectSlotsByName(PauseWindow);
     } // setupUi
 
     void retranslateUi(QDialog *PauseWindow)
     {
-        PauseWindow->setWindowTitle(QApplication::translate("PauseWindow", "Dialog", nullptr));
+        PauseWindow->setWindowTitle(QApplication::translate("PauseWindow", "Game Pause", nullptr));
+        pushButton->setText(QApplication::translate("PauseWindow", "\347\273\247\347\273\255\346\270\270\346\210\217", nullptr));
+        pushButton_2->setText(QApplication::translate("PauseWindow", "\351\200\200\345\207\272\345\271\266\344\277\235\345\255\230\346\270\270\346\210\217", nullptr));
+        label->setText(QApplication::translate("PauseWindow", "\346\232\202\345\201\234\346\270\270\346\210\217", nullptr));
     } // retranslateUi
 
 };

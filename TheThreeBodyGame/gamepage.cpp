@@ -4,6 +4,7 @@
 #include "sun.h"
 #include "civilization.h"
 #include "pausewindow.h"
+#include "mainwindow.h"
 #include <QGroupBox>
 #include <QVBoxLayout>
 #include <QCheckBox>
@@ -16,6 +17,9 @@
 #include <QGraphicsEllipseItem>
 #include <QScreen>
 #include <QKeyEvent>
+#include <QFile>
+#include <QTextStream>
+#include <QDebug>
 
 Gamepage::Gamepage(QWidget *parent) :
     QMainWindow(parent),
@@ -26,12 +30,10 @@ Gamepage::Gamepage(QWidget *parent) :
     this->setStyleSheet(backgroundImage);
 
     // 设置游戏音乐
-    QMediaPlayer* mediaPlayer = new QMediaPlayer;
-    QMediaPlaylist* playlist = new QMediaPlaylist;
-
+    mediaPlayer = new QMediaPlayer;
+    playlist = new QMediaPlaylist;
     playlist->addMedia(QUrl::fromLocalFile("../Assests/game_bgm.mp3"));
     playlist->setPlaybackMode(QMediaPlaylist::Loop);
-
     mediaPlayer->setPlaylist(playlist);
     mediaPlayer->play();
 
@@ -42,7 +44,7 @@ Gamepage::Gamepage(QWidget *parent) :
                          "}";
     ui->groupBox->setStyleSheet(styleSheet);
 
-    // 设置Groupbox中的progressbar
+    // 设置第一个Groupbox中的progressbar
     styleSheet = "QProgressBar {"
                          "    background-image: url(../Assests/1.png);"
                          "    background-color: rgba(23, 33, 255, 50);"
@@ -80,14 +82,12 @@ Gamepage::Gamepage(QWidget *parent) :
                          "}";
     ui->groupBox_4->setStyleSheet(styleSheet);
 
-    QList<QScreen*> screens = QGuiApplication::screens();
 
     // 设置Scene大小为屏幕大小
+    QList<QScreen*> screens = QGuiApplication::screens();
     scene = new QGraphicsScene();
     scene->setSceneRect(0, 0, 1119, 951);
-
-    // 设置背景刷为透明
-    scene->setBackgroundBrush(Qt::transparent);
+    scene->setBackgroundBrush(Qt::transparent);     // 设置背景刷为透明
 
     // 初始化恒星、行星
     sun1.initialize(-10, 0, 0);
@@ -102,7 +102,6 @@ Gamepage::Gamepage(QWidget *parent) :
     circle2 = scene->addEllipse(sun2.location[0]*10, sun2.location[1]*10, 10, 10);
     circle3 = scene->addEllipse(sun3.location[0]*10, sun3.location[1]*10, 10, 10);
     circle4 = scene->addEllipse(earth.location[0]*10, earth.location[1]*10, 5, 5);
-
     circle1->setFlag(QGraphicsItem::ItemIsFocusable);
     circle1->setFocus();
     circle2->setFlag(QGraphicsItem::ItemIsFocusable);
@@ -152,18 +151,15 @@ Gamepage::Gamepage(QWidget *parent) :
 
     // 创建layout
     QHBoxLayout *horizontalLayout = new QHBoxLayout;
-
-    // 添加小部件到layout
-    horizontalLayout->addWidget(view);
-
-    // 设置layout到中心小部件
-    this->centralWidget()->setLayout(horizontalLayout);
+    horizontalLayout->addWidget(view);    // 添加小部件到layout
+    this->centralWidget()->setLayout(horizontalLayout);    // 设置layout到中心小部件
 
     // 以1毫秒（1000帧）刷新
     timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()),this,SLOT(updateGameState()));
     timer->start(1);
 
+    // 连接暂停游戏界面
     connect(this, &Gamepage::keyPressEvent, this, &Gamepage::keyPressEvent);
 }
 
@@ -262,12 +258,38 @@ void Gamepage::updatePosition()
     }
 }
 
+void Gamepage::saveGame()
+{
+
+    QFile file("savegame.txt");
+    file.open(QIODevice::WriteOnly);
+    QTextStream stream(&file);
+    stream << "1\n";
+    file.close();
+}
+
 void Gamepage::keyPressEvent(QKeyEvent * event)
 {
     if (event->key() == Qt::Key_Escape)
     {
         PauseWindow *pause = new PauseWindow();
-        pause->show();
+        gap = 0;
+        if (pause->exec())
+        {
+            gap = 25;
+        }
+        else
+        {
+            saveGame();
+            close();
+
+            // 关闭音乐
+            mediaPlayer->stop();
+
+            // 打开主界页面
+            MainWindow *main = new MainWindow();
+            main->showMaximized();
+        }
     }
 
 }

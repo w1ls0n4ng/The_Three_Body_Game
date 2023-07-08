@@ -9,6 +9,8 @@
 #include <QKeyEvent>
 #include <QTimer>
 #include <QGraphicsScene>
+#include <QMediaPlayer>
+#include <QMediaPlaylist>
 
 namespace Ui {
 class Gamepage;
@@ -22,18 +24,20 @@ public:
     explicit Gamepage(QWidget *parent = nullptr);
     ~Gamepage();
 
-
 public slots:
     void myfunction();
     void updateUI();
     void updatePosition();
     void updateGameState();
+    void saveGame();
 
 protected:
     void keyPressEvent(QKeyEvent *event);
 
 private:
     Ui::Gamepage *ui;
+    QMediaPlayer* mediaPlayer;
+    QMediaPlaylist* playlist;
     QTimer *timer;
     QGraphicsScene *scene;
     QGraphicsView* view;
