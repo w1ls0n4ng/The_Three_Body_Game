@@ -10,6 +10,8 @@
 #include <QKeyEvent>
 #include <QTimer>
 #include <QGraphicsScene>
+#include <QMediaPlayer>
+#include <QMediaPlaylist>
 
 namespace Ui {
 class Gamepage;
@@ -30,12 +32,18 @@ public slots:
     void updateUI();
     void updatePosition();
     void updateGameState();
+    void saveGame();
+
+protected:
+    void keyPressEvent(QKeyEvent * event);
 
 protected:
     void keyPressEvent(QKeyEvent *event);
 
 private:
     Ui::Gamepage *ui;
+    QMediaPlayer* mediaPlayer;
+    QMediaPlaylist* playlist;
     QTimer *timer;
     QGraphicsScene *scene;
     QGraphicsView* view;

@@ -6,6 +6,8 @@
 #include "players.h"
 #include "pausewindow.h"
 #include "ending.h"
+#include "pausewindow.h"
+#include "mainwindow.h"
 #include <QGroupBox>
 #include <QVBoxLayout>
 #include <QCheckBox>
@@ -17,6 +19,7 @@
 #include <QGraphicsView>
 #include <QGraphicsEllipseItem>
 #include <QScreen>
+#include <QFile>
 #include <QKeyEvent>
 
 Gamepage::Gamepage(QWidget *parent) :
@@ -28,8 +31,8 @@ Gamepage::Gamepage(QWidget *parent) :
     this->setStyleSheet(backgroundImage);
 
     // 设置游戏音乐
-    QMediaPlayer* mediaPlayer = new QMediaPlayer;
-    QMediaPlaylist* playlist = new QMediaPlaylist;
+    mediaPlayer = new QMediaPlayer;
+    playlist = new QMediaPlaylist;
 
     playlist->addMedia(QUrl::fromLocalFile("../Assests/game_bgm.mp3"));
     playlist->setPlaybackMode(QMediaPlaylist::Loop);
@@ -164,12 +167,8 @@ Gamepage::Gamepage(QWidget *parent) :
 
     connect(this, &Gamepage::keyPressEvent, this, &Gamepage::keyPressEvent);
 
-    //更新游戏状态
-    if (gamestatus1.game_status != 0){
-        close();
-        ending* gameending = new ending();
-        gameending->show();
-    }
+    // 连接暂停游戏界面
+    connect(this, &Gamepage::keyPressEvent, this, &Gamepage::keyPressEvent);
 }
 
 
@@ -234,7 +233,7 @@ void Gamepage::updateUI()
     if (gamestatus1.current_civilization_state==0){
         str = str + "灭亡";
     }
-    ui->civilization_count->setText(str);
+    ui->civilization_no->setText(str);
 
     //游戏终止条件
     if (gamestatus1.game_status != 0){
@@ -279,21 +278,12 @@ void Gamepage::updatePosition()
     }
 }
 
-void Gamepage::keyPressEvent(QKeyEvent * event)
-{
-    if (event->key() == Qt::Key_Escape)
-    {
-        PauseWindow *pause = new PauseWindow();
-        pause->show();
-    }
-
-}
-
 void Gamepage::updateGameState()
 {
     updatePosition();
     updateUI();
 }
+
 
 void Gamepage::on_radioButton_clicked()
 {
@@ -345,3 +335,38 @@ void Gamepage::on_pushButton_clicked()
     }
 }
 
+void Gamepage::saveGame()
+{
+
+    QFile file("savegame.txt");
+    file.open(QIODevice::WriteOnly);
+    QTextStream stream(&file);
+    stream << "1\n";
+    file.close();
+}
+
+void Gamepage::keyPressEvent(QKeyEvent * event)
+{
+    if (event->key() == Qt::Key_Escape)
+    {
+        PauseWindow *pause = new PauseWindow();
+        pause->show();
+        gap = 0;
+        if (pause->exec())
+        {
+            gap = 25;
+        }
+        else
+        {
+            saveGame();
+            close();
+
+            // 关闭音乐
+            mediaPlayer->stop();
+
+            // 打开主界页面
+            MainWindow *main = new MainWindow();
+            main->showMaximized();
+        }
+    }
+}
