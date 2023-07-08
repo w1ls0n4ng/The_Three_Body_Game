@@ -5,9 +5,11 @@ INPUT(
 ./debug\pausewindow.o
 ./debug\ending.o
 ./debug\loadgame.o
+./debug\nosavegame.o
 ./debug\moc_mainwindow.o
 ./debug\moc_gamepage.o
 ./debug\moc_pausewindow.o
 ./debug\moc_ending.o
 ./debug\moc_loadgame.o
+./debug\moc_nosavegame.o
 );

@@ -29,7 +29,6 @@ void LoadGame::on_pushButton_clicked()
     // 创建游戏界面
     Gamepage* game = new Gamepage(nullptr, true);
     game->showMaximized();
-    qDebug() << "successfully loaded game";
     close();
 }
 

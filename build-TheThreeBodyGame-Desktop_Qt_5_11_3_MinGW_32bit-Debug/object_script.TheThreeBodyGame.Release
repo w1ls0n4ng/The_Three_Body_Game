@@ -5,9 +5,11 @@ INPUT(
 ./release\pausewindow.o
 ./release\ending.o
 ./release\loadgame.o
+./release\nosavegame.o
 ./release\moc_mainwindow.o
 ./release\moc_gamepage.o
 ./release\moc_pausewindow.o
 ./release\moc_ending.o
 ./release\moc_loadgame.o
+./release\moc_nosavegame.o
 );
