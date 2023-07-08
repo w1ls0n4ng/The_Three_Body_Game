@@ -86,148 +86,6 @@ Gamepage::Gamepage(QWidget *parent) :
 
     QList<QScreen*> screens = QGuiApplication::screens();
 
-<<<<<<< Updated upstream
-       // 设置Scene大小为屏幕大小
-       scene = new QGraphicsScene();
-       scene->setSceneRect(0, 0, 1119, 951);
-
-       // 设置背景刷为透明
-       scene->setBackgroundBrush(Qt::transparent);
-
-       // 初始化恒星、行星
-       sun1.initialize(-10, 0, 0);
-       sun2.initialize(5, 8.66, 0);
-       sun3.initialize(5, -8.66, 0);
-       earth.initialize(sun1, sun2, sun3);
-       threebodyman.initialize(earth);
-       gamestatus1.initialize();
-
-       // 创造圆形并加入到scene当中
-       circle1 = scene->addEllipse(0, 0, 10, 10);
-       circle2 = scene->addEllipse(0, 0, 10, 10);
-       circle3 = scene->addEllipse(0, 0, 10, 10);
-       circle4 = scene->addEllipse(0, 0, 5, 5);
-
-       circle1->setFlag(QGraphicsItem::ItemIsFocusable);
-       circle1->setFocus();
-       circle2->setFlag(QGraphicsItem::ItemIsFocusable);
-       circle2->setFocus();
-       circle3->setFlag(QGraphicsItem::ItemIsFocusable);
-       circle3->setFocus();
-       circle4->setFlag(QGraphicsItem::ItemIsFocusable);
-       circle4->setFocus();
-
-       // 设置三个圆形的颜色
-       circle1->setBrush(Qt::red);
-       circle2->setBrush(Qt::green);
-       circle3->setBrush(Qt::blue);
-       circle4->setBrush(Qt::white);
-
-       // 创建view并设置好scene
-       view = new QGraphicsView(scene);
-
-       // 设置view大小为1119x951
-       view->setFixedSize(1119, 951);
-
-       // 将视图放置在屏幕中央
-       if (!screens.isEmpty()) {
-           QRect screenRect = screens.first()->availableGeometry();
-           view->move(screenRect.center() - view->rect().center());
-       }
-
-       // 设置中央小部件的背景为透明
-       this->centralWidget()->setStyleSheet("background-color: transparent;"
-                                            "background-image: url(../Assests/1.png);"
-                                            "border: none;");
-
-       // 创建layout
-       QHBoxLayout *horizontalLayout = new QHBoxLayout;
-
-       // 添加小部件到layout
-       horizontalLayout->addWidget(view);
-
-       // 设置layout到中心小部件
-       this->centralWidget()->setLayout(horizontalLayout);
-
-       //右上视图
-       QWidget* widget = ui->upperRightwidget;
-
-       // 创建 QGraphicsView 和 QGraphicsScene
-       QGraphicsView* view = new QGraphicsView(widget);
-       QGraphicsScene* scene = new QGraphicsScene(widget);
-
-       // 创建球体（QGraphicsEllipseItem）
-       ball1 = new QGraphicsEllipseItem(0, 0, 8, 8);
-       ball1->setBrush(Qt::red);  // 设置球体的颜色
-       ball2 = new QGraphicsEllipseItem(0, 0, 8, 8);
-       ball2->setBrush(Qt::green);  // 设置球体的颜色
-       ball3 = new QGraphicsEllipseItem(0, 0, 8, 8);
-       ball3->setBrush(Qt::blue);  // 设置球体的颜色
-       ball4 = new QGraphicsEllipseItem(0, 0, 4, 4);
-       ball4->setBrush(Qt::white);  // 设置球体的颜色
-
-       // 将球体添加到 QGraphicsScene 中
-       scene->addItem(ball1);
-       scene->addItem(ball2);
-       scene->addItem(ball3);
-       scene->addItem(ball4);
-
-       // 设置 QGraphicsScene 给 QGraphicsView
-       view->setScene(scene);
-
-       // 创建布局管理器，并将 QGraphicsView 添加到布局中
-       QVBoxLayout* layout = new QVBoxLayout(widget);
-       layout->addWidget(view);
-
-       widget->setLayout(layout);
-
-       //设置右上视图的背景
-       ui->upperRightwidget->setStyleSheet("background-image: url(../Assests/space1.png);"
-                                            "border: 2px ridge rgb(60,255,255);"
-                                            "margin: 0px;");
-
-       //左上视图
-       QWidget* leftWidget = ui->upperLeftwidget;
-
-       // 创建 QGraphicsView 和 QGraphicsScene
-       view = new QGraphicsView(leftWidget);
-       scene = new QGraphicsScene(leftWidget);
-
-       // 创建球体（QGraphicsEllipseItem）
-       ball1_1 = new QGraphicsEllipseItem(0, 0, 10, 10);
-       ball1_1->setBrush(Qt::red);  // 设置球体的颜色
-       ball2_1 = new QGraphicsEllipseItem(0, 0, 10, 10);
-       ball2_1->setBrush(Qt::green);  // 设置球体的颜色
-       ball3_1 = new QGraphicsEllipseItem(0, 0, 10, 10);
-       ball3_1->setBrush(Qt::blue);  // 设置球体的颜色
-       ball4_1 = new QGraphicsEllipseItem(0, 0, 5, 5);
-       ball4_1->setBrush(Qt::white);  // 设置球体的颜色
-
-       // 将球体添加到 QGraphicsScene 中
-       scene->addItem(ball1_1);
-       scene->addItem(ball2_1);
-       scene->addItem(ball3_1);
-       scene->addItem(ball4_1);
-
-       // 设置 QGraphicsScene 给 QGraphicsView
-       view->setScene(scene);
-
-       // 创建布局管理器，并将 QGraphicsView 添加到布局中
-       layout = new QVBoxLayout(leftWidget);
-       layout->addWidget(view);
-
-       leftWidget->setLayout(layout);
-
-       //设置左上视图的背景
-       ui->upperLeftwidget->setStyleSheet("background-image: url(../Assests/space1.png);"
-                                            "border: 2px ridge rgb(60,255,255);"
-                                            "margin: 0px;");
-
-       // 以1毫秒（1000帧）刷新
-       timer = new QTimer(this);
-       connect(timer, SIGNAL(timeout()),this,SLOT(updateGameState()));
-       timer->start(1);
-=======
    // 设置Scene大小为屏幕大小
    scene = new QGraphicsScene();
    scene->setSceneRect(0, 0, 1119, 951);
@@ -285,7 +143,6 @@ Gamepage::Gamepage(QWidget *parent) :
     centralWidget()->setStyleSheet("background-color: transparent;"
                                         "background-image: url(../Assests/1.png);"
                                         "border: none;");
->>>>>>> Stashed changes
 
 //   // 创建layout
 //   QHBoxLayout *horizontalLayout = new QHBoxLayout;
@@ -379,8 +236,12 @@ Gamepage::Gamepage(QWidget *parent) :
     // 连接暂停游戏界面
     connect(this, &Gamepage::keyPressEvent, this, &Gamepage::keyPressEvent);
 
-    // 连接暂停游戏界面
-    connect(this, &Gamepage::keyPressEvent, this, &Gamepage::keyPressEvent);
+    //更新游戏状态
+    if (gamestatus1.game_status != 0){
+        close();
+        ending* gameending = new ending();
+        gameending->show();
+    }
 }
 
 
@@ -521,23 +382,6 @@ void Gamepage::updatePosition()
     //主视图    x-y轴
     qreal xOffset;
     qreal yOffset;
-<<<<<<< Updated upstream
-    while(true){
-
-        // 获取视图和planet的中心位置
-        QPointF viewCenter = view->mapToScene(view->viewport()->rect().center());
-        QPointF circlesCenter = QPointF((sun1.location[0]+sun2.location[0]+sun3.location[0])*p/3,(sun1.location[1]+sun2.location[1]+sun3.location[1])*p/3);
-
-        // 计算偏移量以重新定位视图
-        xOffset = circlesCenter.x() - viewCenter.x();
-        yOffset = circlesCenter.y() - viewCenter.y();
-        cout << viewCenter.x() << "," << viewCenter.y() << "------" <<circlesCenter.x() <<',' <<circlesCenter.y() << endl;
-        cout << xOffset <<',' << yOffset<<endl;
-        QRectF visibleRect = view->mapToScene(view->viewport()->geometry()).boundingRect();
-        if(visibleRect.contains(QPointF(earth.location[0]*p-xOffset, earth.location[1]*p-yOffset))) break;
-        else p -= 0.5;
-    }
-=======
 //    while(true){
 
         // 获取视图和planet的中心位置
@@ -554,7 +398,6 @@ void Gamepage::updatePosition()
 //        if(visibleRect.contains(QPointF(earth.location[0]*p-xOffset, earth.location[1]*p-yOffset))) break;
 //        else p -= 0.5;
 //    }
->>>>>>> Stashed changes
 
     // 设置圆圈位置
     circle1->setPos(sun1.location[0]*p-xOffset, sun1.location[1]*p-yOffset);
@@ -598,10 +441,6 @@ void Gamepage::updatePosition()
     ball3_1->setPos(sun3.location[1]*mag-xOffset, sun3.location[2]*mag-yOffset);
     ball4_1->setPos(earth.location[1]*mag-xOffset, earth.location[2]*mag-yOffset);
 }
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
 
 
 void Gamepage::updateGameState()

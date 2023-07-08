@@ -35,7 +35,6 @@ SOURCES += \
     mainwindow.cpp \
     gamepage.cpp \
     pausewindow.cpp \
-    test.cpp \
     ending.cpp
 
 HEADERS += \
@@ -47,7 +46,6 @@ HEADERS += \
     gamestatus.h \
     players.h \
     pausewindow.h \
-    test.h \
     ending.h
 
 FORMS += \
