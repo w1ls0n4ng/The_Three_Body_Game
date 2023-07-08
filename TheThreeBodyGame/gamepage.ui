@@ -438,7 +438,8 @@ font: 75 8pt &quot;Microsoft YaHei UI&quot;;
      </property>
      <property name="styleSheet">
       <string notr="true">background: transparent;
-font: 75 8pt &quot;Microsoft YaHei UI&quot;;
+font: 8pt &quot;Microsoft YaHei UI&quot;;
+color:rgb(255, 0, 0);
 </string>
      </property>
      <property name="text">
@@ -456,7 +457,8 @@ font: 75 8pt &quot;Microsoft YaHei UI&quot;;
      </property>
      <property name="styleSheet">
       <string notr="true">background: transparent;
-font: 75 8pt &quot;Microsoft YaHei UI&quot;;
+font: 8pt &quot;Microsoft YaHei UI&quot;;
+color:rgb(0, 255, 0);
 </string>
      </property>
      <property name="text">
@@ -474,7 +476,7 @@ font: 75 8pt &quot;Microsoft YaHei UI&quot;;
      </property>
      <property name="styleSheet">
       <string notr="true">background: transparent;
-font: 75 8pt &quot;Microsoft YaHei UI&quot;;
+font:  8pt &quot;Microsoft YaHei UI&quot;;
 </string>
      </property>
      <property name="text">
@@ -492,7 +494,9 @@ font: 75 8pt &quot;Microsoft YaHei UI&quot;;
      </property>
      <property name="styleSheet">
       <string notr="true">background: transparent;
-font: 8pt &quot;Microsoft YaHei UI&quot;;</string>
+font: 8pt &quot;Microsoft YaHei UI&quot;;
+color:rgb(255, 0, 0);
+</string>
      </property>
      <property name="text">
       <string>TextLabel</string>
@@ -509,7 +513,9 @@ font: 8pt &quot;Microsoft YaHei UI&quot;;</string>
      </property>
      <property name="styleSheet">
       <string notr="true">background: transparent;
-font: 8pt &quot;Microsoft YaHei UI&quot;;</string>
+font: 8pt &quot;Microsoft YaHei UI&quot;;
+color:rgb(0, 255, 0);
+</string>
      </property>
      <property name="text">
       <string>TextLabel</string>
@@ -526,7 +532,8 @@ font: 8pt &quot;Microsoft YaHei UI&quot;;</string>
      </property>
      <property name="styleSheet">
       <string notr="true">background: transparent;
-font: 8pt &quot;Microsoft YaHei UI&quot;;</string>
+font: 8pt &quot;Microsoft YaHei UI&quot;;
+color: rgb(0, 0, 255)</string>
      </property>
      <property name="text">
       <string>TextLabel</string>

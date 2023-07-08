@@ -214,35 +214,42 @@ public:
         red_label->setObjectName(QStringLiteral("red_label"));
         red_label->setGeometry(QRect(40, 75, 55, 21));
         red_label->setStyleSheet(QLatin1String("background: transparent;\n"
-"font: 75 8pt \"Microsoft YaHei UI\";\n"
+"font: 8pt \"Microsoft YaHei UI\";\n"
+"color:rgb(255, 0, 0);\n"
 ""));
         green_label = new QLabel(groupBox_2);
         green_label->setObjectName(QStringLiteral("green_label"));
         green_label->setGeometry(QRect(40, 100, 55, 21));
         green_label->setStyleSheet(QLatin1String("background: transparent;\n"
-"font: 75 8pt \"Microsoft YaHei UI\";\n"
+"font: 8pt \"Microsoft YaHei UI\";\n"
+"color:rgb(0, 255, 0);\n"
 ""));
         blue_label = new QLabel(groupBox_2);
         blue_label->setObjectName(QStringLiteral("blue_label"));
         blue_label->setGeometry(QRect(40, 125, 55, 21));
         blue_label->setStyleSheet(QLatin1String("background: transparent;\n"
-"font: 75 8pt \"Microsoft YaHei UI\";\n"
+"font:  8pt \"Microsoft YaHei UI\";\n"
 ""));
         label = new QLabel(groupBox_2);
         label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(70, 75, 211, 21));
         label->setStyleSheet(QLatin1String("background: transparent;\n"
-"font: 8pt \"Microsoft YaHei UI\";"));
+"font: 8pt \"Microsoft YaHei UI\";\n"
+"color:rgb(255, 0, 0);\n"
+""));
         label_2 = new QLabel(groupBox_2);
         label_2->setObjectName(QStringLiteral("label_2"));
         label_2->setGeometry(QRect(70, 100, 211, 21));
         label_2->setStyleSheet(QLatin1String("background: transparent;\n"
-"font: 8pt \"Microsoft YaHei UI\";"));
+"font: 8pt \"Microsoft YaHei UI\";\n"
+"color:rgb(0, 255, 0);\n"
+""));
         label_3 = new QLabel(groupBox_2);
         label_3->setObjectName(QStringLiteral("label_3"));
         label_3->setGeometry(QRect(70, 125, 211, 21));
         label_3->setStyleSheet(QLatin1String("background: transparent;\n"
-"font: 8pt \"Microsoft YaHei UI\";"));
+"font: 8pt \"Microsoft YaHei UI\";\n"
+"color: rgb(0, 0, 255)"));
         label_4 = new QLabel(groupBox_2);
         label_4->setObjectName(QStringLiteral("label_4"));
         label_4->setGeometry(QRect(40, 50, 201, 21));
