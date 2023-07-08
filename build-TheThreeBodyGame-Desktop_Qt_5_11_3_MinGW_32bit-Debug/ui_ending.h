@@ -37,7 +37,7 @@ public:
         pushButton_2->setGeometry(QRect(250, 240, 93, 28));
         label = new QLabel(ending);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(81, 54, 211, 131));
+        label->setGeometry(QRect(31, 54, 331, 141));
 
         retranslateUi(ending);
 

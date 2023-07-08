@@ -73,5 +73,7 @@ private slots:
     void on_radioButton_clicked();
 };
 
+extern int getscore;
+extern string gamestopinformation;
 
 #endif // GAMEPAGE_H

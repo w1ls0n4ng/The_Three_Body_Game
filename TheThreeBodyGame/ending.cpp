@@ -11,15 +11,10 @@ ending::ending(QWidget *parent) :
 {
     ui->setupUi(this);
     string s;
-    s = "游戏结束，";
-    s = s + "玩家得分：" ;
-    int score = 0;
-    for (int i=0;i<3;++i){
-        if (player2.guess_num[i]==gamestatus2.current_civilization_num & player2.guess_status[i]==gamestatus2.current_civilization_state){
-            score += (1+player2.guess_num[i]-player2.guess_current_num[i]) * (1+player2.guess_num[i]-player2.guess_current_num[i]);
-        }
-    }
-    s = s + to_string(score);
+    int n=getscore;
+    s = gamestopinformation + "\n";
+    s = s + "游戏结束，";
+    s = s + "玩家得分：" + to_string(n);
     ui->label->setText(QString::fromStdString(s));
 }
 
